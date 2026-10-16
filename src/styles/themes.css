@@ -1,0 +1,36 @@
+:root {
+  --subject-hue: 220;
+}
+
+.subject-themed {
+  --subject-accent: hsl(var(--subject-hue) 55% 42%);
+  --subject-surface: hsl(var(--subject-hue) 45% 94%);
+  --subject-border: hsl(var(--subject-hue) 35% 78%);
+}
+
+.dark .subject-themed {
+  --subject-accent: hsl(var(--subject-hue) 65% 62%);
+  --subject-surface: hsl(var(--subject-hue) 30% 16%);
+  --subject-border: hsl(var(--subject-hue) 25% 28%);
+}
+
+.card-syllabus {
+  border-left: 4px solid hsl(var(--subject-hue) 50% 45%);
+  background: var(--subject-surface);
+}
+
+.card-definition {
+  border-left: 4px solid #6366f1;
+}
+
+.card-statute {
+  border-left: 4px solid #e11d48;
+}
+
+.card-exam {
+  border-left: 4px solid #d97706;
+}
+
+.card-reading {
+  border-left: 4px solid #059669;
+}

@@ -1,0 +1,24 @@
+@media print {
+  #sidebar,
+  #command-palette,
+  .no-print,
+  header button {
+    display: none !important;
+  }
+
+  #main-content {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .study-card {
+    break-inside: avoid;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}

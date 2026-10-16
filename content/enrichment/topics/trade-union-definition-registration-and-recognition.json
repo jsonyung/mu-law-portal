@@ -1,0 +1,18 @@
+{
+  "topicId": "trade-union-definition-registration-and-recognition",
+  "definition": "A trade union is an association of workers (or employers) formed primarily for regulating relations between members and employers, or for imposing restrictive conditions on conduct of any trade or business. Registration under the Industrial Relations Code confers legal identity, certain immunities, and rights to represent workers in industrial disputes.",
+  "statutoryReferences": [
+    {
+      "act": "Industrial Relations Code, 2020",
+      "sections": ["Registration provisions — verify current bare act"],
+      "note": "Confirm amendments for your examination batch"
+    }
+  ],
+  "cases": [],
+  "examChecklist": [
+    { "id": "chk-1", "text": "Define trade union and distinguish from casual workers' association" },
+    { "id": "chk-2", "text": "List essentials and procedure for registration" },
+    { "id": "chk-3", "text": "Explain civil and criminal immunities in trade disputes" }
+  ],
+  "lastVerified": "2026-10-17"
+}
