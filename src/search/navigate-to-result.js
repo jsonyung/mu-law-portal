@@ -1,58 +1,122 @@
-import { setProgramme, saveSidebarState, store, subscribe } from '../state/store.js';
+import { store, subscribe, expandSidebarForIntent, clearPendingNavigation } from '../state/store.js';
+import { onRouteChange } from '../router/hash-router.js';
 import { focusTopicElement } from '../utils/focus-scroll.js';
+import { buildNavigationTarget } from './navigation-target.js';
 
-/**
- * Navigate from a search result with programme-aware route and sidebar expansion.
- */
-export function navigateToSearchResult(result) {
-  const route = result.route;
-  if (!route?.path) return;
+const MAX_WAIT_MS = 2500;
 
-  const path = route.path.replace(/^#/, '');
-  const programmeId = route.programmeId;
-  const semesterId = route.semesterId;
-  const subjectSlug = route.subjectSlug;
-  const moduleId = route.moduleId;
-  const topicId = route.topicId;
+function routeMatchesTarget(resolved, target) {
+  if (!resolved || !target) return false;
 
-  if (programmeId) setProgramme(programmeId);
-
-  if (programmeId && semesterId) {
-    saveSidebarState(`${programmeId}:${semesterId}`, true);
-  }
-  if (programmeId && semesterId && subjectSlug) {
-    saveSidebarState(`${programmeId}:${semesterId}:${subjectSlug}`, true);
-  }
-  if (programmeId && semesterId && subjectSlug && moduleId) {
-    saveSidebarState(`${programmeId}:${semesterId}:${subjectSlug}:${moduleId}`, true);
+  if (target.recordType === 'topic' || target.recordType === 'case' || target.recordType === 'statute') {
+    return (
+      resolved.view === 'topic' &&
+      resolved.topic?.id === target.topicId &&
+      resolved.module?.id === target.moduleId &&
+      resolved.subject?.slug === target.subjectSlug
+    );
   }
 
-  const hashTarget = path.startsWith('/') ? path : `/${path}`;
+  if (target.recordType === 'module') {
+    return resolved.subject?.slug === target.subjectSlug && resolved.module?.id === target.moduleId;
+  }
 
-  let unsub = null;
-  const timeout = window.setTimeout(() => {
-    if (topicId) focusTopicElement(topicId);
-    if (unsub) unsub();
-  }, 800);
+  if (target.recordType === 'reading' || target.recordType === 'subject') {
+    return resolved.subject?.slug === target.subjectSlug;
+  }
 
-  unsub = subscribe(() => {
-    const r = store.route;
-    if (!r) return;
-    if (topicId && r.topic?.id === topicId) {
-      window.clearTimeout(timeout);
-      requestAnimationFrame(() => focusTopicElement(topicId));
-      unsub();
-      unsub = null;
-    } else if (!topicId && r.subject?.slug === subjectSlug) {
-      window.clearTimeout(timeout);
-      unsub();
-      unsub = null;
-    }
+  return false;
+}
+
+function applyFocusForTarget(target) {
+  if (!target) return;
+
+  if (target.recordType === 'topic' || target.recordType === 'case' || target.recordType === 'statute') {
+    if (target.topicId) focusTopicElement(target.topicId);
+    return;
+  }
+
+  if (target.recordType === 'module' && target.moduleId) {
+    const modEl = document.getElementById(target.moduleId);
+    modEl?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    modEl?.classList.add('topic-highlight');
+    window.setTimeout(() => modEl?.classList.remove('topic-highlight'), 2000);
+    return;
+  }
+
+  if (target.recordType === 'reading' && target.readingAnchorId) {
+    const readEl = document.getElementById(target.readingAnchorId);
+    readEl?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    readEl?.classList.add('topic-highlight');
+    window.setTimeout(() => readEl?.classList.remove('topic-highlight'), 2000);
+  }
+}
+
+function waitForNavigationTarget(target, onReady) {
+  if (routeMatchesTarget(store.route, target)) {
+    onReady();
+    return () => {};
+  }
+
+  let done = false;
+  const finish = () => {
+    if (done) return;
+    done = true;
+    onReady();
+    unsub();
+    window.clearTimeout(timer);
+  };
+
+  const unsub = subscribe(() => {
+    if (routeMatchesTarget(store.route, target)) finish();
   });
 
-  if (location.hash !== `#${hashTarget}`) {
-    location.hash = hashTarget;
-  } else {
-    window.dispatchEvent(new HashChangeEvent('hashchange'));
+  const timer = window.setTimeout(() => {
+    if (routeMatchesTarget(store.route, target)) finish();
+  }, MAX_WAIT_MS);
+
+  return finish;
+}
+
+/**
+ * Navigate from a search result using stable record metadata.
+ */
+export function navigateToSearchResult(record, options = {}) {
+  const target = buildNavigationTarget(
+    record,
+    options.preferredProgrammeId || store.programme,
+    options.filterProgrammeId || '',
+  );
+
+  if (!target) {
+    console.warn('[search] No navigable destination for record', record?.id, record?.recordType);
+    return false;
   }
+
+  store.pendingNavigation = target;
+  expandSidebarForIntent(target);
+
+  const hashBody = target.hash.replace(/^#/, '');
+  const hashFull = `#${hashBody}`;
+
+  waitForNavigationTarget(target, () => {
+    applyFocusForTarget(target);
+    clearPendingNavigation();
+  });
+
+  if (location.hash !== hashFull) {
+    location.hash = hashBody;
+  } else {
+    onRouteChange();
+  }
+
+  return true;
+}
+
+export function applyPendingNavigationIfReady() {
+  const target = store.pendingNavigation;
+  if (!target) return;
+  if (!routeMatchesTarget(store.route, target)) return;
+  applyFocusForTarget(target);
+  clearPendingNavigation();
 }

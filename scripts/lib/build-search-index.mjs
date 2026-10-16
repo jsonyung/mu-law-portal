@@ -62,7 +62,6 @@ export function buildSearchIndexV2(subjects, subjectOrder, curriculumMeta) {
   const aliasConfig = loadAliasConfig();
   const documents = [];
   const usedIds = new Set();
-  let readingCounter = 0;
 
   function pushDoc(doc) {
     if (usedIds.has(doc.id)) {
@@ -180,10 +179,12 @@ export function buildSearchIndexV2(subjects, subjectOrder, curriculumMeta) {
       }
     }
 
+    let subjectReadingIdx = 0;
     for (const r of s.readings || []) {
-      readingCounter += 1;
+      subjectReadingIdx += 1;
+      const readingDocId = `reading:${s.slug}:${subjectReadingIdx}`;
       pushDoc({
-        id: `reading:${s.slug}:${readingCounter}`,
+        id: readingDocId,
         recordType: 'reading',
         programmeIds,
         routes: buildRoutes(s),
@@ -194,6 +195,8 @@ export function buildSearchIndexV2(subjects, subjectOrder, curriculumMeta) {
         topicId: null,
         topicTitle: null,
         sectionRef: null,
+        readingIndex: subjectReadingIdx,
+        anchorId: `reading-${s.slug}-${subjectReadingIdx}`,
         displayTitle: r.slice(0, 100),
         excerptSource: r,
         searchText: normalizeSearchText(r),

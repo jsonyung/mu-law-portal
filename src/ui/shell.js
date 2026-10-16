@@ -8,6 +8,7 @@ import { renderTopicDrawer } from './topic-drawer.js';
 import { navigate } from '../router/hash-router.js';
 import { focusTopicElement } from '../utils/focus-scroll.js';
 import { openSearchHint } from '../search/command-palette.js';
+import { applyPendingNavigationIfReady } from '../search/navigate-to-result.js';
 
 let appRoot = null;
 let mainEl = null;
@@ -110,8 +111,14 @@ function renderMain() {
         }
       }),
     );
-    requestAnimationFrame(() => focusTopicElement(resolved.topic.id));
   }
+
+  requestAnimationFrame(() => {
+    applyPendingNavigationIfReady();
+    if (!store.pendingNavigation && resolved.view === 'topic' && resolved.topic) {
+      focusTopicElement(resolved.topic.id);
+    }
+  });
 }
 
 function renderHome(programme) {

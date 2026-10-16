@@ -26,6 +26,31 @@ export function renderSubjectView(ctx) {
     wrap.appendChild(sectionBlock('Course Outcomes', subject.outcomes));
   }
 
+  if (subject.readings?.length) {
+    const readingsSec = el('section', {
+      id: 'subject-readings',
+      className: 'mb-8 study-card card-reading',
+    });
+    readingsSec.appendChild(el('h2', { className: 'font-semibold mb-3' }, ['Recommended Readings']));
+    readingsSec.appendChild(
+      el(
+        'ul',
+        { className: 'list-disc pl-5 space-y-2 text-sm' },
+        subject.readings.map((r, idx) =>
+          el(
+            'li',
+            {
+              id: `reading-${subject.slug}-${idx + 1}`,
+              className: 'scroll-mt-24 rounded px-1 -mx-1',
+            },
+            [r],
+          ),
+        ),
+      ),
+    );
+    wrap.appendChild(readingsSec);
+  }
+
   for (const mod of subject.modules) {
     const modEl = el('section', {
       className: 'mb-8 rounded-xl border p-4 dark:border-slate-700',

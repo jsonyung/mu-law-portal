@@ -244,7 +244,10 @@ function renderResults(errorMsg) {
 }
 
 function go(result) {
-  navigateToSearchResult(result);
+  navigateToSearchResult(result, {
+    preferredProgrammeId: filterProgramme || store.programme,
+    filterProgrammeId: filterProgramme,
+  });
   togglePalette(false);
 }
 

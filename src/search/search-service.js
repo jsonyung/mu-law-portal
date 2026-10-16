@@ -1,6 +1,7 @@
 import MiniSearch from 'minisearch';
 import { expandQueryWithAliases, normalizeQuery } from './normalize-query.js';
 import { rankSearchResults } from './rank-results.js';
+import { buildNavigationTarget } from './navigation-target.js';
 
 let mini = null;
 let documentsById = new Map();
@@ -120,11 +121,24 @@ export function search(options) {
     return true;
   });
 
-  const results = ranked.slice(0, limit).map((doc) => ({
-    ...doc,
-    route: pickRoute(doc, preferredProgrammeId, programmeId),
-    matchedAliases: matchedAliases.length ? matchedAliases : undefined,
-  }));
+  const results = ranked.slice(0, limit).map((doc) => {
+    const navigationTarget = buildNavigationTarget(doc, preferredProgrammeId, programmeId);
+    return {
+      ...doc,
+      navigationTarget,
+      route: navigationTarget
+        ? {
+            programmeId: navigationTarget.programmeId,
+            semesterId: navigationTarget.semesterId,
+            path: navigationTarget.hash,
+            subjectSlug: navigationTarget.subjectSlug,
+            moduleId: navigationTarget.moduleId,
+            topicId: navigationTarget.topicId,
+          }
+        : pickRoute(doc, preferredProgrammeId, programmeId),
+      matchedAliases: matchedAliases.length ? matchedAliases : undefined,
+    };
+  });
 
   return { results, matchedAliases, error: null };
 }

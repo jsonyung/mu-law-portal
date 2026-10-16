@@ -24,7 +24,6 @@ export function resolveRoute(route, curriculum) {
   if (!curriculum || route.invalid) return { view: 'notFound', route };
 
   const programme = route.programme || store.programme;
-  if (route.programme) setStore({ programme });
 
   if (!route.semester) {
     return { view: 'home', programme, route: { programme } };
@@ -83,7 +82,12 @@ export function navigate(partial) {
 export function onRouteChange() {
   const route = parseHash();
   const resolved = resolveRoute(route, store.curriculum);
-  setStore({ route: resolved });
+  const programme = resolved.programme || route.programme || store.programme;
+  if (programme && programme !== store.programme) {
+    store.programme = programme;
+    localStorage.setItem('mu-law-programme', programme);
+  }
+  setStore({ route: resolved, programme });
 
   if (!location.hash || location.hash === '#') {
     const last = localStorage.getItem('mu-law-last-route');
