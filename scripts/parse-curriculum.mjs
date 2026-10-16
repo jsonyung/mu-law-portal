@@ -3,6 +3,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { parseCurriculumMarkdown } from './lib/state-machine-parser.mjs';
 import { mergeEnrichment } from './merge-enrichment.mjs';
+import { buildSearchIndexV2 } from './lib/build-search-index.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -52,68 +53,6 @@ function applyThemes(subjects, themes) {
   }
 }
 
-function defaultProgramme(subject) {
-  return subject.semesterMap['llb-3yr'] ? 'llb-3yr' : 'llb-5yr';
-}
-
-function buildSearchIndex(subjects, subjectOrder) {
-  const documents = [];
-
-  for (const id of subjectOrder) {
-    const s = subjects[id];
-    const prog = defaultProgramme(s);
-    documents.push({
-      id: `subject:${s.slug}`,
-      type: 'subject',
-      title: s.title,
-      path: buildPathForSubject(s, prog),
-      text: [s.title, s.objectives, s.outcomes].join(' '),
-    });
-
-    for (const mod of s.modules) {
-      documents.push({
-        id: `module:${s.slug}:${mod.id}`,
-        type: 'module',
-        title: mod.title || mod.id,
-        path: buildPathForSubject(s, prog, mod.id),
-        text: mod.title,
-      });
-
-      for (const topic of mod.topics) {
-        const path = buildPathForSubject(s, prog, mod.id, topic.id);
-        documents.push({
-          id: `topic:${topic.id}`,
-          type: 'topic',
-          title: topic.title,
-          sectionRef: topic.sectionRef,
-          path,
-          text: [topic.title, topic.syllabusText, topic.sectionRef].filter(Boolean).join(' '),
-        });
-      }
-    }
-
-    for (const r of s.readings) {
-      documents.push({
-        id: `reading:${s.slug}:${documents.length}`,
-        type: 'reading',
-        title: r.slice(0, 80),
-        path: buildPathForSubject(s, prog),
-        text: r,
-      });
-    }
-  }
-
-  return { documents };
-}
-
-function buildPathForSubject(subject, programme, moduleId, topicId) {
-  const sem = subject.semesterMap[programme] || subject.semesterMap['llb-3yr'] || 'sem-1';
-  let path = `#/${programme}/${sem}/${subject.slug}`;
-  if (moduleId) path += `/${moduleId}`;
-  if (topicId) path += `/${topicId}`;
-  return path;
-}
-
 const slugOverrides = JSON.parse(readFileSync(SLUG_OVERRIDES_PATH, 'utf8'));
 const themes = JSON.parse(readFileSync(THEMES_PATH, 'utf8'));
 
@@ -122,18 +61,21 @@ mergeEnrichment(subjects);
 applyThemes(subjects, themes);
 
 const programmes = buildProgrammes(subjects, subjectOrder);
-const searchIndex = buildSearchIndex(subjects, subjectOrder);
+
+const curriculumMeta = {
+  source: 'university_mumbai_llb_master_curriculum.md',
+  generatedAt: new Date().toISOString(),
+  syllabusYear: '2022-23',
+};
 
 const curriculum = {
-  meta: {
-    source: 'university_mumbai_llb_master_curriculum.md',
-    generatedAt: new Date().toISOString(),
-    syllabusYear: '2022-23',
-  },
+  meta: curriculumMeta,
   programmes,
   subjectOrder,
   subjects,
 };
+
+const searchIndex = buildSearchIndexV2(subjects, subjectOrder, curriculumMeta);
 
 mkdirSync(OUT_DIR, { recursive: true });
 mkdirSync(PUBLIC_DATA, { recursive: true });

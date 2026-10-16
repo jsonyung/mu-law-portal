@@ -3,6 +3,7 @@ import { store, setStore, initTheme, setProgramme } from './state/store.js';
 import { initRouter, onRouteChange } from './router/hash-router.js';
 import { mountShell } from './ui/shell.js';
 import { initCommandPalette } from './search/command-palette.js';
+import { initSearchService } from './search/search-service.js';
 
 async function boot() {
   initTheme();
@@ -16,6 +17,10 @@ async function boot() {
   ]);
 
   setStore({ curriculum, searchIndex });
+
+  if (!initSearchService(searchIndex)) {
+    console.warn('Search index init failed:', searchIndex?.meta);
+  }
 
   mountShell(document.getElementById('app'));
   initRouter();
