@@ -54,7 +54,8 @@ export function initCommandPalette() {
 function buildPaletteDom() {
   paletteEl = el('div', {
     id: 'command-palette',
-    className: 'hidden fixed inset-0 z-[60] items-start justify-center pt-[10vh] px-4 bg-black/50',
+    className:
+      'hidden fixed inset-0 z-[60] flex flex-col items-stretch sm:items-center justify-start pt-3 sm:pt-[8vh] px-3 sm:px-4 pb-[max(1rem,env(safe-area-inset-bottom))] bg-black/55 backdrop-blur-sm overflow-hidden',
     role: 'dialog',
     'aria-modal': 'true',
     'aria-label': 'Search curriculum',
@@ -64,19 +65,49 @@ function buildPaletteDom() {
   });
 
   const box = el('div', {
-    className: 'w-full max-w-2xl rounded-xl bg-white dark:bg-slate-900 shadow-2xl border dark:border-slate-700 overflow-hidden',
+    className:
+      'w-full sm:max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl border flex flex-col max-h-[min(92dvh,40rem)] min-h-0',
+    style: 'background: hsl(var(--surface-elevated)); border-color: hsl(var(--border-subtle))',
   });
 
-  const filterRow = el('div', { className: 'flex flex-wrap gap-2 p-2 border-b dark:border-slate-700 text-xs' });
+  const topBar = el('div', {
+    className: 'px-4 py-3 border-b flex items-center gap-2',
+    style: 'border-color: hsl(var(--border-subtle)); background: hsl(var(--surface-muted) / 0.5)',
+  }, [
+    el('span', { className: 'text-sm font-semibold font-serif' }, ['Search syllabus']),
+    el('span', { className: 'search-kbd ml-auto' }, ['esc to close']),
+  ]);
 
-  filterRow.appendChild(buildFilterSelect('Programme', ['', 'llb-3yr', 'llb-5yr'], (v) => {
-    filterProgramme = v;
-    runSearch();
-  }));
+  inputEl = el('input', {
+    type: 'search',
+    className: 'w-full px-4 py-3.5 text-base border-b bg-transparent outline-none',
+    style: 'border-color: hsl(var(--border-subtle))',
+    placeholder: 'Subjects, topics, readings, IPC, BNS…',
+    autocomplete: 'off',
+    'aria-autocomplete': 'list',
+    onInput: (e) => {
+      query = e.target.value;
+      if (debounceTimer) clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(runSearch, 180);
+    },
+  });
+
+  const filterRow = el('div', {
+    className: 'flex flex-wrap gap-2 px-4 py-2.5 border-b text-xs',
+    style: 'border-color: hsl(var(--border-subtle))',
+  });
+
+  filterRow.appendChild(
+    buildFilterSelect('Programme', ['', 'llb-3yr', 'llb-5yr'], filterProgramme, (v) => {
+      filterProgramme = v;
+      runSearch();
+    }),
+  );
   filterRow.appendChild(
     buildFilterSelect(
       'Semester',
       ['', ...Array.from({ length: 10 }, (_, i) => `sem-${i + 1}`)],
+      filterSemester,
       (v) => {
         filterSemester = v;
         runSearch();
@@ -87,6 +118,7 @@ function buildPaletteDom() {
     buildFilterSelect(
       'Type',
       ['', 'subject', 'module', 'topic', 'reading', 'case', 'statute'],
+      filterType,
       (v) => {
         filterType = v;
         runSearch();
@@ -94,32 +126,25 @@ function buildPaletteDom() {
     ),
   );
 
-  inputEl = el('input', {
-    type: 'search',
-    className: 'w-full px-4 py-3 text-base border-b dark:border-slate-700 bg-transparent outline-none',
-    placeholder: 'Search all programmes and semesters…',
-    autocomplete: 'off',
-    'aria-autocomplete': 'list',
-    onInput: (e) => {
-      query = e.target.value;
-      if (debounceTimer) clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(runSearch, 180);
-    },
+  listEl = el('ul', {
+    className: 'flex-1 min-h-0 overflow-y-auto overscroll-contain py-2',
+    role: 'listbox',
   });
 
-  listEl = el('ul', { className: 'max-h-[50vh] overflow-y-auto py-2', role: 'listbox' });
-
-  box.appendChild(filterRow);
+  box.appendChild(topBar);
   box.appendChild(inputEl);
+  box.appendChild(filterRow);
   box.appendChild(listEl);
   paletteEl.appendChild(box);
   document.body.appendChild(paletteEl);
 }
 
-function buildFilterSelect(label, values, onChange) {
-  const wrap = el('label', { className: 'flex items-center gap-1' }, [`${label}:`]);
+function buildFilterSelect(label, values, current, onChange) {
+  const wrap = el('label', { className: 'inline-flex items-center gap-1.5 rounded-lg border px-2 py-1', style: 'border-color: hsl(var(--border-subtle))' }, []);
+  wrap.appendChild(el('span', { className: 'font-medium', style: 'color: hsl(var(--text-muted))' }, [label]));
   const sel = el('select', {
-    className: 'rounded border dark:border-slate-600 bg-transparent px-1 py-0.5',
+    className: 'rounded bg-transparent py-0.5 pr-6 text-xs font-medium outline-none',
+    style: 'color: hsl(var(--text-primary))',
     onChange: (e) => onChange(e.target.value),
   });
   for (const v of values) {
@@ -127,6 +152,7 @@ function buildFilterSelect(label, values, onChange) {
       el('option', { value: v }, [v ? v.replace('llb-', '').replace('sem-', 'Sem ') : 'All']),
     );
   }
+  sel.value = current;
   wrap.appendChild(sel);
   return wrap;
 }
@@ -137,9 +163,6 @@ export function togglePalette(show) {
 
   if (open) {
     filterProgramme = store.programme || '';
-    if (!isSearchReady()) {
-      /* still show UI with error */
-    }
     paletteEl.classList.remove('hidden');
     paletteEl.classList.add('flex');
     inputEl.value = '';
@@ -178,26 +201,32 @@ function runSearch() {
   renderResults(res.error);
 }
 
+function typeBadgeClass(recordType) {
+  if (recordType === 'subject' || recordType === 'topic') return `type-badge type-badge--${recordType}`;
+  return 'type-badge';
+}
+
 function renderResults(errorMsg) {
   clear(listEl);
 
   if (errorMsg) {
-    listEl.appendChild(el('li', { className: 'px-4 py-3 text-sm text-red-600' }, [errorMsg]));
+    listEl.appendChild(el('li', { className: 'px-4 py-4 text-sm text-red-600' }, [errorMsg]));
     return;
   }
 
   if (matchedAliases.length && query.trim()) {
     listEl.appendChild(
-      el('li', { className: 'px-4 py-2 text-xs text-amber-700 dark:text-amber-400 border-b dark:border-slate-800' }, [
-        `Alias: ${matchedAliases.map((a) => a.term).join(', ')} — ${matchedAliases[0].disclaimer}`,
-      ]),
+      el('li', {
+        className: 'mx-3 my-2 px-3 py-2 text-xs rounded-lg border',
+        style: 'border-color: hsl(38 80% 70%); background: hsl(48 96% 94%); color: hsl(32 70% 28%)',
+      }, [`Alias match (${matchedAliases.map((a) => a.term).join(', ')}) — ${matchedAliases[0].disclaimer}`]),
     );
   }
 
   if (!query.trim()) {
     listEl.appendChild(
-      el('li', { className: 'px-4 py-3 text-sm opacity-60' }, [
-        'Type to search the full curriculum (all semesters). Try a subject, IPC, or BNS.',
+      el('li', { className: 'px-4 py-8 text-sm text-center', style: 'color: hsl(var(--text-muted))' }, [
+        'Search across all programmes and semesters. Try a subject name, topic, or legal alias (IPC, BNS).',
       ]),
     );
     return;
@@ -205,8 +234,8 @@ function renderResults(errorMsg) {
 
   if (!results.length) {
     listEl.appendChild(
-      el('li', { className: 'px-4 py-3 text-sm opacity-60' }, [
-        'No results. Try another spelling, clear filters, or search IPC/BNS aliases.',
+      el('li', { className: 'px-4 py-8 text-sm text-center', style: 'color: hsl(var(--text-muted))' }, [
+        'No results. Try another spelling or clear filters.',
       ]),
     );
     return;
@@ -220,20 +249,31 @@ function renderResults(errorMsg) {
       {
         type: 'button',
         id: `search-result-${i}`,
-        className: `w-full text-left px-4 py-2 text-sm ${
-          i === selected ? 'bg-indigo-100 dark:bg-indigo-950' : 'hover:bg-slate-50 dark:hover:bg-slate-800'
-        }`,
+        className: 'w-full text-left px-4 py-3 text-sm transition-colors border-l-2',
+        style:
+          i === selected
+            ? 'background: hsl(var(--brand-indigo) / 0.1); border-color: hsl(var(--brand-indigo))'
+            : 'border-color: transparent',
         onClick: () => go(r),
       },
       [
-        el('div', { className: 'flex items-center gap-2' }, [
-          el('span', { className: 'text-[10px] uppercase opacity-50 shrink-0' }, [r.recordType]),
-          el('span', { className: 'font-medium' }, [r.displayTitle]),
+        el('div', { className: 'flex items-start gap-2 min-w-0' }, [
+          el('span', { className: typeBadgeClass(r.recordType) }, [r.recordType]),
+          el('span', { className: 'font-medium leading-snug', style: 'color: hsl(var(--text-primary))' }, [
+            r.displayTitle,
+          ]),
         ]),
-        el('div', { className: 'text-xs opacity-60 mt-0.5' }, [formatBreadcrumb(r.route, r)]),
-        el('p', { className: 'text-xs mt-1 opacity-80 line-clamp-2' }, [
+        el('div', { className: 'text-xs mt-1.5 pl-0.5', style: 'color: hsl(var(--text-muted))' }, [
+          formatBreadcrumb(r.route, r),
+        ]),
+        el('p', { className: 'text-xs mt-2 line-clamp-2 pl-0.5', style: 'color: hsl(var(--text-secondary))' }, [
           hl.before,
-          hl.match ? el('mark', { className: 'bg-yellow-200 dark:bg-yellow-900 rounded px-0.5' }, [hl.match]) : '',
+          hl.match
+            ? el('mark', {
+                className: 'rounded px-0.5 font-medium',
+                style: 'background: hsl(48 96% 75%); color: hsl(var(--text-primary))',
+              }, [hl.match])
+            : '',
           hl.after,
         ]),
       ],

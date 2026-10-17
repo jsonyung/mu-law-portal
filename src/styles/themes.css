@@ -1,5 +1,41 @@
 :root {
   --subject-hue: 220;
+
+  /* Brand — deep navy & restrained indigo */
+  --brand-navy: 222 47% 11%;
+  --brand-navy-soft: 222 35% 18%;
+  --brand-indigo: 239 58% 52%;
+  --brand-indigo-muted: 239 32% 62%;
+
+  --surface-page: 210 40% 98%;
+  --surface-elevated: 0 0% 100%;
+  --surface-muted: 214 32% 96%;
+  --border-subtle: 214 32% 88%;
+  --text-primary: 222 47% 11%;
+  --text-secondary: 215 16% 40%;
+  --text-muted: 215 14% 52%;
+  --shadow-soft: 0 1px 2px hsl(222 47% 11% / 0.06), 0 8px 24px hsl(222 47% 11% / 0.06);
+  --shadow-card: 0 1px 3px hsl(222 47% 11% / 0.08), 0 12px 32px hsl(222 47% 11% / 0.08);
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.125rem;
+  --header-h: 3.75rem;
+  --content-max: 90rem;
+  --focus-ring: 0 0 0 3px hsl(var(--brand-indigo) / 0.35);
+  --z-header: 80;
+  --z-topic-overlay: 90;
+  --z-mobile-nav: 100;
+}
+
+.dark {
+  --surface-page: 222 47% 6%;
+  --surface-elevated: 222 40% 10%;
+  --surface-muted: 222 35% 14%;
+  --border-subtle: 222 28% 20%;
+  --text-primary: 210 40% 98%;
+  --text-secondary: 215 20% 72%;
+  --text-muted: 215 16% 58%;
+  --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.2), 0 8px 24px hsl(0 0% 0% / 0.25);
+  --shadow-card: 0 1px 3px hsl(0 0% 0% / 0.3), 0 16px 40px hsl(0 0% 0% / 0.35);
 }
 
 .subject-themed {
@@ -20,7 +56,7 @@
 }
 
 .card-definition {
-  border-left: 4px solid #6366f1;
+  border-left: 4px solid hsl(var(--brand-indigo));
 }
 
 .card-statute {

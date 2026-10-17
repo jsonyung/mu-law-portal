@@ -1,4 +1,4 @@
-import { el, markdownLite } from '../utils/dom.js';
+import { el, markdownLite, formatReadingLine } from '../utils/dom.js';
 import { isChecked, toggleCheck } from '../state/progress.js';
 
 function card(title, icon, className, bodyChildren) {
@@ -120,7 +120,7 @@ export function renderStudyCards(ctx, onCheckChange) {
             el(
               'ul',
               { className: 'list-disc pl-5 space-y-1 max-h-48 overflow-y-auto' },
-              readings.slice(0, 12).map((r) => el('li', {}, [r])),
+              readings.slice(0, 12).map((r) => el('li', {}, [formatReadingLine(r) || r])),
             ),
           ]
         : [el('p', { className: 'italic opacity-70' }, ['See syllabus PDF for readings.'])],
