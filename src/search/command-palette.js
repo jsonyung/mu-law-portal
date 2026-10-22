@@ -8,6 +8,7 @@ import {
   excerptWithSafeHighlight,
 } from './search-service.js';
 import { navigateToSearchResult } from './navigate-to-result.js';
+import { iconSearch } from '../ui/icons.js';
 
 let open = false;
 let selected = 0;
@@ -24,6 +25,7 @@ let filterType = '';
 let lastTrigger = null;
 
 export function initCommandPalette() {
+  document.addEventListener('close-search-palette-request', () => togglePalette(false));
   document.addEventListener('keydown', (e) => {
     if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
       e.preventDefault();
@@ -55,7 +57,7 @@ function buildPaletteDom() {
   paletteEl = el('div', {
     id: 'command-palette',
     className:
-      'hidden fixed inset-0 z-[60] flex flex-col items-stretch sm:items-center justify-start pt-3 sm:pt-[8vh] px-3 sm:px-4 pb-[max(1rem,env(safe-area-inset-bottom))] bg-black/55 backdrop-blur-sm overflow-hidden',
+      'hidden fixed inset-0 flex flex-col items-stretch sm:items-center justify-start pt-3 sm:pt-[8vh] px-3 sm:px-4 pb-[max(1rem,env(safe-area-inset-bottom))] bg-black/55 backdrop-blur-sm overflow-hidden',
     role: 'dialog',
     'aria-modal': 'true',
     'aria-label': 'Search curriculum',
@@ -78,10 +80,14 @@ function buildPaletteDom() {
     el('span', { className: 'search-kbd ml-auto' }, ['esc to close']),
   ]);
 
+  const inputWrap = el('div', {
+    className: 'flex items-center gap-2 px-4 border-b',
+    style: 'border-color: hsl(var(--border-subtle))',
+  });
+  inputWrap.appendChild(iconSearch());
   inputEl = el('input', {
     type: 'search',
-    className: 'w-full px-4 py-3.5 text-base border-b bg-transparent outline-none',
-    style: 'border-color: hsl(var(--border-subtle))',
+    className: 'flex-1 min-w-0 py-3.5 text-base bg-transparent outline-none',
     placeholder: 'Subjects, topics, readings, IPC, BNS…',
     autocomplete: 'off',
     'aria-autocomplete': 'list',
@@ -91,6 +97,7 @@ function buildPaletteDom() {
       debounceTimer = setTimeout(runSearch, 180);
     },
   });
+  inputWrap.appendChild(inputEl);
 
   const filterRow = el('div', {
     className: 'flex flex-wrap gap-2 px-4 py-2.5 border-b text-xs',
@@ -132,7 +139,7 @@ function buildPaletteDom() {
   });
 
   box.appendChild(topBar);
-  box.appendChild(inputEl);
+  box.appendChild(inputWrap);
   box.appendChild(filterRow);
   box.appendChild(listEl);
   paletteEl.appendChild(box);
@@ -162,6 +169,7 @@ export function togglePalette(show) {
   if (!paletteEl) buildPaletteDom();
 
   if (open) {
+    document.dispatchEvent(new CustomEvent('close-mobile-nav-request'));
     filterProgramme = store.programme || '';
     paletteEl.classList.remove('hidden');
     paletteEl.classList.add('flex');

@@ -1,4 +1,5 @@
 import { el, markdownLite, formatReadingLine } from '../utils/dom.js';
+import { normalizeReadingList } from '../utils/normalize-readings.js';
 import { navigate, buildPath } from '../router/hash-router.js';
 
 export function renderSubjectView(ctx) {
@@ -29,34 +30,34 @@ export function renderSubjectView(ctx) {
     wrap.appendChild(sectionBlock('Course outcomes', subject.outcomes));
   }
 
-  if (subject.readings?.length) {
+  const readings = normalizeReadingList(subject.readings || []);
+  if (readings.length) {
     const readingsSec = el('section', {
       id: 'subject-readings',
       className: 'mb-8 study-card card-reading',
     });
     readingsSec.appendChild(
-      el('h2', { className: 'font-serif font-semibold text-lg mb-4' }, ['Recommended readings']),
+      el('h2', { className: 'font-serif font-semibold text-lg mb-1' }, ['Syllabus bibliography']),
+    );
+    readingsSec.appendChild(
+      el('p', { className: 'text-xs mb-4', style: 'color: hsl(var(--text-muted))' }, [
+        'Prescribed and suggested readings from the official syllabus PDF. Verify editions for your batch.',
+      ]),
     );
     readingsSec.appendChild(
       el(
         'ol',
-        { className: 'space-y-3 text-sm leading-relaxed list-none counter-reset-none' },
-        subject.readings.map((r, idx) => {
+        { className: 'space-y-2.5 text-sm leading-relaxed list-decimal pl-5' },
+        readings.map((r, idx) => {
           const line = formatReadingLine(r);
           return el(
             'li',
             {
               id: `reading-${subject.slug}-${idx + 1}`,
-              className: 'scroll-mt-28 flex gap-3 rounded-lg px-2 py-1.5 -mx-2',
-              style: 'color: hsl(var(--text-secondary))',
+              className: 'scroll-mt-28 pl-1',
+              style: 'color: hsl(var(--text-primary))',
             },
-            [
-              el('span', {
-                className: 'shrink-0 w-6 h-6 rounded-full text-xs font-semibold flex items-center justify-center',
-                style: 'background: hsl(var(--surface-muted)); color: hsl(var(--text-muted))',
-              }, [String(idx + 1)]),
-              el('span', { className: 'flex-1' }, [line || r]),
-            ],
+            [line || r],
           );
         }),
       ),

@@ -1,4 +1,5 @@
 import { el, markdownLite, formatReadingLine } from '../utils/dom.js';
+import { normalizeReadingList } from '../utils/normalize-readings.js';
 import { isChecked, toggleCheck } from '../state/progress.js';
 
 function card(title, icon, className, bodyChildren) {
@@ -109,23 +110,28 @@ export function renderStudyCards(ctx, onCheckChange) {
   }
   frag.appendChild(card('Exam Strategy & Answer-Writing Checklist', '💡', 'card-exam', examChildren));
 
-  const readings = subject.readings || [];
-  frag.appendChild(
-    card(
-      'Recommended Readings',
-      '📚',
-      'card-reading',
-      readings.length
-        ? [
-            el(
-              'ul',
-              { className: 'list-disc pl-5 space-y-1 max-h-48 overflow-y-auto' },
-              readings.slice(0, 12).map((r) => el('li', {}, [formatReadingLine(r) || r])),
-            ),
-          ]
-        : [el('p', { className: 'italic opacity-70' }, ['See syllabus PDF for readings.'])],
-    ),
-  );
+  const readings = normalizeReadingList(subject.readings || []);
+  if (readings.length) {
+    frag.appendChild(
+      card(
+        'Syllabus bibliography',
+        '📚',
+        'card-reading',
+        [
+          el(
+            'ul',
+            { className: 'list-disc pl-5 space-y-2 max-h-48 overflow-y-auto text-sm' },
+            readings.slice(0, 8).map((r) => el('li', {}, [formatReadingLine(r) || r])),
+          ),
+          readings.length > 8
+            ? el('p', { className: 'text-xs mt-2', style: 'color: hsl(var(--text-muted))' }, [
+                `+ ${readings.length - 8} more on the subject page`,
+              ])
+            : null,
+        ],
+      ),
+    );
+  }
 
   if (topic.sourceStatus === 'supplementary') {
     frag.appendChild(

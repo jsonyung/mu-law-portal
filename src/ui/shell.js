@@ -12,6 +12,7 @@ import { focusTopicElement } from '../utils/focus-scroll.js';
 import { openSearchHint } from '../search/command-palette.js';
 import { applyPendingNavigationIfReady } from '../search/navigate-to-result.js';
 import { lockBodyScroll, unlockBodyScroll } from '../utils/scroll-lock.js';
+import { iconSearch, iconMenu, iconClose } from './icons.js';
 
 let appRoot = null;
 let mainEl = null;
@@ -26,14 +27,20 @@ export function mountShell(root) {
   appRoot = root;
   if (!escapeBound) {
     document.addEventListener('keydown', onDocumentKeydown);
+    document.addEventListener('close-mobile-nav-request', closeMobileNav);
     escapeBound = true;
   }
   subscribe(render);
   render();
 }
 
+function isSearchPaletteOpen() {
+  const palette = document.getElementById('command-palette');
+  return Boolean(palette && !palette.classList.contains('hidden'));
+}
+
 function onDocumentKeydown(e) {
-  if (e.key === 'Escape' && mobileNavOpen) {
+  if (e.key === 'Escape' && mobileNavOpen && !isSearchPaletteOpen()) {
     e.preventDefault();
     closeMobileNav();
   }
@@ -46,6 +53,7 @@ function closeMobileNav() {
 }
 
 function openMobileNav() {
+  document.dispatchEvent(new CustomEvent('close-search-palette-request'));
   mobileNavOpen = true;
   render();
   requestAnimationFrame(() => {
@@ -108,10 +116,20 @@ function render() {
 
   const prog = store.curriculum.programmes.find((p) => p.id === store.programme);
 
+  const mobileBackdrop = el('button', {
+    type: 'button',
+    className: `mobile-nav-backdrop xl:hidden fixed inset-0 ${
+      mobileNavOpen ? 'mobile-nav-backdrop--open' : ''
+    }`,
+    'aria-label': 'Close navigation menu',
+    tabindex: mobileNavOpen ? '0' : '-1',
+    onClick: closeMobileNav,
+  });
+
   const mobileSidebar = el('aside', {
     id: 'sidebar-panel',
-    className: `mobile-nav-drawer lg:hidden fixed inset-0 flex flex-col overflow-hidden
-      ${mobileNavOpen ? 'mobile-nav-drawer--open' : 'mobile-nav-drawer--closed pointer-events-none'}`,
+    className: `mobile-nav-drawer xl:hidden fixed flex flex-col overflow-hidden
+      ${mobileNavOpen ? 'mobile-nav-drawer--open' : 'mobile-nav-drawer--closed'}`,
     role: 'dialog',
     'aria-modal': mobileNavOpen ? 'true' : 'false',
     'aria-label': 'Curriculum navigation',
@@ -138,10 +156,10 @@ function render() {
         el('button', {
           type: 'button',
           id: 'mobile-nav-close',
-          className: 'btn-icon min-h-11 min-w-11 shrink-0',
+          className: 'btn-search-trigger shrink-0',
           'aria-label': 'Close menu',
           onClick: closeMobileNav,
-        }, ['✕']),
+        }, [iconClose()]),
       ]),
     ]),
   );
@@ -177,7 +195,7 @@ function render() {
   mobileSidebar.appendChild(mobileNavScroll);
 
   desktopSidebarSlot = el('aside', {
-    className: 'hidden lg:block lg:w-72 lg:shrink-0 sidebar-panel sticky top-[var(--header-h)] max-h-[calc(100vh-var(--header-h))] overflow-y-auto',
+    className: 'hidden xl:block xl:w-72 xl:shrink-0 sidebar-panel sticky top-[var(--header-h)] max-h-[calc(100vh-var(--header-h))] overflow-y-auto',
     'aria-label': 'Curriculum navigation',
   });
   desktopSidebarSlot.appendChild(renderSidebarTree(store.route));
@@ -206,6 +224,7 @@ function render() {
   }
 
   appRoot.appendChild(page);
+  appRoot.appendChild(mobileBackdrop);
   appRoot.appendChild(mobileSidebar);
 
   renderMain();
@@ -233,21 +252,21 @@ function renderHeader() {
           (menuButtonEl = el('button', {
             type: 'button',
             id: 'mobile-nav-open',
-            className: 'btn-icon min-h-11 min-w-11 lg:hidden shrink-0',
+            className: 'btn-menu-trigger xl:hidden shrink-0',
             'aria-expanded': mobileNavOpen ? 'true' : 'false',
             'aria-controls': 'sidebar-panel',
             onClick: () => {
               if (mobileNavOpen) closeMobileNav();
               else openMobileNav();
             },
-          }, ['☰'])),
+          }, [iconMenu()])),
           el('div', { className: 'min-w-0 flex-1' }, [
             el('a', {
               href: `#/${store.programme}`,
               className: 'font-serif font-bold text-base sm:text-lg md:text-xl tracking-tight block truncate text-brand-navy dark:text-slate-50',
             }, ['MU Law Portal']),
             el('p', {
-              className: 'hidden lg:block text-[11px] leading-snug truncate max-w-md mt-0.5',
+              className: 'hidden xl:block text-[11px] leading-snug truncate max-w-md mt-0.5',
               style: 'color: hsl(var(--text-muted))',
             }, [
               'UoM LL.B. syllabus · Independent resource',
@@ -258,19 +277,21 @@ function renderHeader() {
         el('div', { className: 'flex items-center gap-1 shrink-0' }, [
           el('button', {
             type: 'button',
-            className: 'btn-ghost hidden sm:inline-flex min-h-11',
+            className: 'btn-search-wide hidden sm:inline-flex xl:inline-flex',
             onClick: openSearchHint,
             'aria-keyshortcuts': 'Meta+K Control+K',
+            'aria-label': 'Search curriculum',
           }, [
-            el('span', { className: 'hidden md:inline' }, ['Search']),
+            iconSearch(),
+            el('span', { className: 'hidden md:inline text-sm font-medium' }, ['Search']),
             el('span', { className: 'search-kbd' }, ['⌘K']),
           ]),
           el('button', {
             type: 'button',
-            className: 'btn-icon min-h-11 min-w-11 sm:hidden',
+            className: 'btn-search-trigger sm:hidden shrink-0',
             'aria-label': 'Search curriculum',
             onClick: openSearchHint,
-          }, ['⌕']),
+          }, [iconSearch()]),
           el('button', {
             type: 'button',
             className: 'btn-icon min-h-11 min-w-11',
@@ -286,7 +307,7 @@ function renderHeader() {
         ]),
       ]),
       el('div', {
-        className: 'header-row-programme hidden lg:flex items-center gap-3 min-w-0 w-full border-t mt-2 pt-2 lg:mt-2.5',
+        className: 'header-row-programme hidden xl:flex items-center gap-3 min-w-0 w-full border-t mt-2 pt-2 lg:mt-2.5',
       }, [
         el('div', { className: 'flex-1 min-w-0' }, [renderProgrammeSwitcher()]),
         prog

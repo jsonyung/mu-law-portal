@@ -3,6 +3,7 @@ import { slugify, uniqueSlug } from '../slugify.mjs';
 import { parseSemesterLabel, semId } from '../normalize-semester.mjs';
 import { classifyProgrammeHeading } from '../normalize-programme.mjs';
 import { isSkippableLine, truncateBeforeEditorial } from './pdf-artifact-filters.mjs';
+import { normalizeReadingList } from '../../src/utils/normalize-readings.js';
 
 const MODULE_H4 =
   /^####\s+Module\s+([IVX\d]+)\s*:?\s*(.*)$/i;
@@ -108,7 +109,7 @@ function flushSectionBuffer(subject, section, buffer) {
       .split(/\n/)
       .map((l) => l.replace(/^[\d.\u2022\uF0B7\-*]\s*/, '').trim())
       .filter(Boolean);
-    subject.readings.push(...items);
+    subject.readings.push(...normalizeReadingList(items));
   }
 }
 
