@@ -25,4 +25,13 @@ describe('normalizeReadingList', () => {
     expect(out[0]).toContain('in India (4th ed., 2002');
     expect(out[0]).not.toMatch(/\bth\b$/);
   });
+
+  it('splits run-on syllabus lines with multiple "by" author segments', () => {
+    const raw = [
+      'Criminal Law: Cases and Material by KD Gaur Commentary on the Indian Penal Code by KD Gaur The Criminal Law Manual – Mulla‘s IPC Criminal Law by P S A Pillai',
+    ];
+    const out = normalizeReadingList(raw);
+    expect(out.some((l) => /mulla/i.test(l) && /ipc/i.test(l))).toBe(true);
+    expect(out.length).toBeGreaterThanOrEqual(3);
+  });
 });

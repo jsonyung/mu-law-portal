@@ -1,9 +1,9 @@
 {
   "meta": {
     "indexVersion": 2,
-    "generatedAt": "2026-10-22T18:41:07.367Z",
+    "generatedAt": "2026-10-22T18:49:07.944Z",
     "curriculumSource": "university_mumbai_llb_master_curriculum.md",
-    "documentCount": 1885,
+    "documentCount": 1894,
     "aliasConfigHash": "33fd19a6"
   },
   "aliases": [
@@ -24963,10 +24963,361 @@
       "sectionRef": null,
       "readingIndex": 1,
       "anchorId": "reading-law-of-crimes-1",
-      "displayTitle": "Criminal Law: Cases and Material by KD Gaur Commentary on the Indian Penal Code by KD Gaur Criminal ",
-      "excerptSource": "Criminal Law: Cases and Material by KD Gaur Commentary on the Indian Penal Code by KD Gaur Criminal Jurisprudence by Dr. V S Chitnis Law of Crimes in India by R C Nigam Textbook of Criminal Law by Glanville Williams The Indian Penal Code by Ratanlal & Dhirajlal Simplest book on Criminal Law by Dr. K K Shetty Lectures on Criminal Law by Dr. Rega Surya Rao The Criminal Law Manual – Mulla‘s IPC Criminal Law by P S A Pillai Law of Crimes and Criminology by R P Kathuri",
-      "searchText": "criminal law cases and material by kd gaur commentary on the indian penal code by kd gaur criminal jurisprudence by dr. v s chitnis law of crimes in india by r c nigam textbook of criminal law by glanville williams the indian penal code by ratanlal dhirajlal simplest book on criminal law by dr. k k shetty lectures on criminal law by dr. rega surya rao the criminal law manual - mulla s ipc criminal law by p s a pillai law of crimes and criminology by r p kathuri",
-      "searchTextRaw": "Criminal Law: Cases and Material by KD Gaur Commentary on the Indian Penal Code by KD Gaur Criminal Jurisprudence by Dr. V S Chitnis Law of Crimes in India by R C Nigam Textbook of Criminal Law by Glanville Williams The Indian Penal Code by Ratanlal & Dhirajlal Simplest book on Criminal Law by Dr. K K Shetty Lectures on Criminal Law by Dr. Rega Surya Rao The Criminal Law Manual – Mulla‘s IPC Criminal Law by P S A Pillai Law of Crimes and Criminology by R P Kathuri"
+      "displayTitle": "Criminal Law: Cases and Material by KD Gaur",
+      "excerptSource": "Criminal Law: Cases and Material by KD Gaur",
+      "searchText": "criminal law cases and material by kd gaur",
+      "searchTextRaw": "Criminal Law: Cases and Material by KD Gaur"
+    },
+    {
+      "id": "reading:law-of-crimes:2",
+      "recordType": "reading",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-2",
+          "path": "#/llb-3yr/sem-2/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-6",
+          "path": "#/llb-5yr/sem-6/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        }
+      ],
+      "subjectSlug": "law-of-crimes",
+      "subjectTitle": "LAW OF CRIMES",
+      "moduleId": null,
+      "moduleTitle": null,
+      "topicId": null,
+      "topicTitle": null,
+      "sectionRef": null,
+      "readingIndex": 2,
+      "anchorId": "reading-law-of-crimes-2",
+      "displayTitle": "Commentary on the Indian Penal Code by KD Gaur",
+      "excerptSource": "Commentary on the Indian Penal Code by KD Gaur",
+      "searchText": "commentary on the indian penal code by kd gaur",
+      "searchTextRaw": "Commentary on the Indian Penal Code by KD Gaur"
+    },
+    {
+      "id": "reading:law-of-crimes:3",
+      "recordType": "reading",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-2",
+          "path": "#/llb-3yr/sem-2/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-6",
+          "path": "#/llb-5yr/sem-6/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        }
+      ],
+      "subjectSlug": "law-of-crimes",
+      "subjectTitle": "LAW OF CRIMES",
+      "moduleId": null,
+      "moduleTitle": null,
+      "topicId": null,
+      "topicTitle": null,
+      "sectionRef": null,
+      "readingIndex": 3,
+      "anchorId": "reading-law-of-crimes-3",
+      "displayTitle": "Criminal Jurisprudence by Dr. V S Chitnis",
+      "excerptSource": "Criminal Jurisprudence by Dr. V S Chitnis",
+      "searchText": "criminal jurisprudence by dr. v s chitnis",
+      "searchTextRaw": "Criminal Jurisprudence by Dr. V S Chitnis"
+    },
+    {
+      "id": "reading:law-of-crimes:4",
+      "recordType": "reading",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-2",
+          "path": "#/llb-3yr/sem-2/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-6",
+          "path": "#/llb-5yr/sem-6/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        }
+      ],
+      "subjectSlug": "law-of-crimes",
+      "subjectTitle": "LAW OF CRIMES",
+      "moduleId": null,
+      "moduleTitle": null,
+      "topicId": null,
+      "topicTitle": null,
+      "sectionRef": null,
+      "readingIndex": 4,
+      "anchorId": "reading-law-of-crimes-4",
+      "displayTitle": "Law of Crimes in India by R C Nigam",
+      "excerptSource": "Law of Crimes in India by R C Nigam",
+      "searchText": "law of crimes in india by r c nigam",
+      "searchTextRaw": "Law of Crimes in India by R C Nigam"
+    },
+    {
+      "id": "reading:law-of-crimes:5",
+      "recordType": "reading",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-2",
+          "path": "#/llb-3yr/sem-2/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-6",
+          "path": "#/llb-5yr/sem-6/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        }
+      ],
+      "subjectSlug": "law-of-crimes",
+      "subjectTitle": "LAW OF CRIMES",
+      "moduleId": null,
+      "moduleTitle": null,
+      "topicId": null,
+      "topicTitle": null,
+      "sectionRef": null,
+      "readingIndex": 5,
+      "anchorId": "reading-law-of-crimes-5",
+      "displayTitle": "Textbook of Criminal Law by Glanville Williams",
+      "excerptSource": "Textbook of Criminal Law by Glanville Williams",
+      "searchText": "textbook of criminal law by glanville williams",
+      "searchTextRaw": "Textbook of Criminal Law by Glanville Williams"
+    },
+    {
+      "id": "reading:law-of-crimes:6",
+      "recordType": "reading",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-2",
+          "path": "#/llb-3yr/sem-2/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-6",
+          "path": "#/llb-5yr/sem-6/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        }
+      ],
+      "subjectSlug": "law-of-crimes",
+      "subjectTitle": "LAW OF CRIMES",
+      "moduleId": null,
+      "moduleTitle": null,
+      "topicId": null,
+      "topicTitle": null,
+      "sectionRef": null,
+      "readingIndex": 6,
+      "anchorId": "reading-law-of-crimes-6",
+      "displayTitle": "The Indian Penal Code by Ratanlal & Dhirajlal",
+      "excerptSource": "The Indian Penal Code by Ratanlal & Dhirajlal",
+      "searchText": "the indian penal code by ratanlal dhirajlal",
+      "searchTextRaw": "The Indian Penal Code by Ratanlal & Dhirajlal"
+    },
+    {
+      "id": "reading:law-of-crimes:7",
+      "recordType": "reading",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-2",
+          "path": "#/llb-3yr/sem-2/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-6",
+          "path": "#/llb-5yr/sem-6/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        }
+      ],
+      "subjectSlug": "law-of-crimes",
+      "subjectTitle": "LAW OF CRIMES",
+      "moduleId": null,
+      "moduleTitle": null,
+      "topicId": null,
+      "topicTitle": null,
+      "sectionRef": null,
+      "readingIndex": 7,
+      "anchorId": "reading-law-of-crimes-7",
+      "displayTitle": "Simplest book on Criminal Law by Dr. K K Shetty",
+      "excerptSource": "Simplest book on Criminal Law by Dr. K K Shetty",
+      "searchText": "simplest book on criminal law by dr. k k shetty",
+      "searchTextRaw": "Simplest book on Criminal Law by Dr. K K Shetty"
+    },
+    {
+      "id": "reading:law-of-crimes:8",
+      "recordType": "reading",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-2",
+          "path": "#/llb-3yr/sem-2/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-6",
+          "path": "#/llb-5yr/sem-6/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        }
+      ],
+      "subjectSlug": "law-of-crimes",
+      "subjectTitle": "LAW OF CRIMES",
+      "moduleId": null,
+      "moduleTitle": null,
+      "topicId": null,
+      "topicTitle": null,
+      "sectionRef": null,
+      "readingIndex": 8,
+      "anchorId": "reading-law-of-crimes-8",
+      "displayTitle": "Lectures on Criminal Law by Dr. Rega Surya Rao",
+      "excerptSource": "Lectures on Criminal Law by Dr. Rega Surya Rao",
+      "searchText": "lectures on criminal law by dr. rega surya rao",
+      "searchTextRaw": "Lectures on Criminal Law by Dr. Rega Surya Rao"
+    },
+    {
+      "id": "reading:law-of-crimes:9",
+      "recordType": "reading",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-2",
+          "path": "#/llb-3yr/sem-2/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-6",
+          "path": "#/llb-5yr/sem-6/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        }
+      ],
+      "subjectSlug": "law-of-crimes",
+      "subjectTitle": "LAW OF CRIMES",
+      "moduleId": null,
+      "moduleTitle": null,
+      "topicId": null,
+      "topicTitle": null,
+      "sectionRef": null,
+      "readingIndex": 9,
+      "anchorId": "reading-law-of-crimes-9",
+      "displayTitle": "The Criminal Law Manual – Mulla‘s IPC Criminal Law by P S A Pillai",
+      "excerptSource": "The Criminal Law Manual – Mulla‘s IPC Criminal Law by P S A Pillai",
+      "searchText": "the criminal law manual - mulla s ipc criminal law by p s a pillai",
+      "searchTextRaw": "The Criminal Law Manual – Mulla‘s IPC Criminal Law by P S A Pillai"
+    },
+    {
+      "id": "reading:law-of-crimes:10",
+      "recordType": "reading",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-2",
+          "path": "#/llb-3yr/sem-2/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-6",
+          "path": "#/llb-5yr/sem-6/law-of-crimes",
+          "subjectSlug": "law-of-crimes",
+          "moduleId": null,
+          "topicId": null
+        }
+      ],
+      "subjectSlug": "law-of-crimes",
+      "subjectTitle": "LAW OF CRIMES",
+      "moduleId": null,
+      "moduleTitle": null,
+      "topicId": null,
+      "topicTitle": null,
+      "sectionRef": null,
+      "readingIndex": 10,
+      "anchorId": "reading-law-of-crimes-10",
+      "displayTitle": "Law of Crimes and Criminology by R P Kathuri",
+      "excerptSource": "Law of Crimes and Criminology by R P Kathuri",
+      "searchText": "law of crimes and criminology by r p kathuri",
+      "searchTextRaw": "Law of Crimes and Criminology by R P Kathuri"
     },
     {
       "id": "subject:constitutional-law-i",

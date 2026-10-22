@@ -4,6 +4,32 @@ const ORPHAN_FRAGMENT = /^(th|st|nd|rd|ed\.?|vol\.?|pp\.?|supplement\s+\d{4}\)?)
 const STARTS_NEW_ENTRY =
   /^(\d+[\.)]\s+|\.?\s*[A-Z][a-z].*,|\bBare Act:|^\.?\s*[A-Z][\w.']+\s*,)/;
 
+/** PDF sometimes emits many titles as one space-separated run-on line. */
+const RUN_ON_ENTRY_START =
+  /(?:^|\s)(Criminal Law:|Commentary on|Textbook of|Criminal Jurisprudence|Law of Crimes|The Indian Penal Code|Simplest book on|Lectures on|The Criminal Law Manual|Bare Act:)/g;
+
+function splitRunOnBibliographyLine(line) {
+  const byCount = (line.match(/\sby\s/gi) || []).length;
+  if (byCount < 2 || line.length < 80) return [line];
+
+  const starts = [];
+  let match;
+  RUN_ON_ENTRY_START.lastIndex = 0;
+  while ((match = RUN_ON_ENTRY_START.exec(line)) !== null) {
+    const idx = match.index + (match[0].startsWith(' ') ? 1 : 0);
+    if (!starts.includes(idx)) starts.push(idx);
+  }
+  starts.sort((a, b) => a - b);
+  if (starts.length < 2) return [line];
+
+  const parts = [];
+  for (let i = 0; i < starts.length; i++) {
+    const chunk = line.slice(starts[i], starts[i + 1]).trim();
+    if (chunk) parts.push(chunk);
+  }
+  return parts;
+}
+
 function cleanLine(line) {
   return String(line || '')
     .replace(/^[\d.\u2022\uF0B7\-*]\s*/, '')
@@ -50,5 +76,6 @@ export function normalizeReadingList(raw) {
     }
   }
 
-  return merged.filter((l) => l.length > 2 && !ORPHAN_FRAGMENT.test(l));
+  const expanded = merged.flatMap(splitRunOnBibliographyLine);
+  return expanded.filter((l) => l.length > 2 && !ORPHAN_FRAGMENT.test(l));
 }

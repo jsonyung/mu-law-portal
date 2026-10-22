@@ -4,7 +4,7 @@ import { renderProgrammeSwitcher } from './programme-switcher.js';
 import { renderSidebarTree } from './sidebar-tree.js';
 import { renderBreadcrumbs } from './breadcrumbs.js';
 import { renderSubjectView } from './subject-view.js';
-import { renderTopicDrawer } from './topic-drawer.js';
+import { renderTopicStudyView } from './topic-study-view.js';
 import { renderHome } from './home-view.js';
 import { renderFooter } from './footer.js';
 import { navigate } from '../router/hash-router.js';
@@ -108,11 +108,11 @@ function render() {
   }
   lastRouteSnapshot = routeSnapshot(resolved);
 
-  document.querySelectorAll('.topic-drawer-overlay').forEach((n) => n.remove());
   clear(appRoot);
 
   const header = renderHeader();
-  const footer = renderFooter();
+  const footerVariant = resolved?.view === 'home' ? 'full' : 'compact';
+  const footer = renderFooter({ variant: footerVariant });
 
   const prog = store.curriculum.programmes.find((p) => p.id === store.programme);
 
@@ -351,20 +351,12 @@ function renderMain() {
     return;
   }
 
-  if (resolved.subject) {
+  if (resolved.view === 'topic' && resolved.topic) {
+    mainEl.appendChild(renderBreadcrumbs(resolved));
+    mainEl.appendChild(renderTopicStudyView(resolved));
+  } else if (resolved.subject) {
     mainEl.appendChild(renderBreadcrumbs(resolved));
     mainEl.appendChild(renderSubjectView(resolved));
-  }
-
-  if (resolved.view === 'topic' && resolved.topic) {
-    document.body.appendChild(
-      renderTopicDrawer(resolved, () => {
-        if (desktopSidebarSlot) {
-          clear(desktopSidebarSlot);
-          desktopSidebarSlot.appendChild(renderSidebarTree(store.route));
-        }
-      }),
-    );
   }
 
   requestAnimationFrame(() => {

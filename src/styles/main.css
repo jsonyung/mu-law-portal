@@ -411,6 +411,18 @@
     color: hsl(var(--text-primary));
   }
 
+  .topic-study-view {
+    @apply w-full min-w-0;
+  }
+
+  .topic-study-section h2 {
+    letter-spacing: -0.01em;
+  }
+
+  .site-footer-compact {
+    flex-shrink: 0;
+  }
+
   .study-card {
     @apply rounded-xl border p-5;
     background-color: hsl(var(--surface-elevated));
