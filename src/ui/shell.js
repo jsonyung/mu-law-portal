@@ -8,7 +8,7 @@ import { renderTopicStudyView } from './topic-study-view.js';
 import { renderHome } from './home-view.js';
 import { renderFooter } from './footer.js';
 import { navigate } from '../router/hash-router.js';
-import { focusTopicElement } from '../utils/focus-scroll.js';
+import { focusTopicElement, scrollToPageAnchor } from '../utils/focus-scroll.js';
 import { openSearchHint } from '../search/command-palette.js';
 import { applyPendingNavigationIfReady } from '../search/navigate-to-result.js';
 import { lockBodyScroll, unlockBodyScroll } from '../utils/scroll-lock.js';
@@ -374,6 +374,9 @@ function renderMain() {
     applyPendingNavigationIfReady();
     if (!store.pendingNavigation && resolved.view === 'topic' && resolved.topic) {
       focusTopicElement(resolved.topic.id);
+    }
+    if (!store.pendingNavigation && resolved.routeAnchor) {
+      scrollToPageAnchor(resolved.routeAnchor);
     }
   });
 }
