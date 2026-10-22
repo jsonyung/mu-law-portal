@@ -48,7 +48,7 @@ npm run enrich:scaffold -- --topic <topicId> --subject <subject-slug>
 - **Source of truth (git):** [`data/generated/`](data/generated/) — curriculum, search index, parse report.
 - **`public/data/`** and **`docs/data/`** are build copies (gitignored); created by `npm run build:curriculum` and Vite.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for PR checks.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for PR checks and [docs/CURRICULUM_MODEL.md](docs/CURRICULUM_MODEL.md) for how programmes, semesters, modules, and topics map from the syllabus file to URLs.
 
 ## Deep links
 

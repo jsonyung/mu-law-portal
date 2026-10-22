@@ -16,7 +16,9 @@ See [SEARCH_REGRESSION.md](SEARCH_REGRESSION.md). Check at **390px** and **1280p
 | Path | Role |
 |------|------|
 | `university_mumbai_llb_master_curriculum.md` | Source syllabus |
+| `docs/CURRICULUM_MODEL.md` | Data model (3yr/5yr, sem, module, topic, URLs) |
 | `content/enrichment/topics/*.json` | Optional per-topic notes (merged at build) |
+| `data/overrides/*.json` | Slugs, themes, search aliases, module titles |
 | `data/generated/` | **Committed** curriculum + search index + parse report |
 | `public/data/` | Dev copy (gitignored; created by parse) |
 | `docs/data/` | Pages build copy (gitignored; created by Vite from `public/`) |

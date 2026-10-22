@@ -2,7 +2,7 @@
   "meta": {
     "schemaVersion": 1,
     "source": "university_mumbai_llb_master_curriculum.md",
-    "generatedAt": "2026-10-22T19:00:34.476Z",
+    "generatedAt": "2026-10-22T19:17:08.055Z",
     "syllabusYear": "2022-23"
   },
   "programmes": [
@@ -390,7 +390,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Language Development",
           "topics": [
             {
               "id": "analytical-skill",
@@ -501,7 +501,7 @@
         {
           "id": "module-4",
           "number": 4,
-          "title": "",
+          "title": "Language Enhancement",
           "topics": [
             {
               "id": "written-communication",
@@ -640,7 +640,7 @@
         {
           "id": "module-1",
           "number": 1,
-          "title": "",
+          "title": "Introduction to Logical and Legal Reasoning",
           "topics": [
             {
               "id": "traditional-and-modern-definitions-of-logic",
@@ -764,7 +764,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "Propositions",
           "topics": [
             {
               "id": "distinctions-between-proposition-and-sentence-proposition",
@@ -901,7 +901,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Inference",
           "topics": [
             {
               "id": "inference-kinds-of-inference-immediate-and-mediate",
@@ -960,7 +960,7 @@
         {
           "id": "module-4",
           "number": 4,
-          "title": "",
+          "title": "Definition And Logical Division",
           "topics": [
             {
               "id": "definition-purpose",
@@ -1077,7 +1077,7 @@
         {
           "id": "module-1",
           "number": 1,
-          "title": "",
+          "title": "Foundation of Economics",
           "topics": [
             {
               "id": "the-nature-and-significance-of-economic-science-and-its-rele",
@@ -1162,7 +1162,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "Indian Economy",
           "topics": [
             {
               "id": "salient-features-of-indian-economy-and-structural-changes",
@@ -1273,7 +1273,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Financial Markets and Fiscal System",
           "topics": [
             {
               "id": "indian-money-market-features-and-recent-trends",
@@ -1371,7 +1371,7 @@
         {
           "id": "module-4",
           "number": 4,
-          "title": "",
+          "title": "External Sector",
           "topics": [
             {
               "id": "structural-changes-in-indias-foreign-trade-since1991",
@@ -1459,7 +1459,7 @@
         {
           "id": "module-1",
           "number": 1,
-          "title": "",
+          "title": "Administration of East Indian Company and the Revolt of 1857",
           "topics": [
             {
               "id": "charter-acts-from-1773-to1853",
@@ -1518,7 +1518,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "Major developments in India and Social Reform",
           "topics": [
             {
               "id": "education",
@@ -1668,7 +1668,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Freedom Struggle and Constitutional Developments (1885-1935)",
           "topics": [
             {
               "id": "establishment-of-the-indian-national-congress-and-the-work-o",
@@ -1779,7 +1779,7 @@
         {
           "id": "module-4",
           "number": 4,
-          "title": "",
+          "title": "Partition and Post-Independence India",
           "topics": [
             {
               "id": "cripps-mission1942-cabinet-mission-plan-1946-and-the-in",
@@ -2031,7 +2031,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Selected readings:",
           "topics": [
             {
               "id": "learning-the-law-chapters-1the-divisions-of-the-law",
@@ -2199,7 +2199,7 @@
         {
           "id": "module-1",
           "number": 1,
-          "title": "",
+          "title": "State and Sovereignty in Political Theory",
           "topics": [
             {
               "id": "the-concept-of-the-state-meaning-and-definition",
@@ -2414,7 +2414,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "Government as a Concept in Political Theory",
           "topics": [
             {
               "id": "main-currents-of-western-political-thought-on-statecraft",
@@ -2525,7 +2525,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Organization of Government",
           "topics": [
             {
               "id": "theory-of-separation-of-powers",
@@ -2740,7 +2740,7 @@
         {
           "id": "module-4",
           "number": 4,
-          "title": "",
+          "title": "Representation",
           "topics": [
             {
               "id": "concept-of-representation",
@@ -2988,7 +2988,7 @@
         {
           "id": "module-1",
           "number": 1,
-          "title": "",
+          "title": "Introduction to Sociology",
           "topics": [
             {
               "id": "meaning-and-definition",
@@ -3216,7 +3216,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "Crime, Deviance, Disorganization and Social Control",
           "topics": [
             {
               "id": "crime-and-social-deviance",
@@ -3262,7 +3262,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Social Processes and Change",
           "topics": [
             {
               "id": "social-processes-competition-conflict-accommodation",
@@ -3360,7 +3360,7 @@
         {
           "id": "module-4",
           "number": 4,
-          "title": "",
+          "title": "Law, Society and Social Thought",
           "topics": [
             {
               "id": "relation-of-law-and-society",
@@ -3521,7 +3521,7 @@
         {
           "id": "module-1",
           "number": 1,
-          "title": "",
+          "title": "Power, Authority and Legitimacy",
           "topics": [
             {
               "id": "power-as-a-concept-in-political-science",
@@ -3671,7 +3671,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "Political Obligation - State Authority and Citizen",
           "topics": [
             {
               "id": "concept-of-political-obligation",
@@ -3925,7 +3925,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Political Ideologies",
           "topics": [
             {
               "id": "liberalism",
@@ -4075,7 +4075,7 @@
         {
           "id": "module-4",
           "number": 4,
-          "title": "",
+          "title": "Indian Democracy at Work",
           "topics": [
             {
               "id": "significance-of-political-parties-in-india",
@@ -4278,7 +4278,7 @@
         {
           "id": "module-1",
           "number": 1,
-          "title": "",
+          "title": "Administration of Justice (1600-1780), Regulating Act of 1773 & Settlement Act of 1781",
           "topics": [
             {
               "id": "administration-of-justice-in-the-presidency-towns-and-develo",
@@ -4363,7 +4363,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "Conflict Arising out of the Dual Judicial System & Judicial Committee of the Privy",
           "topics": [
             {
               "id": "conflict-arising-out-of-the-dual-judicial-system",
@@ -4422,7 +4422,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Court System under the Constitution of India & Rule of Law, Independence of",
           "topics": [
             {
               "id": "court-system-under-the-constitution-of-india-supreme-court",
@@ -4455,7 +4455,7 @@
         {
           "id": "module-4",
           "number": 4,
-          "title": "",
+          "title": "History of Legislature & History of Legal Profession:",
           "topics": [
             {
               "id": "history-of-legislature",
@@ -4695,7 +4695,7 @@
         {
           "id": "module-1",
           "number": 1,
-          "title": "",
+          "title": "Law & Literature: Texts",
           "topics": [
             {
               "id": "justice-john-galsworthy",
@@ -4767,7 +4767,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "Law & Literature: Speeches & Essays",
           "topics": [
             {
               "id": "susan-b-anthony-us-vs-susan-anthony",
@@ -4839,7 +4839,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Literature for Analytical Study",
           "topics": [
             {
               "id": "the-greek-interpreter-arthur-conan-doyle",
@@ -4911,7 +4911,7 @@
         {
           "id": "module-4",
           "number": 4,
-          "title": "",
+          "title": "Language Enhancement",
           "topics": [
             {
               "id": "writing-skills",
@@ -5106,7 +5106,7 @@
         {
           "id": "module-1",
           "number": 1,
-          "title": "",
+          "title": "Categorical Syllogism",
           "topics": [
             {
               "id": "syllogism-rules-and-fallacies",
@@ -5178,7 +5178,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "Other Mediate Inferences",
           "topics": [
             {
               "id": "hypothetical-and-disjunctive-arguments",
@@ -5276,7 +5276,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Language and Law",
           "topics": [
             {
               "id": "uses-of-language-emotive-words-emotively-neutral-language",
@@ -5374,7 +5374,7 @@
         {
           "id": "module-4",
           "number": 4,
-          "title": "",
+          "title": "Application of Logical & Moral Reasoning",
           "topics": [
             {
               "id": "causation-conception-common-sense-and-scientific-notion-p",
@@ -5497,7 +5497,7 @@
         {
           "id": "module-1",
           "number": 1,
-          "title": "",
+          "title": "Introduction to International Relations (IR)",
           "topics": [
             {
               "id": "ir-as-an-academic-discipline-relevance-of-the-study-of-ir",
@@ -5634,7 +5634,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "Actors in IR",
           "topics": [
             {
               "id": "sovereign-nation-state-as-the-primary-actor-in-ir",
@@ -5797,7 +5797,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Dispute Redressal Mechanisms in IR",
           "topics": [
             {
               "id": "peaceful-settlement-of-disputes",
@@ -6171,7 +6171,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "THE INDUSTRIAL DISPUTES",
           "topics": [
             {
               "id": "industry-conceptual-analysis",
@@ -6386,7 +6386,7 @@
         {
           "id": "module-1",
           "number": 1,
-          "title": "",
+          "title": "General Principles of Tort",
           "topics": [
             {
               "id": "tort-definition-nature-scope-and-object-of-tort-tort-in",
@@ -6471,7 +6471,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "Torts against person, property, Freedom &Reputation",
           "topics": [
             {
               "id": "trespass-to-person-assault-battery-mayhem-false-imprison",
@@ -6543,7 +6543,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Principles of Liability in Torts and Legal Remedies",
           "topics": [
             {
               "id": "vicarious-liability-basis-scope-justification-different",
@@ -6602,7 +6602,7 @@
         {
           "id": "module-4",
           "number": 4,
-          "title": "",
+          "title": "Concept of Consumer & Consumer Protection Act 2019",
           "topics": [
             {
               "id": "1-consumer-definition-defect-in-goods",
@@ -6730,7 +6730,7 @@
         {
           "id": "module-1",
           "number": 1,
-          "title": "",
+          "title": "Sections 1 – 9, 30 – 37 and 68 – 72 of the Indian Contract Act 1872",
           "topics": [
             {
               "id": "introduction",
@@ -6809,7 +6809,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "Section 10-30",
           "topics": [
             {
               "id": "essential-ingredients-for-enforceability-sections-10-30",
@@ -6894,7 +6894,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Sections 36 – 67 and 73-75",
           "topics": [
             {
               "id": "performance-of-contract",
@@ -6953,7 +6953,7 @@
         {
           "id": "module-4",
           "number": 4,
-          "title": "",
+          "title": "Specific Relief Act 1963 — kinds of relief",
           "topics": [
             {
               "id": "origin-of-specific-relief-as-equitable-relief",
@@ -8231,7 +8231,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "Article 13 -Judicial Review, Pre-constitutional and Post Constitutional Laws, Doctrine of",
           "topics": []
         },
         {
@@ -8516,7 +8516,7 @@
         {
           "id": "module-4",
           "number": 4,
-          "title": "",
+          "title": "Indian Succession Act, 1925",
           "topics": [
             {
               "id": "introduction-2",
@@ -10862,7 +10862,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Schools of Jurisprudence",
           "topics": [
             {
               "id": "legal-positivism",
@@ -11768,7 +11768,7 @@
         {
           "id": "module-1",
           "number": 1,
-          "title": "",
+          "title": "History and Philosophy of Human Rights",
           "topics": [
             {
               "id": "human-rights-concept-definition-evolution-characteristic",
@@ -11866,7 +11866,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "International Conventions and Protocols",
           "topics": [
             {
               "id": "international-covenant-on-civil-and-political-rights-first",
@@ -11912,7 +11912,7 @@
         {
           "id": "module-3",
           "number": 3,
-          "title": "",
+          "title": "Human Rights and the Indian Constitution and Commissions",
           "topics": [
             {
               "id": "indian-constitution-and-human-rights-fundamental-rights-and",
@@ -12010,7 +12010,7 @@
         {
           "id": "module-4",
           "number": 4,
-          "title": "",
+          "title": "Human Rights Protection of Vulnerable Groups & Regional Arrangements",
           "topics": [
             {
               "id": "human-rights-protection-of-vulnerable-groups-the",
@@ -15247,7 +15247,7 @@
         {
           "id": "module-1",
           "number": 1,
-          "title": "",
+          "title": "Information Technology (Amendment) Act 2008",
           "topics": [
             {
               "id": "introduction-and-applicability-of-indian-evidence",
@@ -17149,7 +17149,7 @@
         {
           "id": "module-2",
           "number": 2,
-          "title": "",
+          "title": "Laws Governing Financial Institutions in India",
           "topics": [
             {
               "id": "banking-regulation-act-1949",

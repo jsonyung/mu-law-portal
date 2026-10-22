@@ -6,6 +6,9 @@ import {
   subjectIsExpandable,
   moduleIsExpandable,
   expandAriaLabel,
+  moduleRowIsActive,
+  moduleRowIsExpanded,
+  topicRowIsActive,
 } from './sidebar-tree-utils.js';
 
 function chevronIcon(expanded) {
@@ -194,8 +197,13 @@ export function renderSidebarTree(resolved, options = {}) {
 
           for (const mod of subject.modules) {
             const modKey = `${subKey}:${mod.id}`;
-            const modExp = store.sidebarExpanded[modKey] ?? resolved?.module?.id === mod.id;
-            const modActive = resolved?.module?.id === mod.id && !resolved?.topic;
+            const modExp = moduleRowIsExpanded(
+              resolved,
+              slug,
+              mod.id,
+              store.sidebarExpanded[modKey],
+            );
+            const modActive = moduleRowIsActive(resolved, slug, mod.id);
             const modExpandable = moduleIsExpandable(mod);
             const modTitle = mod.title?.trim() || '';
             const modLabel = modTitle
@@ -234,7 +242,7 @@ export function renderSidebarTree(resolved, options = {}) {
               });
 
               for (const topic of mod.topics.slice(0, 50)) {
-                const topicActive = resolved?.topic?.id === topic.id;
+                const topicActive = topicRowIsActive(resolved, slug, mod.id, topic.id);
                 topicList.appendChild(
                   el('a', {
                     href: buildPath({
@@ -255,15 +263,6 @@ export function renderSidebarTree(resolved, options = {}) {
           subList.appendChild(modList);
         }
 
-        const altEntry = Object.entries(subject.semesterMap).find(([p]) => p !== programme);
-        if (altEntry) {
-          const altLabel = altEntry[0] === 'llb-3yr' ? '3-Year' : '5-Year';
-          subList.appendChild(
-            el('p', { className: 'tree-crosslist' }, [
-              `Also in ${altLabel} · ${formatSemesterLabel(altEntry[1])}`,
-            ]),
-          );
-        }
       }
       semesterList.appendChild(subList);
     }

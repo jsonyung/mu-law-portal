@@ -44,6 +44,31 @@ function moduleId(n) {
   return `module-${n}`;
 }
 
+/** PDF often puts `#### Module 2` on one line and the title on the next. */
+export function isModuleBannerTitleLine(trimmed) {
+  if (!trimmed || trimmed.length < 6) return false;
+  if (/^\d+\.\d+\.?\s/.test(trimmed)) return false;
+  if (/^\d+[\.)]\s+[A-Z]/.test(trimmed) && /^\d+\.\s/.test(trimmed)) return false;
+  if (/^Suggested Books/i.test(trimmed) || /^Recommended Resources/i.test(trimmed)) return false;
+  if (READINGS_H4.test(trimmed)) return false;
+  if (MODULE_H4.test(trimmed) || MODULE_INLINE.test(trimmed) || MODULE_CAPS.test(trimmed)) return false;
+  if (/^Module:\s*\d/i.test(trimmed)) return false;
+  if (/^Bare Act:/i.test(trimmed)) return false;
+  if (/^(OBJECTIVES|COURSE OUTCOMES|Teaching Scheme)/i.test(trimmed)) return false;
+  if (/^[A-Z][A-Z0-9\s:'’\-–—,&()]+$/.test(trimmed)) return true;
+  if (/^INDUSTRIAL RELATIONS:/i.test(trimmed)) return true;
+  if (/^Sections?\s+\d/i.test(trimmed) || /^Section\s+\d+/i.test(trimmed)) return true;
+  if (/^[A-Za-z][A-Za-z0-9\s,'\-–—:&()]+$/.test(trimmed) && trimmed.length <= 160) return true;
+  return false;
+}
+
+export function normalizeModuleBannerTitle(line) {
+  const t = String(line).trim();
+  const prefixed = t.match(/^INDUSTRIAL RELATIONS:\s*(.+)$/i);
+  if (prefixed) return prefixed[1].trim();
+  return t;
+}
+
 function emptyEnrichment() {
   return {
     definition: null,
@@ -393,6 +418,17 @@ export function parseCurriculumMarkdown(mdPath, slugOverrides = {}) {
         sectionBuffer.push(line);
         continue;
       }
+    }
+
+    if (
+      currentModule &&
+      section === 'module_body' &&
+      !currentModule.title?.trim() &&
+      !currentModule.topics.length &&
+      isModuleBannerTitleLine(trimmed)
+    ) {
+      currentModule.title = normalizeModuleBannerTitle(trimmed);
+      continue;
     }
 
     const topicMatch = trimmed.match(TOPIC_LINE);

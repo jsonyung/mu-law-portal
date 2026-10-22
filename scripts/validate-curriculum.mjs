@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CURR_PATH = join(ROOT, 'data/generated/curriculum.json');
 const REPORT_PATH = join(ROOT, 'data/generated/parse-report.json');
+const MODULE_TITLES_PATH = join(ROOT, 'data/overrides/module-titles.json');
 const MAX_WARNINGS = Number(process.env.MAX_PARSE_WARNINGS ?? '9999');
 
 function fail(msg) {
@@ -38,6 +39,24 @@ for (const id of curriculum.subjectOrder || []) {
     for (const topic of mod.topics || []) {
       if (!topic.id) {
         console.warn(`topic missing id: ${s.slug} ${mod.id}`);
+        issues += 1;
+      }
+    }
+  }
+}
+
+if (existsSync(MODULE_TITLES_PATH)) {
+  const overrides = JSON.parse(readFileSync(MODULE_TITLES_PATH, 'utf8'));
+  for (const [subjectSlug, modules] of Object.entries(overrides)) {
+    const s = subjects[subjectSlug] ?? Object.values(subjects).find((x) => x.slug === subjectSlug);
+    if (!s) {
+      console.warn(`module-titles override: unknown subject ${subjectSlug}`);
+      issues += 1;
+      continue;
+    }
+    for (const moduleId of Object.keys(modules)) {
+      if (!s.modules?.some((m) => m.id === moduleId)) {
+        console.warn(`module-titles override: unknown module ${moduleId} on ${subjectSlug}`);
         issues += 1;
       }
     }

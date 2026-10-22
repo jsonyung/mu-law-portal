@@ -1,9 +1,10 @@
-import { el, markdownLite, formatReadingLine } from '../utils/dom.js';
+import { el, markdownLite, formatReadingLine, formatSemesterLabel } from '../utils/dom.js';
 import { normalizeReadingList } from '../utils/normalize-readings.js';
 import { navigate, buildPath } from '../router/hash-router.js';
+import { setProgramme } from '../state/store.js';
 
 export function renderSubjectView(ctx) {
-  const { programme, semester, subject, topic } = ctx;
+  const { programme, semester, subject, topic, module: activeModule } = ctx;
   const hue = subject.theme?.hue ?? 220;
   const wrap = el('article', {
     className: 'subject-themed w-full min-w-0 max-w-4xl',
@@ -20,6 +21,7 @@ export function renderSubjectView(ctx) {
         subject.credits ? ` · ${subject.credits} credits` : '',
       ]),
       el('h1', { className: 'font-serif text-2xl md:text-3xl font-bold leading-tight' }, [subject.title]),
+      alternateProgrammeDetails(subject, programme, semester),
     ]),
   );
 
@@ -80,7 +82,7 @@ export function renderSubjectView(ctx) {
 
     const list = el('ul', { className: 'space-y-3' });
     for (const t of mod.topics) {
-      const isActive = topic?.id === t.id;
+      const isActive = topic?.id === t.id && activeModule?.id === mod.id;
       const li = el('li', {
         id: `topic-${t.id}`,
         className: 'rounded-xl border p-4 transition-shadow',
@@ -127,6 +129,37 @@ export function renderSubjectView(ctx) {
   }
 
   return wrap;
+}
+
+function alternateProgrammeDetails(subject, programme, semester) {
+  const altEntry = Object.entries(subject.semesterMap || {}).find(([p]) => p !== programme);
+  if (!altEntry) return null;
+  const [altProg, altSem] = altEntry;
+  const altLabel = altProg === 'llb-3yr' ? '3-Year LL.B.' : '5-Year BLS LL.B.';
+
+  return el('details', { className: 'mt-4 text-xs opacity-90 max-w-xl' }, [
+    el('summary', {
+      className: 'cursor-pointer select-none underline-offset-2 hover:underline',
+    }, ['Also offered in another programme']),
+    el('p', { className: 'mt-2 leading-relaxed' }, [
+      `This paper is also listed under ${altLabel}, ${formatSemesterLabel(altSem)}. `,
+      el('button', {
+        type: 'button',
+        className: 'font-semibold underline underline-offset-2',
+        onClick: () => {
+          setProgramme(altProg);
+          navigate({
+            programme: altProg,
+            semester: altSem,
+            subject: subject.slug,
+            module: null,
+            topic: null,
+          });
+        },
+      }, [`Open in ${altLabel}`]),
+      '.',
+    ]),
+  ]);
 }
 
 function sectionBlock(title, text) {

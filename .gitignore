@@ -9,3 +9,4 @@ docs/data/
 
 # Authoring content (override global *.json ignore)
 !content/enrichment/**/*.json
+!data/overrides/*.json

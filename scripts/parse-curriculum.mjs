@@ -4,6 +4,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { parseCurriculumMarkdown } from './lib/state-machine-parser.mjs';
 import { mergeEnrichment } from './merge-enrichment.mjs';
+import { mergeModuleTitles } from './merge-module-titles.mjs';
 import { buildSearchIndexV2 } from './lib/build-search-index.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -59,6 +60,7 @@ const themes = JSON.parse(readFileSync(THEMES_PATH, 'utf8'));
 
 const { subjects, subjectOrder, warnings } = parseCurriculumMarkdown(MD_PATH, slugOverrides);
 mergeEnrichment(subjects);
+mergeModuleTitles(subjects);
 applyThemes(subjects, themes);
 
 const programmes = buildProgrammes(subjects, subjectOrder);
