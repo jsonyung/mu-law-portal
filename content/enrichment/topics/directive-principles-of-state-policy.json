@@ -1,0 +1,17 @@
+{
+  "topicId": "directive-principles-of-state-policy",
+  "definition": "Directive Principles of State Policy (Part IV, Articles 36–51) are non-justiciable guidelines for governance toward a welfare state. They complement Fundamental Rights and inform legislative and policy choices; courts may use DPSPs for interpretation and proportionality.",
+  "statutoryReferences": [
+    {
+      "act": "Constitution of India, 1950",
+      "sections": ["Part IV — Articles 36–51"],
+      "note": "Cross-read with Fundamental Rights (Part III) for exam answers"
+    }
+  ],
+  "cases": [],
+  "examChecklist": [
+    { "id": "chk-1", "text": "Distinguish DPSPs from Fundamental Rights (enforceability, nature)" },
+    { "id": "chk-2", "text": "Give examples of DPSPs and corresponding legislative steps" }
+  ],
+  "lastVerified": "2026-10-22"
+}

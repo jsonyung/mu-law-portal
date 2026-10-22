@@ -1,105 +1,273 @@
 import { el, formatSemesterLabel } from '../utils/dom.js';
 import { store, saveSidebarState } from '../state/store.js';
 import { navigate, buildPath } from '../router/hash-router.js';
-import { subjectProgress } from '../state/progress.js';
+import {
+  semesterIsExpandable,
+  subjectIsExpandable,
+  moduleIsExpandable,
+  expandAriaLabel,
+  moduleRowIsActive,
+  moduleRowIsExpanded,
+  topicRowIsActive,
+} from './sidebar-tree-utils.js';
 
-export function renderSidebarTree(resolved) {
-  const root = el('nav', { id: 'sidebar', className: 'text-sm', role: 'tree', 'aria-label': 'Curriculum' });
+function chevronIcon(expanded) {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('class', 'tree-chevron-icon');
+  svg.setAttribute('width', '20');
+  svg.setAttribute('height', '20');
+  svg.setAttribute('viewBox', '0 0 20 20');
+  svg.setAttribute('aria-hidden', 'true');
+  svg.setAttribute('focusable', 'false');
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke', 'currentColor');
+  path.setAttribute('stroke-width', '2');
+  path.setAttribute('stroke-linecap', 'round');
+  path.setAttribute('stroke-linejoin', 'round');
+  path.setAttribute(
+    'd',
+    expanded ? 'M5.5 8 L10 12.5 L14.5 8' : 'M8 5.5 L12.5 10 L8 14.5',
+  );
+  svg.appendChild(path);
+  return svg;
+}
+
+function createChevronButton({ expanded, sectionLabel, onToggle }) {
+  return el('button', {
+    type: 'button',
+    className: 'tree-chevron-btn',
+    'aria-expanded': expanded ? 'true' : 'false',
+    'aria-label': expandAriaLabel(expanded, sectionLabel),
+    onClick: (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      onToggle();
+    },
+  }, [chevronIcon(expanded)]);
+}
+
+function createTreeRow({
+  level,
+  active,
+  mobile,
+  expanded,
+  expandable,
+  sectionLabel,
+  labelContent,
+  onLabelClick,
+  onToggleExpand,
+}) {
+  const row = el('div', {
+    className: [
+      'tree-row',
+      `tree-row--${level}`,
+      active ? 'is-active' : '',
+      mobile ? 'tree-row--touch' : '',
+    ]
+      .filter(Boolean)
+      .join(' '),
+  });
+
+  const labelBtn = el('button', {
+    type: 'button',
+    role: 'treeitem',
+    className: 'tree-row-label',
+    ...(expandable ? { 'aria-expanded': expanded ? 'true' : 'false' } : {}),
+    onClick: onLabelClick,
+  }, [].concat(labelContent));
+
+  row.appendChild(labelBtn);
+
+  if (expandable && onToggleExpand) {
+    row.appendChild(
+      createChevronButton({
+        expanded,
+        sectionLabel,
+        onToggle: onToggleExpand,
+      }),
+    );
+  }
+
+  return row;
+}
+
+function subjectTitle(subject, mobile) {
+  const title = subject.title || '';
+  if (mobile || title.length <= 64) return title;
+  return `${title.slice(0, 64)}…`;
+}
+
+function topicTitle(topic, mobile) {
+  const title = topic.title || '';
+  if (mobile || title.length <= 80) return title;
+  return `${title.slice(0, 80)}…`;
+}
+
+export function renderSidebarTree(resolved, options = {}) {
+  const mobile = Boolean(options.mobile);
+  const navId = options.navId || (mobile ? 'sidebar-mobile' : 'sidebar');
+  const root = el('nav', {
+    id: navId,
+    className: `sidebar-tree${mobile ? ' sidebar-tree--mobile' : ''}`,
+    role: 'tree',
+    'aria-label': 'Curriculum',
+  });
   const programme = store.programme;
   const prog = store.curriculum.programmes.find((p) => p.id === programme);
   if (!prog) return root;
 
+  if (!options.hideHeading) {
+    root.appendChild(
+      el('p', { className: 'sidebar-tree-heading' }, ['Curriculum']),
+    );
+  }
+
+  const semesterList = el('div', { className: 'sidebar-tree-semesters', role: 'presentation' });
+
   for (const sem of prog.semesters) {
     const semKey = `${programme}:${sem}`;
-    const expanded = store.sidebarExpanded[semKey] ?? resolved?.semester === sem;
     const subjects = prog.subjectsBySemester[sem] || [];
+    const expanded = store.sidebarExpanded[semKey] ?? resolved?.semester === sem;
+    const semActive = resolved?.semester === sem && !resolved?.subject;
+    const semLabel = formatSemesterLabel(sem);
+    const semExpandable = semesterIsExpandable(subjects);
 
-    const semBtn = el('button', {
-      type: 'button',
-      role: 'treeitem',
-      'aria-expanded': expanded ? 'true' : 'false',
-      className: 'w-full flex items-center justify-between px-2 py-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 font-medium text-left',
-      onClick: () => {
-        saveSidebarState(semKey, !expanded);
-        navigate({ programme, semester: sem, subject: null, module: null, topic: null });
-      },
-    }, [
-      formatSemesterLabel(sem),
-      el('span', { className: 'text-xs opacity-50' }, [expanded ? '▼' : '▶']),
-    ]);
+    semesterList.appendChild(
+      createTreeRow({
+        level: 'semester',
+        active: semActive,
+        mobile,
+        expanded,
+        expandable: semExpandable,
+        sectionLabel: semLabel,
+        labelContent: [semLabel],
+        onLabelClick: () => {
+          navigate({ programme, semester: sem, subject: null, module: null, topic: null });
+        },
+        onToggleExpand: () => saveSidebarState(semKey, !expanded),
+      }),
+    );
 
-    root.appendChild(semBtn);
+    if (expanded && subjects.length) {
+      const subList = el('div', {
+        className: 'tree-group tree-group--subjects',
+        role: 'group',
+        'aria-label': `${semLabel} subjects`,
+      });
 
-    if (expanded) {
-      const subList = el('div', { className: 'ml-2 border-l border-slate-200 dark:border-slate-700 pl-2 mb-2', role: 'group' });
       for (const slug of subjects) {
         const subject = store.curriculum.subjects[slug];
         if (!subject) continue;
         const subKey = `${programme}:${sem}:${slug}`;
         const subExp = store.sidebarExpanded[subKey] ?? resolved?.subject?.slug === slug;
-        const pct = subjectProgress(subject);
+        const subjectActive = resolved?.subject?.slug === slug && !resolved?.topic;
+        const subExpandable = subjectIsExpandable(subject);
+        const subjectLabel = subjectTitle(subject, mobile);
 
         subList.appendChild(
-          el('button', {
-            type: 'button',
-            role: 'treeitem',
-            className: `w-full text-left px-2 py-1 rounded text-xs ${
-              resolved?.subject?.slug === slug ? 'bg-indigo-100 dark:bg-indigo-950 text-indigo-900 dark:text-indigo-100' : 'hover:bg-slate-50 dark:hover:bg-slate-800/80'
-            }`,
-            onClick: () => {
-              saveSidebarState(subKey, !subExp);
+          createTreeRow({
+            level: 'subject',
+            active: subjectActive,
+            mobile,
+            expanded: subExp,
+            expandable: subExpandable,
+            sectionLabel: subjectLabel,
+            labelContent: [
+              subject.isElective
+                ? el('span', { className: 'tree-elective-mark', 'aria-hidden': 'true' }, ['⚡ '])
+                : null,
+              subjectLabel,
+            ],
+            onLabelClick: () => {
               navigate({ programme, semester: sem, subject: slug, module: null, topic: null });
             },
-          }, [
-            subject.isElective ? '⚡ ' : '',
-            subject.title.slice(0, 36),
-            pct != null ? ` (${pct}%)` : '',
-          ]),
+            onToggleExpand: subExpandable
+              ? () => saveSidebarState(subKey, !subExp)
+              : null,
+          }),
         );
 
         if (subExp && subject.modules.length) {
+          const modList = el('div', {
+            className: 'tree-group tree-group--modules',
+            role: 'group',
+            'aria-label': `Modules in ${subjectLabel}`,
+          });
+
           for (const mod of subject.modules) {
             const modKey = `${subKey}:${mod.id}`;
-            const modExp = store.sidebarExpanded[modKey] ?? resolved?.module?.id === mod.id;
-            subList.appendChild(
-              el('button', {
-                type: 'button',
-                className: 'w-full text-left pl-4 py-0.5 text-[11px] opacity-80 hover:opacity-100',
-                onClick: () => {
-                  saveSidebarState(modKey, !modExp);
-                  navigate({ programme, semester: sem, subject: slug, module: mod.id, topic: null });
+            const modExp = moduleRowIsExpanded(
+              resolved,
+              slug,
+              mod.id,
+              store.sidebarExpanded[modKey],
+            );
+            const modActive = moduleRowIsActive(resolved, slug, mod.id);
+            const modExpandable = moduleIsExpandable(mod);
+            const modTitle = mod.title?.trim() || '';
+            const modLabel = modTitle
+              ? `Module ${mod.number}: ${modTitle}`
+              : `Module ${mod.number}`;
+
+            modList.appendChild(
+              createTreeRow({
+                level: 'module',
+                active: modActive,
+                mobile,
+                expanded: modExp,
+                expandable: modExpandable,
+                sectionLabel: modLabel,
+                labelContent: [modLabel],
+                onLabelClick: () => {
+                  navigate({
+                    programme,
+                    semester: sem,
+                    subject: slug,
+                    module: mod.id,
+                    topic: null,
+                  });
                 },
-              }, [`${mod.id.replace('module-', 'M')}: ${(mod.title || '').slice(0, 28)}`]),
+                onToggleExpand: modExpandable
+                  ? () => saveSidebarState(modKey, !modExp)
+                  : null,
+              }),
             );
 
-            if (modExp) {
+            if (modExp && mod.topics.length) {
+              const topicList = el('div', {
+                className: 'tree-group tree-group--topics',
+                role: 'group',
+                'aria-label': `Topics in ${modLabel}`,
+              });
+
               for (const topic of mod.topics.slice(0, 50)) {
-                subList.appendChild(
+                const topicActive = topicRowIsActive(resolved, slug, mod.id, topic.id);
+                topicList.appendChild(
                   el('a', {
-                    href: buildPath({ programme, semester: sem, subject: slug, module: mod.id, topic: topic.id }),
-                    className: `block pl-6 py-0.5 text-[11px] truncate ${
-                      resolved?.topic?.id === topic.id ? 'text-indigo-600 dark:text-indigo-400 font-medium' : 'opacity-70 hover:opacity-100'
-                    }`,
-                  }, [topic.title.slice(0, 40)]),
+                    href: buildPath({
+                      programme,
+                      semester: sem,
+                      subject: slug,
+                      module: mod.id,
+                      topic: topic.id,
+                    }),
+                    role: 'treeitem',
+                    className: `tree-topic${topicActive ? ' is-active' : ''}`,
+                  }, [topicTitle(topic, mobile)]),
                 );
               }
+              modList.appendChild(topicList);
             }
           }
+          subList.appendChild(modList);
         }
 
-        const altEntry = Object.entries(subject.semesterMap).find(([p]) => p !== programme);
-        if (altEntry) {
-          const altLabel = altEntry[0] === 'llb-3yr' ? '3-Year' : '5-Year';
-          subList.appendChild(
-            el('p', { className: 'pl-2 text-[10px] text-slate-500 italic' }, [
-              `Cross-listed: ${altLabel} ${formatSemesterLabel(altEntry[1])}`,
-            ]),
-          );
-        }
       }
-      root.appendChild(subList);
+      semesterList.appendChild(subList);
     }
   }
 
+  root.appendChild(semesterList);
   return root;
 }

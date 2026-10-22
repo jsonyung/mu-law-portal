@@ -23,6 +23,30 @@ export function formatSemesterLabel(semId) {
   return `Semester ${romans[n] || n}`;
 }
 
+/** Display cleanup for syllabus reading lines (leading dot artifacts from source). */
+export function formatReadingLine(text) {
+  if (!text) return '';
+  let s = String(text).trim();
+  if (/^\.\s+/.test(s)) s = s.replace(/^\.\s+/, '');
+  return s;
+}
+
+export function programmeShortLabel(progId) {
+  if (progId === 'llb-5yr') return '5-Year BLS LL.B.';
+  return '3-Year LL.B.';
+}
+
+export function programmeDescription(prog) {
+  if (!prog) return '';
+  const count = prog.semesters?.length ?? 0;
+  const last = prog.semesters?.[count - 1];
+  const lastLabel = last ? formatSemesterLabel(last).replace('Semester ', '') : '';
+  if (prog.id === 'llb-5yr') {
+    return `Integrated programme · Semesters I–${lastLabel || 'X'} (${count} semesters)`;
+  }
+  return `Graduate LL.B. · Semesters I–${lastLabel || 'VI'} (${count} semesters)`;
+}
+
 export function escapeHtml(text) {
   const d = document.createElement('div');
   d.textContent = text;

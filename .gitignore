@@ -2,3 +2,11 @@ node_modules/
 .DS_Store
 *.local
 .cursor/
+
+# Generated copies (source: data/generated; parse copies to public; Vite copies to docs)
+public/data/*.json
+docs/data/
+
+# Authoring content (override global *.json ignore)
+!content/enrichment/**/*.json
+!data/overrides/*.json

@@ -3,6 +3,7 @@ import { slugify, uniqueSlug } from '../slugify.mjs';
 import { parseSemesterLabel, semId } from '../normalize-semester.mjs';
 import { classifyProgrammeHeading } from '../normalize-programme.mjs';
 import { isSkippableLine, truncateBeforeEditorial } from './pdf-artifact-filters.mjs';
+import { normalizeReadingList } from '../../src/utils/normalize-readings.js';
 
 const MODULE_H4 =
   /^####\s+Module\s+([IVX\d]+)\s*:?\s*(.*)$/i;
@@ -41,6 +42,31 @@ function moduleNumFromToken(token) {
 
 function moduleId(n) {
   return `module-${n}`;
+}
+
+/** PDF often puts `#### Module 2` on one line and the title on the next. */
+export function isModuleBannerTitleLine(trimmed) {
+  if (!trimmed || trimmed.length < 6) return false;
+  if (/^\d+\.\d+\.?\s/.test(trimmed)) return false;
+  if (/^\d+[\.)]\s+[A-Z]/.test(trimmed) && /^\d+\.\s/.test(trimmed)) return false;
+  if (/^Suggested Books/i.test(trimmed) || /^Recommended Resources/i.test(trimmed)) return false;
+  if (READINGS_H4.test(trimmed)) return false;
+  if (MODULE_H4.test(trimmed) || MODULE_INLINE.test(trimmed) || MODULE_CAPS.test(trimmed)) return false;
+  if (/^Module:\s*\d/i.test(trimmed)) return false;
+  if (/^Bare Act:/i.test(trimmed)) return false;
+  if (/^(OBJECTIVES|COURSE OUTCOMES|Teaching Scheme)/i.test(trimmed)) return false;
+  if (/^[A-Z][A-Z0-9\s:'’\-–—,&()]+$/.test(trimmed)) return true;
+  if (/^INDUSTRIAL RELATIONS:/i.test(trimmed)) return true;
+  if (/^Sections?\s+\d/i.test(trimmed) || /^Section\s+\d+/i.test(trimmed)) return true;
+  if (/^[A-Za-z][A-Za-z0-9\s,'\-–—:&()]+$/.test(trimmed) && trimmed.length <= 160) return true;
+  return false;
+}
+
+export function normalizeModuleBannerTitle(line) {
+  const t = String(line).trim();
+  const prefixed = t.match(/^INDUSTRIAL RELATIONS:\s*(.+)$/i);
+  if (prefixed) return prefixed[1].trim();
+  return t;
 }
 
 function emptyEnrichment() {
@@ -98,9 +124,20 @@ function addTopic(mod, sectionRef, title, syllabusText, ctx) {
   });
 }
 
+export function trimObjectivesOrOutcomes(text) {
+  const byLine = text.search(/\n(?:####\s+)?Module\s+[IVX\d]/i);
+  if (byLine > 0) return text.slice(0, byLine).trim();
+  const inline = text.search(/\sModule\s+(?:[IVX\d]+)\s*[:\-]/i);
+  if (inline > 24) return text.slice(0, inline).trim();
+  return text;
+}
+
 function flushSectionBuffer(subject, section, buffer) {
-  const text = buffer.join('\n').trim();
+  let text = buffer.join('\n').trim();
   if (!text || !subject) return;
+  if (section === 'objectives' || section === 'outcomes') {
+    text = trimObjectivesOrOutcomes(text);
+  }
   if (section === 'objectives') subject.objectives = text;
   else if (section === 'outcomes') subject.outcomes = text;
   else if (section === 'readings') {
@@ -108,7 +145,7 @@ function flushSectionBuffer(subject, section, buffer) {
       .split(/\n/)
       .map((l) => l.replace(/^[\d.\u2022\uF0B7\-*]\s*/, '').trim())
       .filter(Boolean);
-    subject.readings.push(...items);
+    subject.readings.push(...normalizeReadingList(items));
   }
 }
 
@@ -365,14 +402,33 @@ export function parseCurriculumMarkdown(mdPath, slugOverrides = {}) {
     }
 
     if (section && section !== 'module_body' && currentSubject) {
-      if (trimmed.startsWith('#')) {
+      const moduleBreak =
+        MODULE_H4.test(trimmed) || MODULE_INLINE.test(trimmed) || MODULE_CAPS.test(trimmed);
+      if (COURSE_OUTLINE.test(trimmed)) {
         flushSectionBuffer(currentSubject, section, sectionBuffer);
         sectionBuffer = [];
         section = null;
+      } else if (trimmed.startsWith('#') || moduleBreak) {
+        flushSectionBuffer(currentSubject, section, sectionBuffer);
+        sectionBuffer = [];
+        section = null;
+        if (moduleBreak) i -= 1;
+        continue;
       } else {
         sectionBuffer.push(line);
         continue;
       }
+    }
+
+    if (
+      currentModule &&
+      section === 'module_body' &&
+      !currentModule.title?.trim() &&
+      !currentModule.topics.length &&
+      isModuleBannerTitleLine(trimmed)
+    ) {
+      currentModule.title = normalizeModuleBannerTitle(trimmed);
+      continue;
     }
 
     const topicMatch = trimmed.match(TOPIC_LINE);

@@ -3,6 +3,8 @@ import { store, setStore, initTheme, setProgramme } from './state/store.js';
 import { initRouter, onRouteChange } from './router/hash-router.js';
 import { mountShell } from './ui/shell.js';
 import { initCommandPalette } from './search/command-palette.js';
+import { assertCurriculumSchema } from './constants/schema.js';
+import { loadSearchIndexInBackground } from './search/load-search-index.js';
 
 async function boot() {
   initTheme();
@@ -10,21 +12,25 @@ async function boot() {
   if (savedProg) setProgramme(savedProg);
 
   const base = import.meta.env.BASE_URL;
-  const [curriculum, searchIndex] = await Promise.all([
-    fetch(`${base}data/curriculum.json`).then((r) => r.json()),
-    fetch(`${base}data/search-index.json`).then((r) => r.json()),
-  ]);
+  const curriculum = await fetch(`${base}data/curriculum.json`).then((r) => {
+    if (!r.ok) throw new Error(`curriculum.json HTTP ${r.status}`);
+    return r.json();
+  });
 
-  setStore({ curriculum, searchIndex });
+  assertCurriculumSchema(curriculum.meta);
+  setStore({
+    curriculum,
+    searchIndex: null,
+    searchIndexReady: false,
+    searchIndexError: null,
+  });
 
   mountShell(document.getElementById('app'));
   initRouter();
   initCommandPalette();
   onRouteChange();
 
-  document.body.addEventListener('click', () => {
-    document.querySelectorAll('[data-drawer]').forEach((n) => n.remove());
-  });
+  loadSearchIndexInBackground(base);
 }
 
 boot().catch((err) => {

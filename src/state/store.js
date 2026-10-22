@@ -3,8 +3,11 @@ const listeners = new Set();
 export const store = {
   curriculum: null,
   searchIndex: null,
+  searchIndexReady: false,
+  searchIndexError: null,
   programme: 'llb-3yr',
   route: null,
+  pendingNavigation: null,
   sidebarExpanded: loadJson('mu-law-sidebar', {}),
   theme: localStorage.getItem('mu-law-theme') || 'light',
 };
@@ -41,7 +44,7 @@ export function setTheme(mode) {
   store.theme = mode;
   localStorage.setItem('mu-law-theme', mode);
   document.documentElement.classList.toggle('dark', mode === 'dark');
-  emit();
+  document.dispatchEvent(new CustomEvent('theme-changed', { detail: { mode } }));
 }
 
 export function initTheme() {
@@ -55,4 +58,24 @@ export function saveSidebarState(key, value) {
   store.sidebarExpanded[key] = value;
   localStorage.setItem('mu-law-sidebar', JSON.stringify(store.sidebarExpanded));
   emit();
+}
+
+/** Expand sidebar tree for search navigation without triggering a full re-render race. */
+export function expandSidebarForIntent(intent) {
+  if (!intent) return;
+  const { programmeId, semesterId, subjectSlug, moduleId } = intent;
+  if (programmeId && semesterId) {
+    store.sidebarExpanded[`${programmeId}:${semesterId}`] = true;
+  }
+  if (programmeId && semesterId && subjectSlug) {
+    store.sidebarExpanded[`${programmeId}:${semesterId}:${subjectSlug}`] = true;
+  }
+  if (programmeId && semesterId && subjectSlug && moduleId) {
+    store.sidebarExpanded[`${programmeId}:${semesterId}:${subjectSlug}:${moduleId}`] = true;
+  }
+  localStorage.setItem('mu-law-sidebar', JSON.stringify(store.sidebarExpanded));
+}
+
+export function clearPendingNavigation() {
+  store.pendingNavigation = null;
 }

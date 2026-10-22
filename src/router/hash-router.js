@@ -1,14 +1,16 @@
 import { setStore, store } from '../state/store.js';
-
-const ROUTE_RE =
-  /^\/(?<programme>llb-3yr|llb-5yr)(?:\/(?<semester>sem-\d+))?(?:\/(?<subject>[^/]+))?(?:\/(?<module>module-\d+))?(?:\/(?<topic>[^/]+))?$/;
+import { parseHashRoute } from './hash-route-string.js';
 
 export function parseHash(hash = location.hash) {
-  const raw = hash.replace(/^#\/?/, '').trim();
-  if (!raw) return { programme: store.programme || 'llb-3yr' };
-  const m = `/${raw}`.match(ROUTE_RE);
-  if (!m?.groups) return { invalid: true };
-  return { ...m.groups };
+  const parsed = parseHashRoute(hash);
+  if (parsed.empty) {
+    return { programme: store.programme || 'llb-3yr', routeAnchor: parsed.routeAnchor };
+  }
+  if (parsed.invalid) {
+    return { invalid: true, routeAnchor: parsed.routeAnchor };
+  }
+  const { routeAnchor, ...groups } = parsed;
+  return { ...groups, routeAnchor };
 }
 
 export function buildPath({ programme, semester, subject, module, topic }) {
@@ -21,38 +23,46 @@ export function buildPath({ programme, semester, subject, module, topic }) {
 }
 
 export function resolveRoute(route, curriculum) {
-  if (!curriculum || route.invalid) return { view: 'notFound', route };
+  const routeAnchor = route.routeAnchor || null;
+  if (!curriculum || route.invalid) return { view: 'notFound', route, routeAnchor };
 
   const programme = route.programme || store.programme;
-  if (route.programme) setStore({ programme });
 
   if (!route.semester) {
-    return { view: 'home', programme, route: { programme } };
+    return { view: 'home', programme, route: { programme }, routeAnchor };
   }
 
   const prog = curriculum.programmes.find((p) => p.id === programme);
   const semSubjects = prog?.subjectsBySemester?.[route.semester] || [];
 
   if (!route.subject) {
-    return { view: 'semester', programme, semester: route.semester, subjects: semSubjects, route };
+    return { view: 'semester', programme, semester: route.semester, subjects: semSubjects, route, routeAnchor };
   }
 
   const subject = curriculum.subjects[route.subject];
-  if (!subject) return { view: 'notFound', route };
+  if (!subject) return { view: 'notFound', route, routeAnchor };
 
   if (!route.module) {
-    return { view: 'subject', programme, semester: route.semester, subject, route };
+    return { view: 'subject', programme, semester: route.semester, subject, route, routeAnchor };
   }
 
   const mod = subject.modules.find((m) => m.id === route.module);
-  if (!mod) return { view: 'notFound', route };
+  if (!mod) return { view: 'notFound', route, routeAnchor };
 
   if (!route.topic) {
-    return { view: 'module', programme, semester: route.semester, subject, module: mod, route };
+    return {
+      view: 'module',
+      programme,
+      semester: route.semester,
+      subject,
+      module: mod,
+      route,
+      routeAnchor,
+    };
   }
 
   const topic = mod.topics.find((t) => t.id === route.topic);
-  if (!topic) return { view: 'notFound', route };
+  if (!topic) return { view: 'notFound', route, routeAnchor };
 
   return {
     view: 'topic',
@@ -62,6 +72,7 @@ export function resolveRoute(route, curriculum) {
     module: mod,
     topic,
     route,
+    routeAnchor,
   };
 }
 
@@ -83,7 +94,12 @@ export function navigate(partial) {
 export function onRouteChange() {
   const route = parseHash();
   const resolved = resolveRoute(route, store.curriculum);
-  setStore({ route: resolved });
+  const programme = resolved.programme || route.programme || store.programme;
+  if (programme && programme !== store.programme) {
+    store.programme = programme;
+    localStorage.setItem('mu-law-programme', programme);
+  }
+  setStore({ route: resolved, programme });
 
   if (!location.hash || location.hash === '#') {
     const last = localStorage.getItem('mu-law-last-route');
