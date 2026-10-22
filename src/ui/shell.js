@@ -28,10 +28,21 @@ export function mountShell(root) {
   if (!escapeBound) {
     document.addEventListener('keydown', onDocumentKeydown);
     document.addEventListener('close-mobile-nav-request', closeMobileNav);
+    document.addEventListener('theme-changed', onThemeChanged);
     escapeBound = true;
   }
   subscribe(render);
   render();
+}
+
+function onThemeChanged() {
+  document.querySelectorAll('.app-header .btn-icon[aria-label*="theme"]').forEach((btn) => {
+    btn.setAttribute(
+      'aria-label',
+      store.theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme',
+    );
+    btn.textContent = store.theme === 'dark' ? '☀' : '☾';
+  });
 }
 
 function isSearchPaletteOpen() {

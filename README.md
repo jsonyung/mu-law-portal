@@ -26,7 +26,29 @@ Edit [`university_mumbai_llb_master_curriculum.md`](university_mumbai_llb_master
 
 ## Enrichment notes
 
-Add per-topic doctrinal content under [`content/enrichment/topics/`](content/enrichment/topics/) as JSON (see sample file). Re-run `npm run build:curriculum` to merge.
+One JSON file per topic under [`content/enrichment/topics/`](content/enrichment/topics/). Re-run `npm run build:curriculum` to merge into `data/generated/curriculum.json`.
+
+| Field | Purpose |
+|-------|---------|
+| `topicId` | Must match curriculum topic `id` |
+| `definition` | Short concept summary (shown on topic study page) |
+| `statutoryReferences` | `{ act, sections[], note? }` |
+| `cases` | `{ name, citation?, court?, proposition? }` |
+| `examChecklist` | `{ id, text }` checklist items |
+| `lastVerified` | ISO date string |
+
+Scaffold a new file:
+
+```bash
+npm run enrich:scaffold -- --topic <topicId> --subject <subject-slug>
+```
+
+## Generated data
+
+- **Source of truth (git):** [`data/generated/`](data/generated/) — curriculum, search index, parse report.
+- **`public/data/`** and **`docs/data/`** are build copies (gitignored); created by `npm run build:curriculum` and Vite.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for PR checks.
 
 ## Deep links
 

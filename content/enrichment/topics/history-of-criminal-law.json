@@ -1,0 +1,17 @@
+{
+  "topicId": "history-of-criminal-law",
+  "definition": "Indian criminal law draws on colonial codification (IPC 1860), post-Independence amendments, and recent replacement statutes (BNS 2023). For exams, trace how general principles of liability and specific offences evolved from common law and statute.",
+  "statutoryReferences": [
+    {
+      "act": "Bharatiya Nyaya Sanhita, 2023 (BNS)",
+      "sections": ["General scheme — compare with IPC where your syllabus requires"],
+      "note": "Verify the applicable code for your examination batch"
+    }
+  ],
+  "cases": [],
+  "examChecklist": [
+    { "id": "chk-1", "text": "Outline milestones from IPC to BNS in brief point form" },
+    { "id": "chk-2", "text": "Distinguish codified offences from common-law origins" }
+  ],
+  "lastVerified": "2026-10-22"
+}

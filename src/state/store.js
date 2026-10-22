@@ -3,6 +3,8 @@ const listeners = new Set();
 export const store = {
   curriculum: null,
   searchIndex: null,
+  searchIndexReady: false,
+  searchIndexError: null,
   programme: 'llb-3yr',
   route: null,
   pendingNavigation: null,
@@ -42,7 +44,7 @@ export function setTheme(mode) {
   store.theme = mode;
   localStorage.setItem('mu-law-theme', mode);
   document.documentElement.classList.toggle('dark', mode === 'dark');
-  emit();
+  document.dispatchEvent(new CustomEvent('theme-changed', { detail: { mode } }));
 }
 
 export function initTheme() {

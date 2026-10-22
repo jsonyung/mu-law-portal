@@ -99,9 +99,20 @@ function addTopic(mod, sectionRef, title, syllabusText, ctx) {
   });
 }
 
+export function trimObjectivesOrOutcomes(text) {
+  const byLine = text.search(/\n(?:####\s+)?Module\s+[IVX\d]/i);
+  if (byLine > 0) return text.slice(0, byLine).trim();
+  const inline = text.search(/\sModule\s+(?:[IVX\d]+)\s*[:\-]/i);
+  if (inline > 24) return text.slice(0, inline).trim();
+  return text;
+}
+
 function flushSectionBuffer(subject, section, buffer) {
-  const text = buffer.join('\n').trim();
+  let text = buffer.join('\n').trim();
   if (!text || !subject) return;
+  if (section === 'objectives' || section === 'outcomes') {
+    text = trimObjectivesOrOutcomes(text);
+  }
   if (section === 'objectives') subject.objectives = text;
   else if (section === 'outcomes') subject.outcomes = text;
   else if (section === 'readings') {
@@ -366,10 +377,18 @@ export function parseCurriculumMarkdown(mdPath, slugOverrides = {}) {
     }
 
     if (section && section !== 'module_body' && currentSubject) {
-      if (trimmed.startsWith('#')) {
+      const moduleBreak =
+        MODULE_H4.test(trimmed) || MODULE_INLINE.test(trimmed) || MODULE_CAPS.test(trimmed);
+      if (COURSE_OUTLINE.test(trimmed)) {
         flushSectionBuffer(currentSubject, section, sectionBuffer);
         sectionBuffer = [];
         section = null;
+      } else if (trimmed.startsWith('#') || moduleBreak) {
+        flushSectionBuffer(currentSubject, section, sectionBuffer);
+        sectionBuffer = [];
+        section = null;
+        if (moduleBreak) i -= 1;
+        continue;
       } else {
         sectionBuffer.push(line);
         continue;

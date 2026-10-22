@@ -1,4 +1,5 @@
 import { readFileSync, writeFileSync, mkdirSync, cpSync } from 'fs';
+import { spawnSync } from 'child_process';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { parseCurriculumMarkdown } from './lib/state-machine-parser.mjs';
@@ -62,7 +63,10 @@ applyThemes(subjects, themes);
 
 const programmes = buildProgrammes(subjects, subjectOrder);
 
+const CURRICULUM_SCHEMA_VERSION = 1;
+
 const curriculumMeta = {
+  schemaVersion: CURRICULUM_SCHEMA_VERSION,
   source: 'university_mumbai_llb_master_curriculum.md',
   generatedAt: new Date().toISOString(),
   syllabusYear: '2022-23',
@@ -89,3 +93,11 @@ cpSync(join(OUT_DIR, 'search-index.json'), join(PUBLIC_DATA, 'search-index.json'
 
 console.log(`Parsed ${subjectOrder.length} subjects, ${warnings.length} warnings`);
 console.log(`Wrote ${OUT_DIR} and ${PUBLIC_DATA}`);
+
+const validate = spawnSync(process.execPath, ['scripts/validate-curriculum.mjs'], {
+  cwd: ROOT,
+  stdio: 'inherit',
+});
+if (validate.status !== 0) {
+  process.exit(validate.status ?? 1);
+}

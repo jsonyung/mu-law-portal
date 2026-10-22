@@ -41,9 +41,12 @@ describe('search-service integration', () => {
       limit: 30,
     });
     expect(matchedAliases.length).toBeGreaterThan(0);
-    expect(results.some((r) => (r.searchTextRaw || '').toLowerCase().includes('indian penal code'))).toBe(
-      true,
-    );
+    expect(
+      results.some(
+        (r) =>
+          (r.searchText || r.excerptSource || '').toLowerCase().includes('indian penal code'),
+      ),
+    ).toBe(true);
   });
 
   it('IPC direct query hits law of crimes', () => {

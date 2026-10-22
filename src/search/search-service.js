@@ -2,6 +2,7 @@ import MiniSearch from 'minisearch';
 import { expandQueryWithAliases, normalizeQuery } from './normalize-query.js';
 import { rankSearchResults } from './rank-results.js';
 import { buildNavigationTarget } from './navigation-target.js';
+import { assertSearchIndexSchema } from '../constants/schema.js';
 
 let mini = null;
 let documentsById = new Map();
@@ -19,8 +20,10 @@ export function initSearchService(searchIndexPayload) {
   aliases = searchIndexPayload?.aliases || [];
   meta = searchIndexPayload?.meta || null;
 
-  if (!searchIndexPayload?.meta || searchIndexPayload.meta.indexVersion !== 2) {
-    initError = 'Search index version unsupported. Run npm run build:curriculum.';
+  try {
+    assertSearchIndexSchema(searchIndexPayload?.meta);
+  } catch (err) {
+    initError = err.message;
     mini = null;
     return false;
   }
@@ -32,7 +35,7 @@ export function initSearchService(searchIndexPayload) {
 
   mini = new MiniSearch({
     idField: 'id',
-    fields: ['displayTitle', 'subjectTitle', 'moduleTitle', 'topicTitle', 'searchText', 'searchTextRaw'],
+    fields: ['displayTitle', 'subjectTitle', 'moduleTitle', 'topicTitle', 'searchText'],
     storeFields: [
       'id',
       'recordType',
@@ -61,12 +64,7 @@ export function initSearchService(searchIndexPayload) {
     },
   });
 
-  mini.addAll(
-    docs.map((d) => ({
-      ...d,
-      searchTextRaw: d.searchTextRaw || d.excerptSource || '',
-    })),
-  );
+  mini.addAll(docs);
 
   return true;
 }

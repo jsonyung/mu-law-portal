@@ -91,7 +91,6 @@ export function buildSearchIndexV2(subjects, subjectOrder, curriculumMeta) {
       displayTitle: s.title,
       excerptSource: s.title,
       searchText: normalizeSearchText(subjectSearchRaw),
-      searchTextRaw: subjectSearchRaw.slice(0, 8000),
     });
 
     for (const mod of s.modules || []) {
@@ -111,7 +110,6 @@ export function buildSearchIndexV2(subjects, subjectOrder, curriculumMeta) {
         displayTitle: modTitle,
         excerptSource: modTitle,
         searchText: normalizeSearchText([modTitle, s.title].join(' ')),
-        searchTextRaw: modTitle,
       });
 
       for (const topic of mod.topics || []) {
@@ -132,7 +130,6 @@ export function buildSearchIndexV2(subjects, subjectOrder, curriculumMeta) {
           displayTitle: topic.title,
           excerptSource: topic.syllabusText || topic.title,
           searchText: normalizeSearchText(raw),
-          searchTextRaw: raw.slice(0, 4000),
         });
 
         for (const c of topic.enrichment?.cases || []) {
@@ -152,7 +149,6 @@ export function buildSearchIndexV2(subjects, subjectOrder, curriculumMeta) {
             displayTitle: c.name,
             excerptSource: c.proposition || c.name,
             searchText: normalizeSearchText([c.name, c.citation, c.proposition].join(' ')),
-            searchTextRaw: [c.name, c.citation, c.proposition].filter(Boolean).join(' — '),
           });
         }
 
@@ -173,7 +169,6 @@ export function buildSearchIndexV2(subjects, subjectOrder, curriculumMeta) {
             displayTitle: st.act,
             excerptSource: (st.sections || []).join(', ') || st.act,
             searchText: normalizeSearchText([st.act, ...(st.sections || []), st.note].join(' ')),
-            searchTextRaw: [st.act, ...(st.sections || [])].join(' — '),
           });
         }
       }
@@ -200,7 +195,6 @@ export function buildSearchIndexV2(subjects, subjectOrder, curriculumMeta) {
         displayTitle: r.slice(0, 100),
         excerptSource: r,
         searchText: normalizeSearchText(r),
-        searchTextRaw: r,
       });
     }
   }
@@ -208,6 +202,7 @@ export function buildSearchIndexV2(subjects, subjectOrder, curriculumMeta) {
   return {
     meta: {
       indexVersion: 2,
+      schemaVersion: 2,
       generatedAt: curriculumMeta.generatedAt || new Date().toISOString(),
       curriculumSource: curriculumMeta.source,
       documentCount: documents.length,

@@ -1,7 +1,8 @@
 {
   "meta": {
+    "schemaVersion": 1,
     "source": "university_mumbai_llb_master_curriculum.md",
-    "generatedAt": "2026-10-22T18:49:07.944Z",
+    "generatedAt": "2026-10-22T18:58:42.262Z",
     "syllabusYear": "2022-23"
   },
   "programmes": [
@@ -6736,12 +6737,32 @@
               "sectionRef": "1.1",
               "title": "INTRODUCTION",
               "syllabusText": "1.1 INTRODUCTION",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
+                "definition": "Contract law governs enforceable agreements: offer, acceptance, consideration, capacity, and free consent. The Indian Contract Act, 1872 (Sections 1–75 in this course) sets the general law; the Specific Relief Act, 1963 provides remedies when damages are inadequate.",
+                "statutory": [
+                  {
+                    "act": "Indian Contract Act, 1872",
+                    "sections": [
+                      "Preamble",
+                      "Section 2 — definitions",
+                      "Section 10 — essentials of valid contract"
+                    ],
+                    "note": "Use the bare act edition prescribed by your faculty"
+                  }
+                ],
                 "cases": [],
-                "examChecklist": []
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Define contract and list essentials under Section 10"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "Explain relation between Contract Act and Specific Relief Act"
+                  }
+                ],
+                "lastVerified": "2026-10-22"
               }
             },
             {
@@ -7714,12 +7735,30 @@
               "sectionRef": "1.1",
               "title": "History of Criminal law",
               "syllabusText": "1.1 History of Criminal law",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
+                "definition": "Indian criminal law draws on colonial codification (IPC 1860), post-Independence amendments, and recent replacement statutes (BNS 2023). For exams, trace how general principles of liability and specific offences evolved from common law and statute.",
+                "statutory": [
+                  {
+                    "act": "Bharatiya Nyaya Sanhita, 2023 (BNS)",
+                    "sections": [
+                      "General scheme — compare with IPC where your syllabus requires"
+                    ],
+                    "note": "Verify the applicable code for your examination batch"
+                  }
+                ],
                 "cases": [],
-                "examChecklist": []
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Outline milestones from IPC to BNS in brief point form"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "Distinguish codified offences from common-law origins"
+                  }
+                ],
+                "lastVerified": "2026-10-22"
               }
             },
             {
@@ -8211,12 +8250,30 @@
               "sectionRef": "1",
               "title": "– Directive Principles of State Policy.",
               "syllabusText": "1. – Directive Principles of State Policy.",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
+                "definition": "Directive Principles of State Policy (Part IV, Articles 36–51) are non-justiciable guidelines for governance toward a welfare state. They complement Fundamental Rights and inform legislative and policy choices; courts may use DPSPs for interpretation and proportionality.",
+                "statutory": [
+                  {
+                    "act": "Constitution of India, 1950",
+                    "sections": [
+                      "Part IV — Articles 36–51"
+                    ],
+                    "note": "Cross-read with Fundamental Rights (Part III) for exam answers"
+                  }
+                ],
                 "cases": [],
-                "examChecklist": []
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Distinguish DPSPs from Fundamental Rights (enforceability, nature)"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "Give examples of DPSPs and corresponding legislative steps"
+                  }
+                ],
+                "lastVerified": "2026-10-22"
               }
             },
             {

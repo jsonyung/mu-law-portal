@@ -25,6 +25,9 @@ let filterType = '';
 let lastTrigger = null;
 
 export function initCommandPalette() {
+  document.addEventListener('search-index-ready', () => {
+    if (open) runSearch();
+  });
   document.addEventListener('close-search-palette-request', () => togglePalette(false));
   document.addEventListener('keydown', (e) => {
     if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
@@ -190,7 +193,11 @@ function runSearch() {
   if (!isSearchReady()) {
     results = [];
     matchedAliases = [];
-    renderResults(getInitError());
+    const loading =
+      !store.searchIndexError && store.searchIndexReady === false
+        ? 'Loading search index…'
+        : store.searchIndexError || getInitError();
+    renderResults(loading);
     return;
   }
 
