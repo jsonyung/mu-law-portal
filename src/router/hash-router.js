@@ -1,4 +1,9 @@
-import { setStore, store } from '../state/store.js';
+import {
+  setStore,
+  store,
+  ensureSidebarPathOpen,
+  collapseSiblingSubjects,
+} from '../state/store.js';
 import { parseHashRoute } from './hash-route-string.js';
 
 export function parseHash(hash = location.hash) {
@@ -85,6 +90,10 @@ export function navigate(partial) {
     module: 'module' in partial ? partial.module : current.module,
     topic: 'topic' in partial ? partial.topic : current.topic,
   };
+  if ('subject' in partial && partial.subject && next.semester) {
+    collapseSiblingSubjects(next.programme, next.semester, partial.subject);
+  }
+
   const path = buildPath(next);
   const hash = path.startsWith('#') ? path : `#${path}`;
   if (location.hash !== hash) location.hash = hash.slice(1);
@@ -99,6 +108,7 @@ export function onRouteChange() {
     store.programme = programme;
     localStorage.setItem('mu-law-programme', programme);
   }
+  ensureSidebarPathOpen(resolved);
   setStore({ route: resolved, programme });
 
   if (!location.hash || location.hash === '#') {

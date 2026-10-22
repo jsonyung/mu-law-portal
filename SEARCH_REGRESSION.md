@@ -9,3 +9,5 @@
 | 5-Year shared | `#/llb-5yr/sem-6/law-of-crimes` |
 
 Verify: Cmd+K, programme filter, cross-semester navigation, light/dark palette, copied URL refresh.
+
+Sidebar / drawer: [docs/SIDEBAR_REGRESSION.md](docs/SIDEBAR_REGRESSION.md).

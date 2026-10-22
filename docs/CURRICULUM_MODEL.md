@@ -107,6 +107,25 @@ One file per topic: `content/enrichment/topics/<topicId>.json`. Fields: `definit
 - Sidebar shows only that programme’s tree (no repeated “Also in 5-Year” rows).
 - Shared papers: optional **“Also offered in another programme”** on the subject page header (collapsed).
 
+## Sidebar expansion (curriculum tree)
+
+| Control | Action |
+|---------|--------|
+| **Row label** | Navigates (subject / module / semester page) |
+| **Chevron** | Expands or collapses children only; state saved in `localStorage` key `mu-law-sidebar` |
+
+**Key shape:** `{programme}:{sem}` → `{programme}:{sem}:{subjectSlug}` → `{programme}:{sem}:{subjectSlug}:{moduleId}`.
+
+**Rules:**
+
+1. Explicit `true` / `false` in storage wins over defaults (you can collapse Torts while reading Labour).
+2. On **navigation**, missing keys on the route path are set to `true`; existing `false` is not overwritten.
+3. The **module that contains the current topic** stays open (no chevron); topics remain visible and highlighted.
+4. Navigating to a subject **collapses sibling subjects** in that semester (accordion) to reduce noise.
+5. **Viewport:** sticky sidebar from **1024px (`lg`)** up; below that, use the **menu** drawer (e.g. narrow Chrome with a side panel).
+
+See [SIDEBAR_REGRESSION.md](SIDEBAR_REGRESSION.md) for manual checks.
+
 ## Maintainer workflow
 
 1. Edit markdown and/or enrichment/overrides.

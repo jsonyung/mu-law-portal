@@ -110,11 +110,25 @@ function syncScrollLock() {
   }
 }
 
+function scrollSidebarActiveTopicIntoView() {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const opts = { block: 'nearest', behavior: reduced ? 'auto' : 'smooth' };
+  document.querySelector('.sidebar-panel .tree-topic.is-active')?.scrollIntoView(opts);
+  document.querySelector('#mobile-nav-scroll .tree-topic.is-active')?.scrollIntoView(opts);
+}
+
 function render() {
   if (!appRoot || !store.curriculum) return;
 
+  const sidebarScrollElBefore = document.querySelector('.sidebar-panel');
+  const sidebarScrollTopBefore = sidebarScrollElBefore?.scrollTop ?? null;
+  const mobileScrollElBefore = document.getElementById('mobile-nav-scroll');
+  const mobileScrollTopBefore = mobileScrollElBefore?.scrollTop ?? null;
+
   const resolved = store.route;
-  if (mobileNavOpen && shouldCloseNavOnRouteChange(lastRouteSnapshot, routeSnapshot(resolved))) {
+  const prevRouteSnapshot = lastRouteSnapshot;
+  const routeChanged = shouldCloseNavOnRouteChange(prevRouteSnapshot, routeSnapshot(resolved));
+  if (mobileNavOpen && routeChanged) {
     mobileNavOpen = false;
   }
   lastRouteSnapshot = routeSnapshot(resolved);
@@ -129,7 +143,7 @@ function render() {
 
   const mobileBackdrop = el('button', {
     type: 'button',
-    className: `mobile-nav-backdrop xl:hidden fixed inset-0 ${
+    className: `mobile-nav-backdrop lg:hidden fixed inset-0 ${
       mobileNavOpen ? 'mobile-nav-backdrop--open' : ''
     }`,
     'aria-label': 'Close navigation menu',
@@ -139,7 +153,7 @@ function render() {
 
   const mobileSidebar = el('aside', {
     id: 'sidebar-panel',
-    className: `mobile-nav-drawer xl:hidden fixed flex flex-col overflow-hidden
+    className: `mobile-nav-drawer lg:hidden fixed flex flex-col overflow-hidden
       ${mobileNavOpen ? 'mobile-nav-drawer--open' : 'mobile-nav-drawer--closed'}`,
     role: 'dialog',
     'aria-modal': mobileNavOpen ? 'true' : 'false',
@@ -203,13 +217,20 @@ function render() {
     className: 'mobile-nav-drawer-tree flex-1 flex-auto min-h-0 overflow-y-auto overscroll-contain px-3 pb-[max(1rem,env(safe-area-inset-bottom))]',
   });
   mobileNavScroll.appendChild(renderSidebarTree(store.route, { hideHeading: true, mobile: true }));
+  if (!routeChanged && mobileScrollElBefore && mobileScrollTopBefore != null) {
+    mobileNavScroll.scrollTop = mobileScrollTopBefore;
+  }
   mobileSidebar.appendChild(mobileNavScroll);
 
   desktopSidebarSlot = el('aside', {
-    className: 'hidden xl:block xl:w-72 xl:shrink-0 sidebar-panel sticky top-[var(--header-h)] max-h-[calc(100vh-var(--header-h))] overflow-y-auto',
+    className: 'hidden lg:block lg:w-72 lg:shrink-0 sidebar-panel sticky top-[var(--header-h)] max-h-[calc(100vh-var(--header-h))] overflow-y-auto',
     'aria-label': 'Curriculum navigation',
   });
   desktopSidebarSlot.appendChild(renderSidebarTree(store.route));
+
+  if (!routeChanged && sidebarScrollElBefore && sidebarScrollTopBefore != null) {
+    desktopSidebarSlot.scrollTop = sidebarScrollTopBefore;
+  }
 
   mainEl = el('main', {
     id: 'main-content',
@@ -242,7 +263,12 @@ function render() {
 
   syncScrollLock();
 
-  requestAnimationFrame(syncHeaderHeight);
+  requestAnimationFrame(() => {
+    syncHeaderHeight();
+    if (routeChanged) {
+      scrollSidebarActiveTopicIntoView();
+    }
+  });
 }
 
 function syncHeaderHeight() {
@@ -263,7 +289,7 @@ function renderHeader() {
           (menuButtonEl = el('button', {
             type: 'button',
             id: 'mobile-nav-open',
-            className: 'btn-menu-trigger xl:hidden shrink-0',
+            className: 'btn-menu-trigger lg:hidden shrink-0',
             'aria-expanded': mobileNavOpen ? 'true' : 'false',
             'aria-controls': 'sidebar-panel',
             onClick: () => {

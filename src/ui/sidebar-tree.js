@@ -8,6 +8,9 @@ import {
   expandAriaLabel,
   moduleRowIsActive,
   moduleRowIsExpanded,
+  moduleRowIsLockedOpen,
+  semesterRowIsExpanded,
+  subjectRowIsExpanded,
   topicRowIsActive,
 } from './sidebar-tree-utils.js';
 
@@ -128,7 +131,7 @@ export function renderSidebarTree(resolved, options = {}) {
   for (const sem of prog.semesters) {
     const semKey = `${programme}:${sem}`;
     const subjects = prog.subjectsBySemester[sem] || [];
-    const expanded = store.sidebarExpanded[semKey] ?? resolved?.semester === sem;
+    const expanded = semesterRowIsExpanded(resolved, sem, store.sidebarExpanded[semKey]);
     const semActive = resolved?.semester === sem && !resolved?.subject;
     const semLabel = formatSemesterLabel(sem);
     const semExpandable = semesterIsExpandable(subjects);
@@ -160,7 +163,7 @@ export function renderSidebarTree(resolved, options = {}) {
         const subject = store.curriculum.subjects[slug];
         if (!subject) continue;
         const subKey = `${programme}:${sem}:${slug}`;
-        const subExp = store.sidebarExpanded[subKey] ?? resolved?.subject?.slug === slug;
+        const subExp = subjectRowIsExpanded(resolved, slug, store.sidebarExpanded[subKey]);
         const subjectActive = resolved?.subject?.slug === slug && !resolved?.topic;
         const subExpandable = subjectIsExpandable(subject);
         const subjectLabel = subjectTitle(subject, mobile);
@@ -204,7 +207,8 @@ export function renderSidebarTree(resolved, options = {}) {
               store.sidebarExpanded[modKey],
             );
             const modActive = moduleRowIsActive(resolved, slug, mod.id);
-            const modExpandable = moduleIsExpandable(mod);
+            const modLocked = moduleRowIsLockedOpen(resolved, slug, mod.id);
+            const modExpandable = moduleIsExpandable(mod) && !modLocked;
             const modTitle = mod.title?.trim() || '';
             const modLabel = modTitle
               ? `Module ${mod.number}: ${modTitle}`
@@ -228,9 +232,10 @@ export function renderSidebarTree(resolved, options = {}) {
                     topic: null,
                   });
                 },
-                onToggleExpand: modExpandable
-                  ? () => saveSidebarState(modKey, !modExp)
-                  : null,
+                onToggleExpand:
+                  modExpandable && !modLocked
+                    ? () => saveSidebarState(modKey, !modExp)
+                    : null,
               }),
             );
 

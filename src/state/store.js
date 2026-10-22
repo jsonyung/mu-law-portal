@@ -76,6 +76,52 @@ export function expandSidebarForIntent(intent) {
   localStorage.setItem('mu-law-sidebar', JSON.stringify(store.sidebarExpanded));
 }
 
+/** Open sidebar keys on the current route only where the user has not set a preference. */
+export function ensureSidebarPathOpen(resolved) {
+  if (!resolved?.semester) return false;
+  const programme = resolved.programme || store.programme;
+  const keys = [`${programme}:${resolved.semester}`];
+  const subjectSlug = resolved.subject?.slug;
+  if (subjectSlug) {
+    keys.push(`${programme}:${resolved.semester}:${subjectSlug}`);
+    if (resolved.module?.id) {
+      keys.push(`${programme}:${resolved.semester}:${subjectSlug}:${resolved.module.id}`);
+    }
+  }
+  let changed = false;
+  for (const key of keys) {
+    if (store.sidebarExpanded[key] === undefined) {
+      store.sidebarExpanded[key] = true;
+      changed = true;
+    }
+  }
+  if (changed) {
+    localStorage.setItem('mu-law-sidebar', JSON.stringify(store.sidebarExpanded));
+  }
+  return changed;
+}
+
+export const SIDEBAR_ACCORDION_SUBJECTS = true;
+
+/** Collapse sibling subjects in the same semester (navigate only). */
+export function collapseSiblingSubjects(programme, semester, activeSubjectSlug) {
+  if (!SIDEBAR_ACCORDION_SUBJECTS || !store.curriculum || !semester || !activeSubjectSlug) return;
+  const prog = store.curriculum.programmes.find((p) => p.id === programme);
+  const slugs = prog?.subjectsBySemester?.[semester] || [];
+  let changed = false;
+  for (const slug of slugs) {
+    if (slug === activeSubjectSlug) continue;
+    const key = `${programme}:${semester}:${slug}`;
+    if (store.sidebarExpanded[key] !== false) {
+      store.sidebarExpanded[key] = false;
+      changed = true;
+    }
+  }
+  if (changed) {
+    localStorage.setItem('mu-law-sidebar', JSON.stringify(store.sidebarExpanded));
+  }
+}
+
 export function clearPendingNavigation() {
   store.pendingNavigation = null;
 }
