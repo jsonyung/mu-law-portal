@@ -1,0 +1,26 @@
+{
+  "topicId": "analysis-of-the-concepts-pre-requisites",
+  "reviewStatus": "pending",
+  "definition": "Retrenchment, closure, and lay-off in **large industrial establishments** require **prior conditions**: notice to workmen and government, opportunity for consultation, compensation (e.g. 15 days' wages per year of service for retrenchment — verify current Code), and adherence to **re-employment** obligations where applicable. Exams often test **pre-requisites** before employer can lawfully retrench or close.",
+  "statutoryReferences": [
+    {
+      "act": "Industrial Relations Code, 2020",
+      "sections": ["Conditions precedent to retrenchment", "Closure — compensation and notice"],
+      "note": "Compare with pre-2014 ID Act §25F, 25FFA, 25-O terminology"
+    }
+  ],
+  "cases": [
+    {
+      "name": "State Bank of India v. Money",
+      "citation": "(1976) 1 SCC 822",
+      "court": "Supreme Court of India",
+      "proposition": "Often cited on meaning of retrenchment — termination must fall within statutory definition to trigger protections."
+    }
+  ],
+  "examChecklist": [
+    { "id": "chk-1", "text": "List **pre-requisites** before retrenchment (notice, compensation, LIFO)" },
+    { "id": "chk-2", "text": "Pre-requisites for **closure** vs retrenchment" },
+    { "id": "chk-3", "text": "Effect of non-compliance (void termination / reinstatement remedies)" }
+  ],
+  "lastVerified": "2026-10-22"
+}

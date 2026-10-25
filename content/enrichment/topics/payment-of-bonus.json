@@ -1,0 +1,19 @@
+{
+  "topicId": "payment-of-bonus",
+  "reviewStatus": "pending",
+  "definition": "**Bonus** is a share in profits or productivity-linked payment under the Wages Code (formerly Payment of Bonus Act). Eligible employees in covered establishments receive **minimum bonus** (even if no allocable surplus) and **maximum** cap linked to salary ceiling; **set-on/set-off** of surplus/deficiency across accounting years applies.",
+  "statutoryReferences": [
+    {
+      "act": "Code on Wages, 2020",
+      "sections": ["Payment of bonus", "Eligibility and disqualification", "Set-on and set-off"],
+      "note": "Verify % minimum/maximum in bare act for your batch"
+    }
+  ],
+  "cases": [],
+  "examChecklist": [
+    { "id": "chk-1", "text": "Eligibility: who qualifies; **disqualification** (misconduct, etc.)" },
+    { "id": "chk-2", "text": "Minimum bonus even without profit; **maximum** limit" },
+    { "id": "chk-3", "text": "Meaning of **allocable surplus**; set-on/set-off briefly" }
+  ],
+  "lastVerified": "2026-10-22"
+}

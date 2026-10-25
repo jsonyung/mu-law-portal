@@ -36,6 +36,7 @@ One JSON file per topic under [`content/enrichment/topics/`](content/enrichment/
 | `cases` | `{ name, citation?, court?, proposition? }` |
 | `examChecklist` | `{ id, text }` checklist items |
 | `lastVerified` | ISO date string |
+| `reviewStatus` | Optional: `pending` shows “Human review pending” on topic page until approved |
 
 Scaffold a new file:
 

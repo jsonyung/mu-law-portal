@@ -1,0 +1,19 @@
+{
+  "topicId": "mechanism-to-dispute-resolution",
+  "reviewStatus": "pending",
+  "definition": "Industrial dispute resolution follows a **multi-tier machinery**: negotiation → **conciliation** (Conciliation Officer) → optional/reference to **Industrial Tribunal / National Industrial Tribunal** (adjudication). Strikes and lock-outs are regulated during pendency. The goal is **industrial peace** with fair hearing; awards are binding subject to judicial review.",
+  "statutoryReferences": [
+    {
+      "act": "Industrial Relations Code, 2020",
+      "sections": ["Conciliation", "Reference to tribunals", "Procedure and powers of tribunals"],
+      "note": "Map old ID Act machinery to IRC chapters"
+    }
+  ],
+  "cases": [],
+  "examChecklist": [
+    { "id": "chk-1", "text": "Stages: bilateral talks, conciliation, adjudication" },
+    { "id": "chk-2", "text": "Role of **Conciliation Officer** vs **Tribunal**" },
+    { "id": "chk-3", "text": "When disputes may be **referred**; effect of pending proceedings on strike/lock-out" }
+  ],
+  "lastVerified": "2026-10-22"
+}

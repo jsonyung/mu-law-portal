@@ -1,0 +1,26 @@
+{
+  "topicId": "industry-conceptual-analysis",
+  "reviewStatus": "pending",
+  "definition": "**Industry** under industrial law is wider than a mere trade or business: it covers any systematic activity organised by cooperation between employer and employees for production/supply of goods or services — whether profit-making or not. The **Bangalore Water Supply** line of cases expanded \"industry\" to hospitals, educational institutions, charities, etc., subject to exceptions (small clubs, casual hobbies, sovereign functions in narrow sense).",
+  "statutoryReferences": [
+    {
+      "act": "Industrial Relations Code, 2020",
+      "sections": ["Definition of industry / industrial establishment"],
+      "note": "Compare with pre-code ID Act definition in case law"
+    }
+  ],
+  "cases": [
+    {
+      "name": "Bangalore Water Supply & Sewerage Board v. A. Rajappa",
+      "citation": "(1978) 2 SCC 213",
+      "court": "Supreme Court of India",
+      "proposition": "Broad \"triple test\" — systematic activity, cooperation of employer and employees, production of goods/services; liberal definition unless specifically excluded."
+    }
+  ],
+  "examChecklist": [
+    { "id": "chk-1", "text": "State the **Bangalore Water Supply** approach to \"industry\"" },
+    { "id": "chk-2", "text": "List categories held to be industry (hospital, university, club — with nuances)" },
+    { "id": "chk-3", "text": "Note **exclusions** (sovereign/regal functions, small charitable ventures — exam fact-dependent)" }
+  ],
+  "lastVerified": "2026-10-22"
+}

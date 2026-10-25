@@ -1,0 +1,19 @@
+{
+  "topicId": "miscellaneous",
+  "reviewStatus": "pending",
+  "definition": "Miscellaneous Wages Code topics include **appointment of inspectors**, **maintenance of registers/records**, **claims procedure** before authority, **bar of jurisdiction** of civil courts where remedy lies under the Code, and **power to make rules**. These procedural provisions ensure enforceability of wage rights in practice.",
+  "statutoryReferences": [
+    {
+      "act": "Code on Wages, 2020",
+      "sections": ["Inspectors", "Records", "Payment of claims", "Bar of suits"],
+      "note": "Skim miscellaneous chapter for exam short notes"
+    }
+  ],
+  "cases": [],
+  "examChecklist": [
+    { "id": "chk-1", "text": "Role of **Inspector**; powers of search/examination" },
+    { "id": "chk-2", "text": "**Claims authority** — who may apply, limitation" },
+    { "id": "chk-3", "text": "Registers to be maintained; effect of non-maintenance" }
+  ],
+  "lastVerified": "2026-10-22"
+}

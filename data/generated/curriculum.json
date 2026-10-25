@@ -2,7 +2,7 @@
   "meta": {
     "schemaVersion": 1,
     "source": "university_mumbai_llb_master_curriculum.md",
-    "generatedAt": "2026-10-22T19:36:35.728Z",
+    "generatedAt": "2026-10-25T05:25:00.950Z",
     "syllabusYear": "2022-23"
   },
   "programmes": [
@@ -6097,12 +6097,42 @@
               "sectionRef": "1",
               "title": "Historical reasons for the formation of combinations of workers, legal impediments",
               "syllabusText": "1.    Historical reasons for the formation of combinations of workers, legal impediments",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
-                "cases": [],
-                "examChecklist": []
+                "definition": "Workers formed **combinations** (early trade unions) to bargain collectively against unequal bargaining power, long hours, and arbitrary dismissal. Common law initially treated concerted worker action as **criminal conspiracy** or **breach of contract**. The historical shift—from repression to statutory recognition—explains why modern labour law grants **registration, immunities, and dispute machinery**.",
+                "statutory": [
+                  {
+                    "act": "Indian Trade Unions Act, 1926 (historical baseline)",
+                    "sections": [
+                      "Recognition of registered trade unions"
+                    ],
+                    "note": "Largely consolidated into Industrial Relations Code, 2020 — use bare act for your batch"
+                  }
+                ],
+                "cases": [
+                  {
+                    "name": "Taff Vale Railway Co. v. Amalgamated Society of Railway Servants",
+                    "citation": "(1901) UKHL",
+                    "court": "House of Lords",
+                    "proposition": "Held unions liable in tort for strike losses — catalysed statutory reform and recognition of collective organisation abroad; often cited in exams on why immunities were enacted."
+                  }
+                ],
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Explain why workers combined (economic imbalance, collective bargaining need)"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "Outline early **legal impediments**: conspiracy, restraint of trade, breach of contract"
+                  },
+                  {
+                    "id": "chk-3",
+                    "text": "Trace move toward **legal recognition** (registration, limited immunities, dispute settlement)"
+                  }
+                ],
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             },
             {
@@ -6110,12 +6140,35 @@
               "sectionRef": "2",
               "title": "International Labour Organisation – its influence in bringing changes in national",
               "syllabusText": "2.    International Labour Organisation – its influence in bringing changes in national",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
+                "definition": "The **ILO** (1919, League of Nations; now a UN specialised agency) promotes social justice through **international labour standards**. It uses a **tripartite** structure (governments, employers, workers). **Conventions** (binding when ratified) and **Recommendations** shape national laws—including India’s labour codes, factory safety, child labour, and freedom of association norms.",
+                "statutory": [
+                  {
+                    "act": "Constitution of India",
+                    "sections": [
+                      "Art. 51(c) — foster respect for international law and treaty obligations"
+                    ],
+                    "note": "Link ILO influence to DPSP and labour law reform"
+                  }
+                ],
                 "cases": [],
-                "examChecklist": []
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Structure of ILO: tripartism, International Labour Conference, Governing Body"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "Difference between **Convention** and **Recommendation**"
+                  },
+                  {
+                    "id": "chk-3",
+                    "text": "Examples of ILO influence on Indian labour legislation (cite 2–3 areas, e.g. child labour, OSH)"
+                  }
+                ],
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             },
             {
@@ -6125,32 +6178,34 @@
               "syllabusText": "3.    Trade Union – Definition, Registration and Recognition",
               "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": "A trade union is an association of workers (or employers) formed primarily for regulating relations between members and employers, or for imposing restrictive conditions on conduct of any trade or business. Registration under the Industrial Relations Code confers legal identity, certain immunities, and rights to represent workers in industrial disputes.",
+                "definition": "A **trade union** is an association of workers or employers formed mainly to regulate relations between members and employers (or among workers/employers), including imposing lawful restrictive conditions on trade or business conduct. **Registration** under the Industrial Relations Code gives legal personality, rights to represent in disputes, and access to **statutory immunities** when acting in contemplation or furtherance of a trade dispute.",
                 "statutory": [
                   {
                     "act": "Industrial Relations Code, 2020",
                     "sections": [
-                      "Registration provisions — verify current bare act"
+                      "Trade union registration",
+                      "Recognition of negotiating union / union with substantial membership"
                     ],
-                    "note": "Confirm amendments for your examination batch"
+                    "note": "Verify chapter/part numbers in current bare act"
                   }
                 ],
                 "cases": [],
                 "examChecklist": [
                   {
                     "id": "chk-1",
-                    "text": "Define trade union and distinguish from casual workers' association"
+                    "text": "Define trade union; distinguish from informal workers' groups"
                   },
                   {
                     "id": "chk-2",
-                    "text": "List essentials and procedure for registration"
+                    "text": "Essentials and **procedure for registration**; effect of registration"
                   },
                   {
                     "id": "chk-3",
-                    "text": "Explain civil and criminal immunities in trade disputes"
+                    "text": "**Recognition** — why it matters for collective bargaining (substantial membership / verification)"
                   }
                 ],
-                "lastVerified": "2026-10-17"
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             },
             {
@@ -6158,12 +6213,36 @@
               "sectionRef": "4",
               "title": "Immunities in trade disputes : Criminal and Civil",
               "syllabusText": "4.    Immunities in trade disputes : Criminal and Civil",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
+                "definition": "**Trade dispute** — dispute between employers and workmen or among workmen connected with employment, non-employment, terms, or conditions. Registered unions acting **in contemplation or furtherance** of a trade dispute enjoy **immunities**: (1) **Criminal** — certain agreements in restraint of trade not prosecuted as criminal conspiracy; (2) **Civil** — limited protection from tort claims (e.g. inducement of breach) when dispute-related. Immunities are **conditional**— unlawful objectives or violence fall outside protection.",
+                "statutory": [
+                  {
+                    "act": "Industrial Relations Code, 2020",
+                    "sections": [
+                      "Provisions on trade disputes",
+                      "Immunities for registered trade unions"
+                    ],
+                    "note": "Cross-read with general law of conspiracy and tort"
+                  }
+                ],
                 "cases": [],
-                "examChecklist": []
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Define **trade dispute**; give examples"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "Explain **criminal immunity** (concerted action, registered union, bona fide dispute)"
+                  },
+                  {
+                    "id": "chk-3",
+                    "text": "Explain **civil immunity** limits; when immunities **do not apply** (malice, unlawful means, unrelated acts)"
+                  }
+                ],
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             }
           ]
@@ -6178,12 +6257,42 @@
               "sectionRef": "1",
               "title": "‘Industry’ – Conceptual Analysis",
               "syllabusText": "1.    ‘Industry’ – Conceptual Analysis",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
-                "cases": [],
-                "examChecklist": []
+                "definition": "**Industry** under industrial law is wider than a mere trade or business: it covers any systematic activity organised by cooperation between employer and employees for production/supply of goods or services — whether profit-making or not. The **Bangalore Water Supply** line of cases expanded \"industry\" to hospitals, educational institutions, charities, etc., subject to exceptions (small clubs, casual hobbies, sovereign functions in narrow sense).",
+                "statutory": [
+                  {
+                    "act": "Industrial Relations Code, 2020",
+                    "sections": [
+                      "Definition of industry / industrial establishment"
+                    ],
+                    "note": "Compare with pre-code ID Act definition in case law"
+                  }
+                ],
+                "cases": [
+                  {
+                    "name": "Bangalore Water Supply & Sewerage Board v. A. Rajappa",
+                    "citation": "(1978) 2 SCC 213",
+                    "court": "Supreme Court of India",
+                    "proposition": "Broad \"triple test\" — systematic activity, cooperation of employer and employees, production of goods/services; liberal definition unless specifically excluded."
+                  }
+                ],
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "State the **Bangalore Water Supply** approach to \"industry\""
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "List categories held to be industry (hospital, university, club — with nuances)"
+                  },
+                  {
+                    "id": "chk-3",
+                    "text": "Note **exclusions** (sovereign/regal functions, small charitable ventures — exam fact-dependent)"
+                  }
+                ],
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             },
             {
@@ -6191,12 +6300,36 @@
               "sectionRef": "2",
               "title": "Standing orders",
               "syllabusText": "2.    Standing orders",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
+                "definition": "**Standing orders** are rules governing matters of conduct, discipline, holidays, shifts, attendance, and similar conditions of service in industrial establishments. They must be **certified** by the certifying officer/Labour authorities so workers know enforceable service rules before disputes arise. Breach may amount to **misconduct** leading to disciplinary enquiry.",
+                "statutory": [
+                  {
+                    "act": "Industrial Employment (Standing Orders) Act, 1946",
+                    "sections": [
+                      "Certification",
+                      "Schedule of matters to be provided"
+                    ],
+                    "note": "Provisions integrated under IRC 2020 — confirm in bare act"
+                  }
+                ],
                 "cases": [],
-                "examChecklist": []
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Purpose of standing orders; difference from individual contract"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "**Certification** procedure and who may apply"
+                  },
+                  {
+                    "id": "chk-3",
+                    "text": "Link standing orders to **disciplinary action** and misconduct"
+                  }
+                ],
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             },
             {
@@ -6204,12 +6337,37 @@
               "sectionRef": "3",
               "title": "Mechanism to dispute Resolution",
               "syllabusText": "3.    Mechanism to dispute Resolution",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
+                "definition": "Industrial dispute resolution follows a **multi-tier machinery**: negotiation → **conciliation** (Conciliation Officer) → optional/reference to **Industrial Tribunal / National Industrial Tribunal** (adjudication). Strikes and lock-outs are regulated during pendency. The goal is **industrial peace** with fair hearing; awards are binding subject to judicial review.",
+                "statutory": [
+                  {
+                    "act": "Industrial Relations Code, 2020",
+                    "sections": [
+                      "Conciliation",
+                      "Reference to tribunals",
+                      "Procedure and powers of tribunals"
+                    ],
+                    "note": "Map old ID Act machinery to IRC chapters"
+                  }
+                ],
                 "cases": [],
-                "examChecklist": []
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Stages: bilateral talks, conciliation, adjudication"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "Role of **Conciliation Officer** vs **Tribunal**"
+                  },
+                  {
+                    "id": "chk-3",
+                    "text": "When disputes may be **referred**; effect of pending proceedings on strike/lock-out"
+                  }
+                ],
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             },
             {
@@ -6217,12 +6375,43 @@
               "sectionRef": "4",
               "title": "Concept of ‘Workman’",
               "syllabusText": "4.    Concept of ‘Workman’",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
-                "cases": [],
-                "examChecklist": []
+                "definition": "A **workman** is any person employed in an industry to do manual, unskilled, skilled, technical, operational, clerical, or supervisory work for hire or reward — but **excludes** persons in managerial/administrative capacity and those earning above the statutory wage ceiling (as notified). Correct classification decides access to ID Act/IRC protections, reinstatement remedies, and union membership issues.",
+                "statutory": [
+                  {
+                    "act": "Industrial Relations Code, 2020",
+                    "sections": [
+                      "Definition of workman",
+                      "Wage ceiling notification"
+                    ],
+                    "note": "Compare supervisory vs managerial tests in case law"
+                  }
+                ],
+                "cases": [
+                  {
+                    "name": "H.R. Adyanthaya v. Sandoz (India) Ltd.",
+                    "citation": "(1994) 5 SCC 737",
+                    "court": "Supreme Court of India",
+                    "proposition": "Discusses who is workman — functions and dominant nature of duties matter more than designation alone."
+                  }
+                ],
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Statutory definition; **inclusions** and **exclusions**"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "Supervisor vs manager — **dominant duty test**"
+                  },
+                  {
+                    "id": "chk-3",
+                    "text": "Consequences of being/not being a workman (dispute rights, protection on retrenchment)"
+                  }
+                ],
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             }
           ]
@@ -6237,12 +6426,36 @@
               "sectionRef": "1",
               "title": "‘Strike’ &‘Lock out’ :Concepts, legality and justification",
               "syllabusText": "1.    ‘Strike’ &‘Lock out’ :Concepts, legality and justification",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
+                "definition": "**Strike** — cessation of work by body of workmen acting in concert, with common understanding, to press demands. **Lock-out** — employer closes workplace or suspends work to compel acceptance of terms. Both are **weapons of collective economic pressure** but are **regulated**: notice periods, bans during conciliation/adjudication, and illegality if violent or in essential services (where applicable).",
+                "statutory": [
+                  {
+                    "act": "Industrial Relations Code, 2020",
+                    "sections": [
+                      "Strike and lock-out — notice",
+                      "Prohibition during pendency of proceedings"
+                    ],
+                    "note": "List conditions for legal strike/lock-out in bare act"
+                  }
+                ],
                 "cases": [],
-                "examChecklist": []
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Define **strike** and **lock-out**; distinguish from go-slow, gherao, lay-off"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "**Legal vs illegal** strike/lock-out (notice, timing, public utility)"
+                  },
+                  {
+                    "id": "chk-3",
+                    "text": "Consequences of illegal strike (disciplinary action, no wages for strike period — policy/law nuances)"
+                  }
+                ],
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             },
             {
@@ -6250,12 +6463,37 @@
               "sectionRef": "2",
               "title": "‘Lay off’ ‘Retrenchment’ & ‘Closure’",
               "syllabusText": "2.     ‘Lay off’ ‘Retrenchment’ & ‘Closure’",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
+                "definition": "**Lay-off** — failure/refusal/inability of employer to give employment due to shortage of coal/power/raw material, accumulation of stock, breakdown, or natural calamity (with conditions). **Retrenchment** — termination for any reason other than disciplinary penalty (with **last-in-first-out** and compensation norms). **Closure** — permanent shut-down of establishment (compensation and notice for affected workmen in applicable establishments).",
+                "statutory": [
+                  {
+                    "act": "Industrial Relations Code, 2020",
+                    "sections": [
+                      "Lay-off",
+                      "Retrenchment",
+                      "Closure of undertaking"
+                    ],
+                    "note": "Chapter V-B style protections for large establishments — verify thresholds"
+                  }
+                ],
                 "cases": [],
-                "examChecklist": []
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Define lay-off, retrenchment, closure — **do not confuse**"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "Compensation and **notice** requirements for retrenchment/closure"
+                  },
+                  {
+                    "id": "chk-3",
+                    "text": "Prior permission / approval where applicable (large industrial establishments)"
+                  }
+                ],
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             },
             {
@@ -6263,12 +6501,43 @@
               "sectionRef": "3",
               "title": "Analysis of the Concepts, Pre-requisites",
               "syllabusText": "3.    Analysis of the Concepts, Pre-requisites",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
-                "cases": [],
-                "examChecklist": []
+                "definition": "Retrenchment, closure, and lay-off in **large industrial establishments** require **prior conditions**: notice to workmen and government, opportunity for consultation, compensation (e.g. 15 days' wages per year of service for retrenchment — verify current Code), and adherence to **re-employment** obligations where applicable. Exams often test **pre-requisites** before employer can lawfully retrench or close.",
+                "statutory": [
+                  {
+                    "act": "Industrial Relations Code, 2020",
+                    "sections": [
+                      "Conditions precedent to retrenchment",
+                      "Closure — compensation and notice"
+                    ],
+                    "note": "Compare with pre-2014 ID Act §25F, 25FFA, 25-O terminology"
+                  }
+                ],
+                "cases": [
+                  {
+                    "name": "State Bank of India v. Money",
+                    "citation": "(1976) 1 SCC 822",
+                    "court": "Supreme Court of India",
+                    "proposition": "Often cited on meaning of retrenchment — termination must fall within statutory definition to trigger protections."
+                  }
+                ],
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "List **pre-requisites** before retrenchment (notice, compensation, LIFO)"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "Pre-requisites for **closure** vs retrenchment"
+                  },
+                  {
+                    "id": "chk-3",
+                    "text": "Effect of non-compliance (void termination / reinstatement remedies)"
+                  }
+                ],
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             },
             {
@@ -6276,12 +6545,36 @@
               "sectionRef": "4",
               "title": "Unfair Labour Practices",
               "syllabusText": "4.    Unfair Labour Practices",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
+                "definition": "**Unfair labour practices (ULP)** are specified acts by employers or unions that disturb industrial harmony — e.g. victimisation, domination of unions by employer, refusal to bargain collectively, illegal strike encouragement, coercive picketing. Labour courts/tribunals may order **cease-and-desist**, reinstatement, or compensation.",
+                "statutory": [
+                  {
+                    "act": "Industrial Relations Code, 2020",
+                    "sections": [
+                      "Schedule of unfair labour practices",
+                      "Remedies"
+                    ],
+                    "note": "Cross-reference Maharashtra Recognition of Trade Unions Act schedule in state exams if applicable"
+                  }
+                ],
                 "cases": [],
-                "examChecklist": []
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Give **examples** of ULP by employer and by union (from schedule)"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "Remedies and forum for ULP claims"
+                  },
+                  {
+                    "id": "chk-3",
+                    "text": "Distinguish ULP from ordinary misconduct or illegal strike"
+                  }
+                ],
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             }
           ]
@@ -6296,12 +6589,37 @@
               "sectionRef": "1",
               "title": "Minimum Wages and Payment of Wages",
               "syllabusText": "1.    Minimum Wages and Payment of Wages",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
+                "definition": "**Minimum wages** fix a legal floor for scheduled employments (basic + VDA etc.) to prevent exploitation. **Payment of wages** rules govern timing, mode, deductions (fines, absence, damage — with limits), and claims for wrong deductions or delayed payment. The **Wages Code, 2020** consolidates prior Minimum Wages and Payment of Wages Acts.",
+                "statutory": [
+                  {
+                    "act": "Code on Wages, 2020",
+                    "sections": [
+                      "Minimum wages",
+                      "Payment of wages",
+                      "Permissible deductions"
+                    ],
+                    "note": "Check Maharashtra/state notifications for scheduled employments"
+                  }
+                ],
                 "cases": [],
-                "examChecklist": []
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Who fixes minimum wages; components of minimum wage"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "**Wage period**, time of payment, authorised **deductions**"
+                  },
+                  {
+                    "id": "chk-3",
+                    "text": "Remedy for non-payment / excessive deduction (authority, limitation)"
+                  }
+                ],
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             },
             {
@@ -6309,12 +6627,37 @@
               "sectionRef": "2",
               "title": "Payment of Bonus",
               "syllabusText": "2.    Payment of Bonus",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
+                "definition": "**Bonus** is a share in profits or productivity-linked payment under the Wages Code (formerly Payment of Bonus Act). Eligible employees in covered establishments receive **minimum bonus** (even if no allocable surplus) and **maximum** cap linked to salary ceiling; **set-on/set-off** of surplus/deficiency across accounting years applies.",
+                "statutory": [
+                  {
+                    "act": "Code on Wages, 2020",
+                    "sections": [
+                      "Payment of bonus",
+                      "Eligibility and disqualification",
+                      "Set-on and set-off"
+                    ],
+                    "note": "Verify % minimum/maximum in bare act for your batch"
+                  }
+                ],
                 "cases": [],
-                "examChecklist": []
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Eligibility: who qualifies; **disqualification** (misconduct, etc.)"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "Minimum bonus even without profit; **maximum** limit"
+                  },
+                  {
+                    "id": "chk-3",
+                    "text": "Meaning of **allocable surplus**; set-on/set-off briefly"
+                  }
+                ],
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             },
             {
@@ -6322,12 +6665,36 @@
               "sectionRef": "3",
               "title": "Offences and Penalties",
               "syllabusText": "3.    Offences and Penalties",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
+                "definition": "The Wages Code creates **offences** for breaches such as paying below minimum wage, unauthorised deductions, failure to maintain registers, and obstruction of inspectors. Penalties include **fines** (higher for repeat offences) and continuing offences may attract **daily fines**. Corporate employers may expose officers to liability when offence committed with consent or neglect.",
+                "statutory": [
+                  {
+                    "act": "Code on Wages, 2020",
+                    "sections": [
+                      "Offences and penalties",
+                      "Cognizance of offences"
+                    ],
+                    "note": "Note which offences are compoundable if provided"
+                  }
+                ],
                 "cases": [],
-                "examChecklist": []
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Major **offences** under Wages Code (list 4–5)"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "Penalty structure; **repeat offence** enhancement"
+                  },
+                  {
+                    "id": "chk-3",
+                    "text": "Who may be prosecuted (employer, manager, company officers)"
+                  }
+                ],
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             },
             {
@@ -6335,12 +6702,38 @@
               "sectionRef": "4",
               "title": "Miscellaneous",
               "syllabusText": "4.    Miscellaneous",
-              "sourceStatus": "prescribed",
+              "sourceStatus": "supplementary",
               "enrichment": {
-                "definition": null,
-                "statutory": [],
+                "definition": "Miscellaneous Wages Code topics include **appointment of inspectors**, **maintenance of registers/records**, **claims procedure** before authority, **bar of jurisdiction** of civil courts where remedy lies under the Code, and **power to make rules**. These procedural provisions ensure enforceability of wage rights in practice.",
+                "statutory": [
+                  {
+                    "act": "Code on Wages, 2020",
+                    "sections": [
+                      "Inspectors",
+                      "Records",
+                      "Payment of claims",
+                      "Bar of suits"
+                    ],
+                    "note": "Skim miscellaneous chapter for exam short notes"
+                  }
+                ],
                 "cases": [],
-                "examChecklist": []
+                "examChecklist": [
+                  {
+                    "id": "chk-1",
+                    "text": "Role of **Inspector**; powers of search/examination"
+                  },
+                  {
+                    "id": "chk-2",
+                    "text": "**Claims authority** — who may apply, limitation"
+                  },
+                  {
+                    "id": "chk-3",
+                    "text": "Registers to be maintained; effect of non-maintenance"
+                  }
+                ],
+                "lastVerified": "2026-10-22",
+                "reviewStatus": "pending"
               }
             }
           ]

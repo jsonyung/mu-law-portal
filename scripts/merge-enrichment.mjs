@@ -47,6 +47,9 @@ export function mergeEnrichment(subjects) {
         if (overlay.lastVerified) {
           topic.enrichment.lastVerified = overlay.lastVerified;
         }
+        if (overlay.reviewStatus) {
+          topic.enrichment.reviewStatus = overlay.reviewStatus;
+        }
       }
     }
   }

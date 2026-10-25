@@ -1,0 +1,19 @@
+{
+  "topicId": "unfair-labour-practices",
+  "reviewStatus": "pending",
+  "definition": "**Unfair labour practices (ULP)** are specified acts by employers or unions that disturb industrial harmony — e.g. victimisation, domination of unions by employer, refusal to bargain collectively, illegal strike encouragement, coercive picketing. Labour courts/tribunals may order **cease-and-desist**, reinstatement, or compensation.",
+  "statutoryReferences": [
+    {
+      "act": "Industrial Relations Code, 2020",
+      "sections": ["Schedule of unfair labour practices", "Remedies"],
+      "note": "Cross-reference Maharashtra Recognition of Trade Unions Act schedule in state exams if applicable"
+    }
+  ],
+  "cases": [],
+  "examChecklist": [
+    { "id": "chk-1", "text": "Give **examples** of ULP by employer and by union (from schedule)" },
+    { "id": "chk-2", "text": "Remedies and forum for ULP claims" },
+    { "id": "chk-3", "text": "Distinguish ULP from ordinary misconduct or illegal strike" }
+  ],
+  "lastVerified": "2026-10-22"
+}

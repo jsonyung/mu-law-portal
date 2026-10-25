@@ -1,0 +1,19 @@
+{
+  "topicId": "minimum-wages-and-payment-of-wages",
+  "reviewStatus": "pending",
+  "definition": "**Minimum wages** fix a legal floor for scheduled employments (basic + VDA etc.) to prevent exploitation. **Payment of wages** rules govern timing, mode, deductions (fines, absence, damage — with limits), and claims for wrong deductions or delayed payment. The **Wages Code, 2020** consolidates prior Minimum Wages and Payment of Wages Acts.",
+  "statutoryReferences": [
+    {
+      "act": "Code on Wages, 2020",
+      "sections": ["Minimum wages", "Payment of wages", "Permissible deductions"],
+      "note": "Check Maharashtra/state notifications for scheduled employments"
+    }
+  ],
+  "cases": [],
+  "examChecklist": [
+    { "id": "chk-1", "text": "Who fixes minimum wages; components of minimum wage" },
+    { "id": "chk-2", "text": "**Wage period**, time of payment, authorised **deductions**" },
+    { "id": "chk-3", "text": "Remedy for non-payment / excessive deduction (authority, limitation)" }
+  ],
+  "lastVerified": "2026-10-22"
+}

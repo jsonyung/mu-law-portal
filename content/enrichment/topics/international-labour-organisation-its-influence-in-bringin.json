@@ -1,0 +1,19 @@
+{
+  "topicId": "international-labour-organisation-its-influence-in-bringin",
+  "reviewStatus": "pending",
+  "definition": "The **ILO** (1919, League of Nations; now a UN specialised agency) promotes social justice through **international labour standards**. It uses a **tripartite** structure (governments, employers, workers). **Conventions** (binding when ratified) and **Recommendations** shape national laws—including India’s labour codes, factory safety, child labour, and freedom of association norms.",
+  "statutoryReferences": [
+    {
+      "act": "Constitution of India",
+      "sections": ["Art. 51(c) — foster respect for international law and treaty obligations"],
+      "note": "Link ILO influence to DPSP and labour law reform"
+    }
+  ],
+  "cases": [],
+  "examChecklist": [
+    { "id": "chk-1", "text": "Structure of ILO: tripartism, International Labour Conference, Governing Body" },
+    { "id": "chk-2", "text": "Difference between **Convention** and **Recommendation**" },
+    { "id": "chk-3", "text": "Examples of ILO influence on Indian labour legislation (cite 2–3 areas, e.g. child labour, OSH)" }
+  ],
+  "lastVerified": "2026-10-22"
+}

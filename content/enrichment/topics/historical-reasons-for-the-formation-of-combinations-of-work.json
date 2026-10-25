@@ -1,0 +1,26 @@
+{
+  "topicId": "historical-reasons-for-the-formation-of-combinations-of-work",
+  "reviewStatus": "pending",
+  "definition": "Workers formed **combinations** (early trade unions) to bargain collectively against unequal bargaining power, long hours, and arbitrary dismissal. Common law initially treated concerted worker action as **criminal conspiracy** or **breach of contract**. The historical shift—from repression to statutory recognition—explains why modern labour law grants **registration, immunities, and dispute machinery**.",
+  "statutoryReferences": [
+    {
+      "act": "Indian Trade Unions Act, 1926 (historical baseline)",
+      "sections": ["Recognition of registered trade unions"],
+      "note": "Largely consolidated into Industrial Relations Code, 2020 — use bare act for your batch"
+    }
+  ],
+  "cases": [
+    {
+      "name": "Taff Vale Railway Co. v. Amalgamated Society of Railway Servants",
+      "citation": "(1901) UKHL",
+      "court": "House of Lords",
+      "proposition": "Held unions liable in tort for strike losses — catalysed statutory reform and recognition of collective organisation abroad; often cited in exams on why immunities were enacted."
+    }
+  ],
+  "examChecklist": [
+    { "id": "chk-1", "text": "Explain why workers combined (economic imbalance, collective bargaining need)" },
+    { "id": "chk-2", "text": "Outline early **legal impediments**: conspiracy, restraint of trade, breach of contract" },
+    { "id": "chk-3", "text": "Trace move toward **legal recognition** (registration, limited immunities, dispute settlement)" }
+  ],
+  "lastVerified": "2026-10-22"
+}

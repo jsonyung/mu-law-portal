@@ -54,6 +54,7 @@ if (existsSync(outPath)) {
 
 const template = {
   topicId,
+  reviewStatus: 'pending',
   definition: null,
   statutoryReferences: [],
   cases: [],

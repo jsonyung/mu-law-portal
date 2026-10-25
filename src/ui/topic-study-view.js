@@ -14,6 +14,17 @@ export function renderTopicStudyView(ctx) {
     style: `--subject-hue: ${hue}`,
   });
 
+  const reviewStatus = topic.enrichment?.reviewStatus;
+  if (reviewStatus === 'pending') {
+    wrap.appendChild(
+      el('p', {
+        className:
+          'mb-4 text-xs font-semibold uppercase tracking-wide rounded-lg border px-3 py-2 text-amber-900 bg-amber-50 border-amber-200 dark:text-amber-100 dark:bg-amber-950/50 dark:border-amber-800',
+        role: 'status',
+      }, ['Human review pending — study notes are draft; verify with bare acts before exams']),
+    );
+  }
+
   wrap.appendChild(
     el('header', { className: 'mb-6 space-y-3' }, [
       el('button', {

@@ -1,0 +1,26 @@
+{
+  "topicId": "concept-of-workman",
+  "reviewStatus": "pending",
+  "definition": "A **workman** is any person employed in an industry to do manual, unskilled, skilled, technical, operational, clerical, or supervisory work for hire or reward — but **excludes** persons in managerial/administrative capacity and those earning above the statutory wage ceiling (as notified). Correct classification decides access to ID Act/IRC protections, reinstatement remedies, and union membership issues.",
+  "statutoryReferences": [
+    {
+      "act": "Industrial Relations Code, 2020",
+      "sections": ["Definition of workman", "Wage ceiling notification"],
+      "note": "Compare supervisory vs managerial tests in case law"
+    }
+  ],
+  "cases": [
+    {
+      "name": "H.R. Adyanthaya v. Sandoz (India) Ltd.",
+      "citation": "(1994) 5 SCC 737",
+      "court": "Supreme Court of India",
+      "proposition": "Discusses who is workman — functions and dominant nature of duties matter more than designation alone."
+    }
+  ],
+  "examChecklist": [
+    { "id": "chk-1", "text": "Statutory definition; **inclusions** and **exclusions**" },
+    { "id": "chk-2", "text": "Supervisor vs manager — **dominant duty test**" },
+    { "id": "chk-3", "text": "Consequences of being/not being a workman (dispute rights, protection on retrenchment)" }
+  ],
+  "lastVerified": "2026-10-22"
+}

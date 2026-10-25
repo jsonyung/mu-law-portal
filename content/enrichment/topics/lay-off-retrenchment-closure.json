@@ -1,0 +1,19 @@
+{
+  "topicId": "lay-off-retrenchment-closure",
+  "reviewStatus": "pending",
+  "definition": "**Lay-off** — failure/refusal/inability of employer to give employment due to shortage of coal/power/raw material, accumulation of stock, breakdown, or natural calamity (with conditions). **Retrenchment** — termination for any reason other than disciplinary penalty (with **last-in-first-out** and compensation norms). **Closure** — permanent shut-down of establishment (compensation and notice for affected workmen in applicable establishments).",
+  "statutoryReferences": [
+    {
+      "act": "Industrial Relations Code, 2020",
+      "sections": ["Lay-off", "Retrenchment", "Closure of undertaking"],
+      "note": "Chapter V-B style protections for large establishments — verify thresholds"
+    }
+  ],
+  "cases": [],
+  "examChecklist": [
+    { "id": "chk-1", "text": "Define lay-off, retrenchment, closure — **do not confuse**" },
+    { "id": "chk-2", "text": "Compensation and **notice** requirements for retrenchment/closure" },
+    { "id": "chk-3", "text": "Prior permission / approval where applicable (large industrial establishments)" }
+  ],
+  "lastVerified": "2026-10-22"
+}

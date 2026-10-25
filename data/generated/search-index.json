@@ -2,9 +2,9 @@
   "meta": {
     "indexVersion": 2,
     "schemaVersion": 2,
-    "generatedAt": "2026-10-22T19:36:35.728Z",
+    "generatedAt": "2026-10-25T05:25:00.950Z",
     "curriculumSource": "university_mumbai_llb_master_curriculum.md",
-    "documentCount": 1897,
+    "documentCount": 1916,
     "aliasConfigHash": "33fd19a6"
   },
   "aliases": [
@@ -16573,7 +16573,79 @@
       "sectionRef": "1",
       "displayTitle": "Historical reasons for the formation of combinations of workers, legal impediments",
       "excerptSource": "1.    Historical reasons for the formation of combinations of workers, legal impediments",
-      "searchText": "historical reasons for the formation of combinations of workers legal impediments 1. historical reasons for the formation of combinations of workers legal impediments 1"
+      "searchText": "historical reasons for the formation of combinations of workers legal impediments 1. historical reasons for the formation of combinations of workers legal impediments 1 workers formed combinations early trade unions to bargain collectively against unequal bargaining power long hours and arbitrary dismissal. common law initially treated concerted worker action as criminal conspiracy or breach of contract . the historical shift-from repression to statutory recognition-explains why modern labour law grants registration immunities and dispute machinery . indian trade unions act 1926 historical baseline recognition of registered trade unions largely consolidated into industrial relations code 2020 - use bare act for your batch taff vale railway co. v. amalgamated society of railway servants 1901 ukhl house of lords held unions liable in tort for strike losses - catalysed statutory reform and recognition of collective organisation abroad often cited in exams on why immunities were enacted. explain why workers combined economic imbalance collective bargaining need outline early legal impediments conspiracy restraint of trade breach of contract trace move toward legal recognition registration limited immunities dispute settlement"
+    },
+    {
+      "id": "case:labour-law-industrial-relations-1:module-1:historical-reasons-for-the-formation-of-combinations-of-work:5160a6fa",
+      "recordType": "case",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-1/historical-reasons-for-the-formation-of-combinations-of-work",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-1",
+          "topicId": "historical-reasons-for-the-formation-of-combinations-of-work"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-1/historical-reasons-for-the-formation-of-combinations-of-work",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-1",
+          "topicId": "historical-reasons-for-the-formation-of-combinations-of-work"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-1",
+      "moduleTitle": "INDUSTRIAL RELATIONS CODE",
+      "topicId": "historical-reasons-for-the-formation-of-combinations-of-work",
+      "topicTitle": "Historical reasons for the formation of combinations of workers, legal impediments",
+      "sectionRef": "1",
+      "displayTitle": "Taff Vale Railway Co. v. Amalgamated Society of Railway Servants",
+      "excerptSource": "Held unions liable in tort for strike losses — catalysed statutory reform and recognition of collective organisation abroad; often cited in exams on why immunities were enacted.",
+      "searchText": "taff vale railway co. v. amalgamated society of railway servants 1901 ukhl held unions liable in tort for strike losses - catalysed statutory reform and recognition of collective organisation abroad often cited in exams on why immunities were enacted."
+    },
+    {
+      "id": "statute:labour-law-industrial-relations-1:module-1:historical-reasons-for-the-formation-of-combinations-of-work:6cc8f731",
+      "recordType": "statute",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-1/historical-reasons-for-the-formation-of-combinations-of-work",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-1",
+          "topicId": "historical-reasons-for-the-formation-of-combinations-of-work"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-1/historical-reasons-for-the-formation-of-combinations-of-work",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-1",
+          "topicId": "historical-reasons-for-the-formation-of-combinations-of-work"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-1",
+      "moduleTitle": "INDUSTRIAL RELATIONS CODE",
+      "topicId": "historical-reasons-for-the-formation-of-combinations-of-work",
+      "topicTitle": "Historical reasons for the formation of combinations of workers, legal impediments",
+      "sectionRef": "1",
+      "displayTitle": "Indian Trade Unions Act, 1926 (historical baseline)",
+      "excerptSource": "Recognition of registered trade unions",
+      "searchText": "indian trade unions act 1926 historical baseline recognition of registered trade unions largely consolidated into industrial relations code 2020 - use bare act for your batch"
     },
     {
       "id": "topic:labour-law-industrial-relations-1:module-1:international-labour-organisation-its-influence-in-bringin",
@@ -16609,7 +16681,43 @@
       "sectionRef": "2",
       "displayTitle": "International Labour Organisation – its influence in bringing changes in national",
       "excerptSource": "2.    International Labour Organisation – its influence in bringing changes in national",
-      "searchText": "international labour organisation - its influence in bringing changes in national 2. international labour organisation - its influence in bringing changes in national 2"
+      "searchText": "international labour organisation - its influence in bringing changes in national 2. international labour organisation - its influence in bringing changes in national 2 the ilo 1919 league of nations now a un specialised agency promotes social justice through international labour standards . it uses a tripartite structure governments employers workers . conventions binding when ratified and recommendations shape national laws-including india s labour codes factory safety child labour and freedom of association norms. constitution of india art. 51 c - foster respect for international law and treaty obligations link ilo influence to dpsp and labour law reform structure of ilo tripartism international labour conference governing body difference between convention and recommendation examples of ilo influence on indian labour legislation cite 2-3 areas e.g. child labour osh"
+    },
+    {
+      "id": "statute:labour-law-industrial-relations-1:module-1:international-labour-organisation-its-influence-in-bringin:f3bcdf3",
+      "recordType": "statute",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-1/international-labour-organisation-its-influence-in-bringin",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-1",
+          "topicId": "international-labour-organisation-its-influence-in-bringin"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-1/international-labour-organisation-its-influence-in-bringin",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-1",
+          "topicId": "international-labour-organisation-its-influence-in-bringin"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-1",
+      "moduleTitle": "INDUSTRIAL RELATIONS CODE",
+      "topicId": "international-labour-organisation-its-influence-in-bringin",
+      "topicTitle": "International Labour Organisation – its influence in bringing changes in national",
+      "sectionRef": "2",
+      "displayTitle": "Constitution of India",
+      "excerptSource": "Art. 51(c) — foster respect for international law and treaty obligations",
+      "searchText": "constitution of india art. 51 c - foster respect for international law and treaty obligations link ilo influence to dpsp and labour law reform"
     },
     {
       "id": "topic:labour-law-industrial-relations-1:module-1:trade-union-definition-registration-and-recognition",
@@ -16645,7 +16753,7 @@
       "sectionRef": "3",
       "displayTitle": "Trade Union – Definition, Registration and Recognition",
       "excerptSource": "3.    Trade Union – Definition, Registration and Recognition",
-      "searchText": "trade union - definition registration and recognition 3. trade union - definition registration and recognition 3 a trade union is an association of workers or employers formed primarily for regulating relations between members and employers or for imposing restrictive conditions on conduct of any trade or business. registration under the industrial relations code confers legal identity certain immunities and rights to represent workers in industrial disputes. industrial relations code 2020 registration provisions - verify current bare act confirm amendments for your examination batch define trade union and distinguish from casual workers association list essentials and procedure for registration explain civil and criminal immunities in trade disputes"
+      "searchText": "trade union - definition registration and recognition 3. trade union - definition registration and recognition 3 a trade union is an association of workers or employers formed mainly to regulate relations between members and employers or among workers employers including imposing lawful restrictive conditions on trade or business conduct. registration under the industrial relations code gives legal personality rights to represent in disputes and access to statutory immunities when acting in contemplation or furtherance of a trade dispute. industrial relations code 2020 trade union registration recognition of negotiating union union with substantial membership verify chapter part numbers in current bare act define trade union distinguish from informal workers groups essentials and procedure for registration effect of registration recognition - why it matters for collective bargaining substantial membership verification"
     },
     {
       "id": "statute:labour-law-industrial-relations-1:module-1:trade-union-definition-registration-and-recognition:e3805cd",
@@ -16680,8 +16788,8 @@
       "topicTitle": "Trade Union – Definition, Registration and Recognition",
       "sectionRef": "3",
       "displayTitle": "Industrial Relations Code, 2020",
-      "excerptSource": "Registration provisions — verify current bare act",
-      "searchText": "industrial relations code 2020 registration provisions - verify current bare act confirm amendments for your examination batch"
+      "excerptSource": "Trade union registration, Recognition of negotiating union / union with substantial membership",
+      "searchText": "industrial relations code 2020 trade union registration recognition of negotiating union union with substantial membership verify chapter part numbers in current bare act"
     },
     {
       "id": "topic:labour-law-industrial-relations-1:module-1:immunities-in-trade-disputes-criminal-and-civil",
@@ -16717,7 +16825,43 @@
       "sectionRef": "4",
       "displayTitle": "Immunities in trade disputes : Criminal and Civil",
       "excerptSource": "4.    Immunities in trade disputes : Criminal and Civil",
-      "searchText": "immunities in trade disputes criminal and civil 4. immunities in trade disputes criminal and civil 4"
+      "searchText": "immunities in trade disputes criminal and civil 4. immunities in trade disputes criminal and civil 4 trade dispute - dispute between employers and workmen or among workmen connected with employment non-employment terms or conditions. registered unions acting in contemplation or furtherance of a trade dispute enjoy immunities 1 criminal - certain agreements in restraint of trade not prosecuted as criminal conspiracy 2 civil - limited protection from tort claims e.g. inducement of breach when dispute-related. immunities are conditional - unlawful objectives or violence fall outside protection. industrial relations code 2020 provisions on trade disputes immunities for registered trade unions cross-read with general law of conspiracy and tort define trade dispute give examples explain criminal immunity concerted action registered union bona fide dispute explain civil immunity limits when immunities do not apply malice unlawful means unrelated acts"
+    },
+    {
+      "id": "statute:labour-law-industrial-relations-1:module-1:immunities-in-trade-disputes-criminal-and-civil:e3805cd",
+      "recordType": "statute",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-1/immunities-in-trade-disputes-criminal-and-civil",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-1",
+          "topicId": "immunities-in-trade-disputes-criminal-and-civil"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-1/immunities-in-trade-disputes-criminal-and-civil",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-1",
+          "topicId": "immunities-in-trade-disputes-criminal-and-civil"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-1",
+      "moduleTitle": "INDUSTRIAL RELATIONS CODE",
+      "topicId": "immunities-in-trade-disputes-criminal-and-civil",
+      "topicTitle": "Immunities in trade disputes : Criminal and Civil",
+      "sectionRef": "4",
+      "displayTitle": "Industrial Relations Code, 2020",
+      "excerptSource": "Provisions on trade disputes, Immunities for registered trade unions",
+      "searchText": "industrial relations code 2020 provisions on trade disputes immunities for registered trade unions cross-read with general law of conspiracy and tort"
     },
     {
       "id": "module:labour-law-industrial-relations-1:module-2",
@@ -16789,7 +16933,79 @@
       "sectionRef": "1",
       "displayTitle": "‘Industry’ – Conceptual Analysis",
       "excerptSource": "1.    ‘Industry’ – Conceptual Analysis",
-      "searchText": "industry - conceptual analysis 1. industry - conceptual analysis 1"
+      "searchText": "industry - conceptual analysis 1. industry - conceptual analysis 1 industry under industrial law is wider than a mere trade or business it covers any systematic activity organised by cooperation between employer and employees for production supply of goods or services - whether profit-making or not. the bangalore water supply line of cases expanded industry to hospitals educational institutions charities etc. subject to exceptions small clubs casual hobbies sovereign functions in narrow sense . industrial relations code 2020 definition of industry industrial establishment compare with pre-code id act definition in case law bangalore water supply sewerage board v. a. rajappa 1978 2 scc 213 supreme court of india broad triple test - systematic activity cooperation of employer and employees production of goods services liberal definition unless specifically excluded. state the bangalore water supply approach to industry list categories held to be industry hospital university club - with nuances note exclusions sovereign regal functions small charitable ventures - exam fact-dependent"
+    },
+    {
+      "id": "case:labour-law-industrial-relations-1:module-2:industry-conceptual-analysis:153ee564",
+      "recordType": "case",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-2/industry-conceptual-analysis",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-2",
+          "topicId": "industry-conceptual-analysis"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-2/industry-conceptual-analysis",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-2",
+          "topicId": "industry-conceptual-analysis"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-2",
+      "moduleTitle": "THE INDUSTRIAL DISPUTES",
+      "topicId": "industry-conceptual-analysis",
+      "topicTitle": "‘Industry’ – Conceptual Analysis",
+      "sectionRef": "1",
+      "displayTitle": "Bangalore Water Supply & Sewerage Board v. A. Rajappa",
+      "excerptSource": "Broad \"triple test\" — systematic activity, cooperation of employer and employees, production of goods/services; liberal definition unless specifically excluded.",
+      "searchText": "bangalore water supply sewerage board v. a. rajappa 1978 2 scc 213 broad triple test - systematic activity cooperation of employer and employees production of goods services liberal definition unless specifically excluded."
+    },
+    {
+      "id": "statute:labour-law-industrial-relations-1:module-2:industry-conceptual-analysis:e3805cd",
+      "recordType": "statute",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-2/industry-conceptual-analysis",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-2",
+          "topicId": "industry-conceptual-analysis"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-2/industry-conceptual-analysis",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-2",
+          "topicId": "industry-conceptual-analysis"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-2",
+      "moduleTitle": "THE INDUSTRIAL DISPUTES",
+      "topicId": "industry-conceptual-analysis",
+      "topicTitle": "‘Industry’ – Conceptual Analysis",
+      "sectionRef": "1",
+      "displayTitle": "Industrial Relations Code, 2020",
+      "excerptSource": "Definition of industry / industrial establishment",
+      "searchText": "industrial relations code 2020 definition of industry industrial establishment compare with pre-code id act definition in case law"
     },
     {
       "id": "topic:labour-law-industrial-relations-1:module-2:standing-orders",
@@ -16825,7 +17041,43 @@
       "sectionRef": "2",
       "displayTitle": "Standing orders",
       "excerptSource": "2.    Standing orders",
-      "searchText": "standing orders 2. standing orders 2"
+      "searchText": "standing orders 2. standing orders 2 standing orders are rules governing matters of conduct discipline holidays shifts attendance and similar conditions of service in industrial establishments. they must be certified by the certifying officer labour authorities so workers know enforceable service rules before disputes arise. breach may amount to misconduct leading to disciplinary enquiry. industrial employment standing orders act 1946 certification schedule of matters to be provided provisions integrated under irc 2020 - confirm in bare act purpose of standing orders difference from individual contract certification procedure and who may apply link standing orders to disciplinary action and misconduct"
+    },
+    {
+      "id": "statute:labour-law-industrial-relations-1:module-2:standing-orders:51f5ed85",
+      "recordType": "statute",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-2/standing-orders",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-2",
+          "topicId": "standing-orders"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-2/standing-orders",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-2",
+          "topicId": "standing-orders"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-2",
+      "moduleTitle": "THE INDUSTRIAL DISPUTES",
+      "topicId": "standing-orders",
+      "topicTitle": "Standing orders",
+      "sectionRef": "2",
+      "displayTitle": "Industrial Employment (Standing Orders) Act, 1946",
+      "excerptSource": "Certification, Schedule of matters to be provided",
+      "searchText": "industrial employment standing orders act 1946 certification schedule of matters to be provided provisions integrated under irc 2020 - confirm in bare act"
     },
     {
       "id": "topic:labour-law-industrial-relations-1:module-2:mechanism-to-dispute-resolution",
@@ -16861,7 +17113,43 @@
       "sectionRef": "3",
       "displayTitle": "Mechanism to dispute Resolution",
       "excerptSource": "3.    Mechanism to dispute Resolution",
-      "searchText": "mechanism to dispute resolution 3. mechanism to dispute resolution 3"
+      "searchText": "mechanism to dispute resolution 3. mechanism to dispute resolution 3 industrial dispute resolution follows a multi-tier machinery negotiation conciliation conciliation officer optional reference to industrial tribunal national industrial tribunal adjudication . strikes and lock-outs are regulated during pendency. the goal is industrial peace with fair hearing awards are binding subject to judicial review. industrial relations code 2020 conciliation reference to tribunals procedure and powers of tribunals map old id act machinery to irc chapters stages bilateral talks conciliation adjudication role of conciliation officer vs tribunal when disputes may be referred effect of pending proceedings on strike lock-out"
+    },
+    {
+      "id": "statute:labour-law-industrial-relations-1:module-2:mechanism-to-dispute-resolution:e3805cd",
+      "recordType": "statute",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-2/mechanism-to-dispute-resolution",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-2",
+          "topicId": "mechanism-to-dispute-resolution"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-2/mechanism-to-dispute-resolution",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-2",
+          "topicId": "mechanism-to-dispute-resolution"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-2",
+      "moduleTitle": "THE INDUSTRIAL DISPUTES",
+      "topicId": "mechanism-to-dispute-resolution",
+      "topicTitle": "Mechanism to dispute Resolution",
+      "sectionRef": "3",
+      "displayTitle": "Industrial Relations Code, 2020",
+      "excerptSource": "Conciliation, Reference to tribunals, Procedure and powers of tribunals",
+      "searchText": "industrial relations code 2020 conciliation reference to tribunals procedure and powers of tribunals map old id act machinery to irc chapters"
     },
     {
       "id": "topic:labour-law-industrial-relations-1:module-2:concept-of-workman",
@@ -16897,7 +17185,79 @@
       "sectionRef": "4",
       "displayTitle": "Concept of ‘Workman’",
       "excerptSource": "4.    Concept of ‘Workman’",
-      "searchText": "concept of workman 4. concept of workman 4"
+      "searchText": "concept of workman 4. concept of workman 4 a workman is any person employed in an industry to do manual unskilled skilled technical operational clerical or supervisory work for hire or reward - but excludes persons in managerial administrative capacity and those earning above the statutory wage ceiling as notified . correct classification decides access to id act irc protections reinstatement remedies and union membership issues. industrial relations code 2020 definition of workman wage ceiling notification compare supervisory vs managerial tests in case law h.r. adyanthaya v. sandoz india ltd. 1994 5 scc 737 supreme court of india discusses who is workman - functions and dominant nature of duties matter more than designation alone. statutory definition inclusions and exclusions supervisor vs manager - dominant duty test consequences of being not being a workman dispute rights protection on retrenchment"
+    },
+    {
+      "id": "case:labour-law-industrial-relations-1:module-2:concept-of-workman:4da6248f",
+      "recordType": "case",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-2/concept-of-workman",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-2",
+          "topicId": "concept-of-workman"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-2/concept-of-workman",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-2",
+          "topicId": "concept-of-workman"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-2",
+      "moduleTitle": "THE INDUSTRIAL DISPUTES",
+      "topicId": "concept-of-workman",
+      "topicTitle": "Concept of ‘Workman’",
+      "sectionRef": "4",
+      "displayTitle": "H.R. Adyanthaya v. Sandoz (India) Ltd.",
+      "excerptSource": "Discusses who is workman — functions and dominant nature of duties matter more than designation alone.",
+      "searchText": "h.r. adyanthaya v. sandoz india ltd. 1994 5 scc 737 discusses who is workman - functions and dominant nature of duties matter more than designation alone."
+    },
+    {
+      "id": "statute:labour-law-industrial-relations-1:module-2:concept-of-workman:e3805cd",
+      "recordType": "statute",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-2/concept-of-workman",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-2",
+          "topicId": "concept-of-workman"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-2/concept-of-workman",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-2",
+          "topicId": "concept-of-workman"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-2",
+      "moduleTitle": "THE INDUSTRIAL DISPUTES",
+      "topicId": "concept-of-workman",
+      "topicTitle": "Concept of ‘Workman’",
+      "sectionRef": "4",
+      "displayTitle": "Industrial Relations Code, 2020",
+      "excerptSource": "Definition of workman, Wage ceiling notification",
+      "searchText": "industrial relations code 2020 definition of workman wage ceiling notification compare supervisory vs managerial tests in case law"
     },
     {
       "id": "module:labour-law-industrial-relations-1:module-3",
@@ -16969,7 +17329,43 @@
       "sectionRef": "1",
       "displayTitle": "‘Strike’ &‘Lock out’ :Concepts, legality and justification",
       "excerptSource": "1.    ‘Strike’ &‘Lock out’ :Concepts, legality and justification",
-      "searchText": "strike lock out concepts legality and justification 1. strike lock out concepts legality and justification 1"
+      "searchText": "strike lock out concepts legality and justification 1. strike lock out concepts legality and justification 1 strike - cessation of work by body of workmen acting in concert with common understanding to press demands. lock-out - employer closes workplace or suspends work to compel acceptance of terms. both are weapons of collective economic pressure but are regulated notice periods bans during conciliation adjudication and illegality if violent or in essential services where applicable . industrial relations code 2020 strike and lock-out - notice prohibition during pendency of proceedings list conditions for legal strike lock-out in bare act define strike and lock-out distinguish from go-slow gherao lay-off legal vs illegal strike lock-out notice timing public utility consequences of illegal strike disciplinary action no wages for strike period - policy law nuances"
+    },
+    {
+      "id": "statute:labour-law-industrial-relations-1:module-3:strike-lock-out-concepts-legality-and-justification:e3805cd",
+      "recordType": "statute",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-3/strike-lock-out-concepts-legality-and-justification",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-3",
+          "topicId": "strike-lock-out-concepts-legality-and-justification"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-3/strike-lock-out-concepts-legality-and-justification",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-3",
+          "topicId": "strike-lock-out-concepts-legality-and-justification"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-3",
+      "moduleTitle": "CAUSES OF INDUSTRIAL DISPUTE",
+      "topicId": "strike-lock-out-concepts-legality-and-justification",
+      "topicTitle": "‘Strike’ &‘Lock out’ :Concepts, legality and justification",
+      "sectionRef": "1",
+      "displayTitle": "Industrial Relations Code, 2020",
+      "excerptSource": "Strike and lock-out — notice, Prohibition during pendency of proceedings",
+      "searchText": "industrial relations code 2020 strike and lock-out - notice prohibition during pendency of proceedings list conditions for legal strike lock-out in bare act"
     },
     {
       "id": "topic:labour-law-industrial-relations-1:module-3:lay-off-retrenchment-closure",
@@ -17005,7 +17401,43 @@
       "sectionRef": "2",
       "displayTitle": "‘Lay off’ ‘Retrenchment’ & ‘Closure’",
       "excerptSource": "2.     ‘Lay off’ ‘Retrenchment’ & ‘Closure’",
-      "searchText": "lay off retrenchment closure 2. lay off retrenchment closure 2"
+      "searchText": "lay off retrenchment closure 2. lay off retrenchment closure 2 lay-off - failure refusal inability of employer to give employment due to shortage of coal power raw material accumulation of stock breakdown or natural calamity with conditions . retrenchment - termination for any reason other than disciplinary penalty with last-in-first-out and compensation norms . closure - permanent shut-down of establishment compensation and notice for affected workmen in applicable establishments . industrial relations code 2020 lay-off retrenchment closure of undertaking chapter v-b style protections for large establishments - verify thresholds define lay-off retrenchment closure - do not confuse compensation and notice requirements for retrenchment closure prior permission approval where applicable large industrial establishments"
+    },
+    {
+      "id": "statute:labour-law-industrial-relations-1:module-3:lay-off-retrenchment-closure:e3805cd",
+      "recordType": "statute",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-3/lay-off-retrenchment-closure",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-3",
+          "topicId": "lay-off-retrenchment-closure"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-3/lay-off-retrenchment-closure",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-3",
+          "topicId": "lay-off-retrenchment-closure"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-3",
+      "moduleTitle": "CAUSES OF INDUSTRIAL DISPUTE",
+      "topicId": "lay-off-retrenchment-closure",
+      "topicTitle": "‘Lay off’ ‘Retrenchment’ & ‘Closure’",
+      "sectionRef": "2",
+      "displayTitle": "Industrial Relations Code, 2020",
+      "excerptSource": "Lay-off, Retrenchment, Closure of undertaking",
+      "searchText": "industrial relations code 2020 lay-off retrenchment closure of undertaking chapter v-b style protections for large establishments - verify thresholds"
     },
     {
       "id": "topic:labour-law-industrial-relations-1:module-3:analysis-of-the-concepts-pre-requisites",
@@ -17041,7 +17473,79 @@
       "sectionRef": "3",
       "displayTitle": "Analysis of the Concepts, Pre-requisites",
       "excerptSource": "3.    Analysis of the Concepts, Pre-requisites",
-      "searchText": "analysis of the concepts pre-requisites 3. analysis of the concepts pre-requisites 3"
+      "searchText": "analysis of the concepts pre-requisites 3. analysis of the concepts pre-requisites 3 retrenchment closure and lay-off in large industrial establishments require prior conditions notice to workmen and government opportunity for consultation compensation e.g. 15 days wages per year of service for retrenchment - verify current code and adherence to re-employment obligations where applicable. exams often test pre-requisites before employer can lawfully retrench or close. industrial relations code 2020 conditions precedent to retrenchment closure - compensation and notice compare with pre-2014 id act 25f 25ffa 25-o terminology state bank of india v. money 1976 1 scc 822 supreme court of india often cited on meaning of retrenchment - termination must fall within statutory definition to trigger protections. list pre-requisites before retrenchment notice compensation lifo pre-requisites for closure vs retrenchment effect of non-compliance void termination reinstatement remedies"
+    },
+    {
+      "id": "case:labour-law-industrial-relations-1:module-3:analysis-of-the-concepts-pre-requisites:5f7f40eb",
+      "recordType": "case",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-3/analysis-of-the-concepts-pre-requisites",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-3",
+          "topicId": "analysis-of-the-concepts-pre-requisites"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-3/analysis-of-the-concepts-pre-requisites",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-3",
+          "topicId": "analysis-of-the-concepts-pre-requisites"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-3",
+      "moduleTitle": "CAUSES OF INDUSTRIAL DISPUTE",
+      "topicId": "analysis-of-the-concepts-pre-requisites",
+      "topicTitle": "Analysis of the Concepts, Pre-requisites",
+      "sectionRef": "3",
+      "displayTitle": "State Bank of India v. Money",
+      "excerptSource": "Often cited on meaning of retrenchment — termination must fall within statutory definition to trigger protections.",
+      "searchText": "state bank of india v. money 1976 1 scc 822 often cited on meaning of retrenchment - termination must fall within statutory definition to trigger protections."
+    },
+    {
+      "id": "statute:labour-law-industrial-relations-1:module-3:analysis-of-the-concepts-pre-requisites:e3805cd",
+      "recordType": "statute",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-3/analysis-of-the-concepts-pre-requisites",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-3",
+          "topicId": "analysis-of-the-concepts-pre-requisites"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-3/analysis-of-the-concepts-pre-requisites",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-3",
+          "topicId": "analysis-of-the-concepts-pre-requisites"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-3",
+      "moduleTitle": "CAUSES OF INDUSTRIAL DISPUTE",
+      "topicId": "analysis-of-the-concepts-pre-requisites",
+      "topicTitle": "Analysis of the Concepts, Pre-requisites",
+      "sectionRef": "3",
+      "displayTitle": "Industrial Relations Code, 2020",
+      "excerptSource": "Conditions precedent to retrenchment, Closure — compensation and notice",
+      "searchText": "industrial relations code 2020 conditions precedent to retrenchment closure - compensation and notice compare with pre-2014 id act 25f 25ffa 25-o terminology"
     },
     {
       "id": "topic:labour-law-industrial-relations-1:module-3:unfair-labour-practices",
@@ -17077,7 +17581,43 @@
       "sectionRef": "4",
       "displayTitle": "Unfair Labour Practices",
       "excerptSource": "4.    Unfair Labour Practices",
-      "searchText": "unfair labour practices 4. unfair labour practices 4"
+      "searchText": "unfair labour practices 4. unfair labour practices 4 unfair labour practices ulp are specified acts by employers or unions that disturb industrial harmony - e.g. victimisation domination of unions by employer refusal to bargain collectively illegal strike encouragement coercive picketing. labour courts tribunals may order cease-and-desist reinstatement or compensation. industrial relations code 2020 schedule of unfair labour practices remedies cross-reference maharashtra recognition of trade unions act schedule in state exams if applicable give examples of ulp by employer and by union from schedule remedies and forum for ulp claims distinguish ulp from ordinary misconduct or illegal strike"
+    },
+    {
+      "id": "statute:labour-law-industrial-relations-1:module-3:unfair-labour-practices:e3805cd",
+      "recordType": "statute",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-3/unfair-labour-practices",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-3",
+          "topicId": "unfair-labour-practices"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-3/unfair-labour-practices",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-3",
+          "topicId": "unfair-labour-practices"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-3",
+      "moduleTitle": "CAUSES OF INDUSTRIAL DISPUTE",
+      "topicId": "unfair-labour-practices",
+      "topicTitle": "Unfair Labour Practices",
+      "sectionRef": "4",
+      "displayTitle": "Industrial Relations Code, 2020",
+      "excerptSource": "Schedule of unfair labour practices, Remedies",
+      "searchText": "industrial relations code 2020 schedule of unfair labour practices remedies cross-reference maharashtra recognition of trade unions act schedule in state exams if applicable"
     },
     {
       "id": "module:labour-law-industrial-relations-1:module-4",
@@ -17149,7 +17689,43 @@
       "sectionRef": "1",
       "displayTitle": "Minimum Wages and Payment of Wages",
       "excerptSource": "1.    Minimum Wages and Payment of Wages",
-      "searchText": "minimum wages and payment of wages 1. minimum wages and payment of wages 1"
+      "searchText": "minimum wages and payment of wages 1. minimum wages and payment of wages 1 minimum wages fix a legal floor for scheduled employments basic vda etc. to prevent exploitation. payment of wages rules govern timing mode deductions fines absence damage - with limits and claims for wrong deductions or delayed payment. the wages code 2020 consolidates prior minimum wages and payment of wages acts. code on wages 2020 minimum wages payment of wages permissible deductions check maharashtra state notifications for scheduled employments who fixes minimum wages components of minimum wage wage period time of payment authorised deductions remedy for non-payment excessive deduction authority limitation"
+    },
+    {
+      "id": "statute:labour-law-industrial-relations-1:module-4:minimum-wages-and-payment-of-wages:a21460d",
+      "recordType": "statute",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-4/minimum-wages-and-payment-of-wages",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-4",
+          "topicId": "minimum-wages-and-payment-of-wages"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-4/minimum-wages-and-payment-of-wages",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-4",
+          "topicId": "minimum-wages-and-payment-of-wages"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-4",
+      "moduleTitle": "WAGES CODE 2020",
+      "topicId": "minimum-wages-and-payment-of-wages",
+      "topicTitle": "Minimum Wages and Payment of Wages",
+      "sectionRef": "1",
+      "displayTitle": "Code on Wages, 2020",
+      "excerptSource": "Minimum wages, Payment of wages, Permissible deductions",
+      "searchText": "code on wages 2020 minimum wages payment of wages permissible deductions check maharashtra state notifications for scheduled employments"
     },
     {
       "id": "topic:labour-law-industrial-relations-1:module-4:payment-of-bonus",
@@ -17185,7 +17761,43 @@
       "sectionRef": "2",
       "displayTitle": "Payment of Bonus",
       "excerptSource": "2.    Payment of Bonus",
-      "searchText": "payment of bonus 2. payment of bonus 2"
+      "searchText": "payment of bonus 2. payment of bonus 2 bonus is a share in profits or productivity-linked payment under the wages code formerly payment of bonus act . eligible employees in covered establishments receive minimum bonus even if no allocable surplus and maximum cap linked to salary ceiling set-on set-off of surplus deficiency across accounting years applies. code on wages 2020 payment of bonus eligibility and disqualification set-on and set-off verify minimum maximum in bare act for your batch eligibility who qualifies disqualification misconduct etc. minimum bonus even without profit maximum limit meaning of allocable surplus set-on set-off briefly"
+    },
+    {
+      "id": "statute:labour-law-industrial-relations-1:module-4:payment-of-bonus:a21460d",
+      "recordType": "statute",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-4/payment-of-bonus",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-4",
+          "topicId": "payment-of-bonus"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-4/payment-of-bonus",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-4",
+          "topicId": "payment-of-bonus"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-4",
+      "moduleTitle": "WAGES CODE 2020",
+      "topicId": "payment-of-bonus",
+      "topicTitle": "Payment of Bonus",
+      "sectionRef": "2",
+      "displayTitle": "Code on Wages, 2020",
+      "excerptSource": "Payment of bonus, Eligibility and disqualification, Set-on and set-off",
+      "searchText": "code on wages 2020 payment of bonus eligibility and disqualification set-on and set-off verify minimum maximum in bare act for your batch"
     },
     {
       "id": "topic:labour-law-industrial-relations-1:module-4:offences-and-penalties",
@@ -17221,7 +17833,43 @@
       "sectionRef": "3",
       "displayTitle": "Offences and Penalties",
       "excerptSource": "3.    Offences and Penalties",
-      "searchText": "offences and penalties 3. offences and penalties 3"
+      "searchText": "offences and penalties 3. offences and penalties 3 the wages code creates offences for breaches such as paying below minimum wage unauthorised deductions failure to maintain registers and obstruction of inspectors. penalties include fines higher for repeat offences and continuing offences may attract daily fines . corporate employers may expose officers to liability when offence committed with consent or neglect. code on wages 2020 offences and penalties cognizance of offences note which offences are compoundable if provided major offences under wages code list 4-5 penalty structure repeat offence enhancement who may be prosecuted employer manager company officers"
+    },
+    {
+      "id": "statute:labour-law-industrial-relations-1:module-4:offences-and-penalties:a21460d",
+      "recordType": "statute",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-4/offences-and-penalties",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-4",
+          "topicId": "offences-and-penalties"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-4/offences-and-penalties",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-4",
+          "topicId": "offences-and-penalties"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-4",
+      "moduleTitle": "WAGES CODE 2020",
+      "topicId": "offences-and-penalties",
+      "topicTitle": "Offences and Penalties",
+      "sectionRef": "3",
+      "displayTitle": "Code on Wages, 2020",
+      "excerptSource": "Offences and penalties, Cognizance of offences",
+      "searchText": "code on wages 2020 offences and penalties cognizance of offences note which offences are compoundable if provided"
     },
     {
       "id": "topic:labour-law-industrial-relations-1:module-4:miscellaneous",
@@ -17257,7 +17905,43 @@
       "sectionRef": "4",
       "displayTitle": "Miscellaneous",
       "excerptSource": "4.    Miscellaneous",
-      "searchText": "miscellaneous 4. miscellaneous 4"
+      "searchText": "miscellaneous 4. miscellaneous 4 miscellaneous wages code topics include appointment of inspectors maintenance of registers records claims procedure before authority bar of jurisdiction of civil courts where remedy lies under the code and power to make rules . these procedural provisions ensure enforceability of wage rights in practice. code on wages 2020 inspectors records payment of claims bar of suits skim miscellaneous chapter for exam short notes role of inspector powers of search examination claims authority - who may apply limitation registers to be maintained effect of non-maintenance"
+    },
+    {
+      "id": "statute:labour-law-industrial-relations-1:module-4:miscellaneous:a21460d",
+      "recordType": "statute",
+      "programmeIds": [
+        "llb-3yr",
+        "llb-5yr"
+      ],
+      "routes": [
+        {
+          "programmeId": "llb-3yr",
+          "semesterId": "sem-1",
+          "path": "#/llb-3yr/sem-1/labour-law-industrial-relations-1/module-4/miscellaneous",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-4",
+          "topicId": "miscellaneous"
+        },
+        {
+          "programmeId": "llb-5yr",
+          "semesterId": "sem-5",
+          "path": "#/llb-5yr/sem-5/labour-law-industrial-relations-1/module-4/miscellaneous",
+          "subjectSlug": "labour-law-industrial-relations-1",
+          "moduleId": "module-4",
+          "topicId": "miscellaneous"
+        }
+      ],
+      "subjectSlug": "labour-law-industrial-relations-1",
+      "subjectTitle": "LABOUR LAW AND INDUSTRIAL RELATIONS- I",
+      "moduleId": "module-4",
+      "moduleTitle": "WAGES CODE 2020",
+      "topicId": "miscellaneous",
+      "topicTitle": "Miscellaneous",
+      "sectionRef": "4",
+      "displayTitle": "Code on Wages, 2020",
+      "excerptSource": "Inspectors, Records, Payment of claims, Bar of suits",
+      "searchText": "code on wages 2020 inspectors records payment of claims bar of suits skim miscellaneous chapter for exam short notes"
     },
     {
       "id": "reading:labour-law-industrial-relations-1:1",

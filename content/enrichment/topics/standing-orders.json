@@ -1,0 +1,19 @@
+{
+  "topicId": "standing-orders",
+  "reviewStatus": "pending",
+  "definition": "**Standing orders** are rules governing matters of conduct, discipline, holidays, shifts, attendance, and similar conditions of service in industrial establishments. They must be **certified** by the certifying officer/Labour authorities so workers know enforceable service rules before disputes arise. Breach may amount to **misconduct** leading to disciplinary enquiry.",
+  "statutoryReferences": [
+    {
+      "act": "Industrial Employment (Standing Orders) Act, 1946",
+      "sections": ["Certification", "Schedule of matters to be provided"],
+      "note": "Provisions integrated under IRC 2020 — confirm in bare act"
+    }
+  ],
+  "cases": [],
+  "examChecklist": [
+    { "id": "chk-1", "text": "Purpose of standing orders; difference from individual contract" },
+    { "id": "chk-2", "text": "**Certification** procedure and who may apply" },
+    { "id": "chk-3", "text": "Link standing orders to **disciplinary action** and misconduct" }
+  ],
+  "lastVerified": "2026-10-22"
+}

@@ -99,7 +99,9 @@ The university PDF is inconsistent:
 
 ## Enrichment (not in raw syllabus)
 
-One file per topic: `content/enrichment/topics/<topicId>.json`. Fields: `definition`, `statutoryReferences`, `cases`, `examChecklist`, `lastVerified`. Run `npm run enrich:scaffold -- --topic <id> --subject <slug>` then `npm run build:curriculum`.
+One file per topic: `content/enrichment/topics/<topicId>.json`. Fields: `definition`, `statutoryReferences`, `cases`, `examChecklist`, `lastVerified`, optional `reviewStatus: "pending"` (shows a draft banner until human approval). Run `npm run enrich:scaffold -- --topic <id> --subject <slug>` then `npm run build:curriculum`.
+
+**In progress:** Labour Law & Industrial Relations I (all 16 topics) has draft exam notes with `reviewStatus: pending`.
 
 ## 3-Year student UX
 

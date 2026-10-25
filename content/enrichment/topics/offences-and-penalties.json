@@ -1,0 +1,19 @@
+{
+  "topicId": "offences-and-penalties",
+  "reviewStatus": "pending",
+  "definition": "The Wages Code creates **offences** for breaches such as paying below minimum wage, unauthorised deductions, failure to maintain registers, and obstruction of inspectors. Penalties include **fines** (higher for repeat offences) and continuing offences may attract **daily fines**. Corporate employers may expose officers to liability when offence committed with consent or neglect.",
+  "statutoryReferences": [
+    {
+      "act": "Code on Wages, 2020",
+      "sections": ["Offences and penalties", "Cognizance of offences"],
+      "note": "Note which offences are compoundable if provided"
+    }
+  ],
+  "cases": [],
+  "examChecklist": [
+    { "id": "chk-1", "text": "Major **offences** under Wages Code (list 4–5)" },
+    { "id": "chk-2", "text": "Penalty structure; **repeat offence** enhancement" },
+    { "id": "chk-3", "text": "Who may be prosecuted (employer, manager, company officers)" }
+  ],
+  "lastVerified": "2026-10-22"
+}

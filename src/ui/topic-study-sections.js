@@ -16,7 +16,26 @@ export function renderTopicStudySections(ctx) {
   const frag = document.createDocumentFragment();
   const syllabus = (topic.syllabusText || topic.title || '').trim();
 
-  if (syllabus) {
+  const hasStudy =
+    topic.enrichment?.definition?.trim() ||
+    (topic.enrichment?.statutory?.length ?? 0) > 0 ||
+    (topic.enrichment?.examChecklist?.length ?? 0) > 0;
+
+  if (syllabus && !hasStudy) {
+    frag.appendChild(
+      section('Syllabus scope', [
+        el('div', { innerHTML: markdownLite(syllabus) }),
+        topic.sectionRef
+          ? el('p', { className: 'text-xs mt-2', style: 'color: hsl(var(--text-muted))' }, [
+              `Section ${topic.sectionRef}`,
+            ])
+          : null,
+        el('p', { className: 'text-xs mt-3 italic', style: 'color: hsl(var(--text-muted))' }, [
+          'Exam notes for this topic are being added module-by-module.',
+        ]),
+      ]),
+    );
+  } else if (syllabus) {
     frag.appendChild(
       section('Syllabus scope', [
         el('div', { innerHTML: markdownLite(syllabus) }),

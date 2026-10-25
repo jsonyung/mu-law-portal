@@ -1,0 +1,19 @@
+{
+  "topicId": "strike-lock-out-concepts-legality-and-justification",
+  "reviewStatus": "pending",
+  "definition": "**Strike** — cessation of work by body of workmen acting in concert, with common understanding, to press demands. **Lock-out** — employer closes workplace or suspends work to compel acceptance of terms. Both are **weapons of collective economic pressure** but are **regulated**: notice periods, bans during conciliation/adjudication, and illegality if violent or in essential services (where applicable).",
+  "statutoryReferences": [
+    {
+      "act": "Industrial Relations Code, 2020",
+      "sections": ["Strike and lock-out — notice", "Prohibition during pendency of proceedings"],
+      "note": "List conditions for legal strike/lock-out in bare act"
+    }
+  ],
+  "cases": [],
+  "examChecklist": [
+    { "id": "chk-1", "text": "Define **strike** and **lock-out**; distinguish from go-slow, gherao, lay-off" },
+    { "id": "chk-2", "text": "**Legal vs illegal** strike/lock-out (notice, timing, public utility)" },
+    { "id": "chk-3", "text": "Consequences of illegal strike (disciplinary action, no wages for strike period — policy/law nuances)" }
+  ],
+  "lastVerified": "2026-10-22"
+}
